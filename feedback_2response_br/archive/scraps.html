@@ -1,0 +1,5 @@
+stimulus: function () {
+    return '<div id="stimulus_container" style="position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 100%; text-align: center;">' +
+        '<p>Recall the last grid pattern.</p><p><span style="color: gray">Use 3 to select the top-left grid, 8 to select the top-right grid, c to select the bottom-left grid, or n to select the bottom-right grid.</span></p>' +
+        jsPsych.timelineVariable('stimulus1') + '</div>';
+}
