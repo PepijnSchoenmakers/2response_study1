@@ -166,106 +166,1221 @@ var trial_info_practice3 = [
     { item_order: 105, item: 'Practice 8', stimulus1: '<p>If a bag contains 15 marbles and 5 are taken, </p>', stimulus2: '<p>If a bag contains 15 marbles and 5 are taken, </p><p>how many marbles are left in the bag?</p>', choices: ['10 marbles', '5 marbles'], QuestionType: 'practice', correct_response: '10 marbles', condition: 'practice', conf_stimulus: '<p>How confident are you in this response?</p>' }
 ];
 
-var trial_info_conflict_all = [
-    { item: 1, stimulus1: "<p>In a building residents have 370 dogs and cats in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 more dogs than cats. How many cats are there ?</SPAN></p>", stimulus2: "<p>In a building residents have 370 dogs and cats in total.</p><p>There are 300 more dogs than cats. How many cats are there ?</p>", choices: ["35", "70"], QuestionType: "C", correct_response: "35", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 2, stimulus1: "<p>In a forest one can find 360 wolves and bears in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 more wolves than bears. How many bears are there ?</SPAN></p>", stimulus2: "<p>In a forest one can find 360 wolves and bears in total.</p><p>There are 300 more wolves than bears. How many bears are there ?</p>", choices: ["30", "60"], QuestionType: "C", correct_response: "30", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 3, stimulus1: "<p>On a safari tour one can watch 350 lions and pumas in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 more lions than pumas. How many pumas are there ?</SPAN></p>", stimulus2: "<p>On a safari tour one can watch 350 lions and pumas in total.</p><p>There are 300 more lions than pumas. How many pumas are there ?</p>", choices: ["25", "50"], QuestionType: "C", correct_response: "25", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 4, stimulus1: "<p>In a jungle there are 340 crocodiles and snakes in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 more crocodiles than snakes. How many snakes are there ?</SPAN></p>", stimulus2: "<p>In a jungle there are 340 crocodiles and snakes in total.</p><p>There are 300 more crocodiles than snakes. How many snakes are there ?</p>", choices: ["20", "40"], QuestionType: "C", correct_response: "20", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 5, stimulus1: "<p>In a grass plain scientists have counted 330 zebras and elephants.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 more zebras than elephants. How many elephants are there ?</SPAN></p>", stimulus2: "<p>In a grass plain scientists have counted 330 zebras and elephants.</p><p>There are 300 more zebras than elephants. How many elephants are there ?</p>", choices: ["15", "30"], QuestionType: "C", correct_response: "15", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 6, stimulus1: "<p>In a store one can choose between 320 tomatoes and avocados.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 more tomatoes than avocados. How many avocados are there ?</SPAN></p>", stimulus2: "<p>In a store one can choose between 320 tomatoes and avocados.</p><p>There are 300 more tomatoes than avocados. How many avocados are there ?</p>", choices: ["10", "20"], QuestionType: "C", correct_response: "10", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 7, stimulus1: "<p>A store manager has bought 310 bananas and kiwis in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 more bananas than kiwis. How many kiwis are there ?</SPAN></p>", stimulus2: "<p>A store manager has bought 310 bananas and kiwis in total.</p><p>There are 300 more bananas than kiwis. How many kiwis are there ?</p>", choices: ["5", "10"], QuestionType: "C", correct_response: "5", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 8, stimulus1: "<p>A retail clerk has to sort 290 oranges and lemons in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 more oranges than lemons. How many lemons are there ?</SPAN></p>", stimulus2: "<p>A retail clerk has to sort 290 oranges and lemons in total.</p><p>There are 200 more oranges than lemons. How many lemons are there ?</p>", choices: ["45", "90"], QuestionType: "C", correct_response: "45", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 9, stimulus1: "<p>To make juice, a producer used 280 clementines and limes.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 more clementines than limes. How many limes are there ?</SPAN></p>", stimulus2: "<p>To make juice, a producer used 280 clementines and limes.</p><p>There are 200 more clementines than limes. How many limes are there ?</p>", choices: ["40", "80"], QuestionType: "C", correct_response: "40", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 10, stimulus1: "<p>To make yogurt, a cook has bought 270 apricots and pears.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 more apricots than pears. How many pears are there ?</SPAN></p>", stimulus2: "<p>To make yogurt, a cook has bought 270 apricots and pears.</p><p>There are 200 more apricots than pears. How many pears are there ?</p>", choices: ["35", "70"], QuestionType: "C", correct_response: "35", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 11, stimulus1: "<p>In a kitchen there are 260 knives and spoons in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 more knives than spoons. How many spoons are there ?</SPAN></p>", stimulus2: "<p>In a kitchen there are 260 knives and spoons in total.</p><p>There are 200 more knives than spoons. How many spoons are there ?</p>", choices: ["30", "60"], QuestionType: "C", correct_response: "30", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 12, stimulus1: "<p>In a restaurant clients have been using 250 forks and napkins.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 more forks than napkins. How many napkins are there ?</SPAN></p>", stimulus2: "<p>In a restaurant clients have been using 250 forks and napkins.</p><p>There are 200 more forks than napkins. How many napkins are there ?</p>", choices: ["25", "50"], QuestionType: "C", correct_response: "25", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 13, stimulus1: "<p>The kitchen in a restaurant has 240 plates and pans in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 more plates than pans. How many pans are there ?</SPAN></p>", stimulus2: "<p>The kitchen in a restaurant has 240 plates and pans in total.</p><p>There are 200 more plates than pans. How many pans are there ?</p>", choices: ["20", "40"], QuestionType: "C", correct_response: "20", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 14, stimulus1: "<p>For a convention organizers have bought 230 glasses and cups.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 more glasses than cups. How many cups are there ?</SPAN></p>", stimulus2: "<p>For a convention organizers have bought 230 glasses and cups.</p><p>There are 200 more glasses than cups. How many cups are there ?</p>", choices: ["15", "30"], QuestionType: "C", correct_response: "15", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 15, stimulus1: "<p>A store is advertising 220 coffee makers and toasters.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 more coffee makers than toasters. How many toasters are there ?</SPAN></p>", stimulus2: "<p>A store is advertising 220 coffee makers and toasters.</p><p>There are 200 more coffee makers than toasters. How many toasters are there ?</p>", choices: ["10", "20"], QuestionType: "C", correct_response: "10", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 16, stimulus1: "<p>A music store has 210 saxophones and flutes in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 more saxophones than flutes. How many flutes are there ?</SPAN></p>", stimulus2: "<p>A music store has 210 saxophones and flutes in total.</p><p>There are 200 more saxophones than flutes. How many flutes are there ?</p>", choices: ["5", "10"], QuestionType: "C", correct_response: "5", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 17, stimulus1: "<p>A store is showcasing  190 pianos and xylophones in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 more pianos than xylophones. How many xylophones are there ?</SPAN></p>", stimulus2: "<p>A store is showcasing  190 pianos and xylophones in total.</p><p>There are 100 more pianos than xylophones. How many xylophones are there ?</p>", choices: ["45", "90"], QuestionType: "C", correct_response: "45", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 18, stimulus1: "<p>An orchestra has bought 180 trombones and clarinets.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 more trombones than clarinets. How many clarinets are there ?</SPAN></p>", stimulus2: "<p>An orchestra has bought 180 trombones and clarinets.</p><p>There are 100 more trombones than clarinets. How many clarinets are there ?</p>", choices: ["40", "80"], QuestionType: "C", correct_response: "40", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 19, stimulus1: "<p>A music school is renting 170 guitars and harps in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 more guitars than harps. How many harps are there ?</SPAN></p>", stimulus2: "<p>A music school is renting 170 guitars and harps in total.</p><p>There are 100 more guitars than harps. How many harps are there ?</p>", choices: ["35", "70"], QuestionType: "C", correct_response: "35", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 20, stimulus1: "<p>A music company has manufactured 160 banjos and ukuleles.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 more banjos than ukuleles. How many ukuleles are there ?</SPAN></p>", stimulus2: "<p>A music company has manufactured 160 banjos and ukuleles.</p><p>There are 100 more banjos than ukuleles. How many ukuleles are there ?</p>", choices: ["30", "60"], QuestionType: "C", correct_response: "30", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 21, stimulus1: "<p>In a company there are 150 men and women in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 more men than women. How many women are there ?</SPAN></p>", stimulus2: "<p>In a company there are 150 men and women in total.</p><p>There are 100 more men than women. How many women are there ?</p>", choices: ["25", "50"], QuestionType: "C", correct_response: "25", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 22, stimulus1: "<p>In a park there are 140 adults and children in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 more adults than children. How many children are there ?</SPAN></p>", stimulus2: "<p>In a park there are 140 adults and children in total.</p><p>There are 100 more adults than children. How many children are there ?</p>", choices: ["20", "40"], QuestionType: "C", correct_response: "20", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 23, stimulus1: "<p>In a school there are 130 boys and girls in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 more boys than girls. How many girls are there ?</SPAN></p>", stimulus2: "<p>In a school there are 130 boys and girls in total.</p><p>There are 100 more boys than girls. How many girls are there ?</p>", choices: ["15", "30"], QuestionType: "C", correct_response: "15", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 24, stimulus1: "<p>A city is employing 120 policemen and firefighters in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 more policemen than firefighters. How many firefighters are there ?</SPAN></p>", stimulus2: "<p>A city is employing 120 policemen and firefighters in total.</p><p>There are 100 more policemen than firefighters. How many firefighters are there ?</p>", choices: ["10", "20"], QuestionType: "C", correct_response: "10", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 25, stimulus1: "<p>A university department lists 110 psychologists and statisticians.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 more psychologists than statisticians. How many statisticians are there ?</SPAN></p>", stimulus2: "<p>A university department lists 110 psychologists and statisticians.</p><p>There are 100 more psychologists than statisticians. How many statisticians are there ?</p>", choices: ["5", "10"], QuestionType: "C", correct_response: "5", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 26, stimulus1: "<p>A national park has 650 roses and lotus flowers in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 600 more roses than lotus flowers. How many lotus flowers are there ?</SPAN></p>", stimulus2: "<p>A national park has 650 roses and lotus flowers in total.</p><p>There are 600 more roses than lotus flowers. How many lotus flowers are there ?</p>", choices: ["25", "50"], QuestionType: "C", correct_response: "25", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 27, stimulus1: "<p>In a forest there are 640 oak trees and maple trees.</p><p><SPAN STYLE='color:#FFFFFF'>There are 600 more oak trees than maple trees. How many maple trees are there ?</SPAN></p>", stimulus2: "<p>In a forest there are 640 oak trees and maple trees.</p><p>There are 600 more oak trees than maple trees. How many maple trees are there ?</p>", choices: ["20", "40"], QuestionType: "C", correct_response: "20", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 28, stimulus1: "<p>On a mountain there are 630 pine and eucalyptus trees.</p><p><SPAN STYLE='color:#FFFFFF'>There are 600 more pine than eucalyptus trees. How many eucalyptus trees are there ?</SPAN></p>", stimulus2: "<p>On a mountain there are 630 pine and eucalyptus trees.</p><p>There are 600 more pine than eucalyptus trees. How many eucalyptus trees are there ?</p>", choices: ["15", "30"], QuestionType: "C", correct_response: "15", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 29, stimulus1: "<p>In a greenhouse there are 620 dandelions and water lilies.</p><p><SPAN STYLE='color:#FFFFFF'>There are 600 more dandelions than water lilies. How many water lilies are there ?</SPAN></p>", stimulus2: "<p>In a greenhouse there are 620 dandelions and water lilies.</p><p>There are 600 more dandelions than water lilies. How many water lilies are there ?</p>", choices: ["10", "20"], QuestionType: "C", correct_response: "10", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 30, stimulus1: "<p>Around a lake there are 610 daisies and jasmine flowers.</p><p><SPAN STYLE='color:#FFFFFF'>There are 600 more daisies than jasmine flowers. How many jasmine flowers are there ?</SPAN></p>", stimulus2: "<p>Around a lake there are 610 daisies and jasmine flowers.</p><p>There are 600 more daisies than jasmine flowers. How many jasmine flowers are there ?</p>", choices: ["5", "10"], QuestionType: "C", correct_response: "5", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 31, stimulus1: "<p>A science fair has gathered 590 inventors and engineers.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 more inventors than engineers. How many engineers are there ?</SPAN></p>", stimulus2: "<p>A science fair has gathered 590 inventors and engineers.</p><p>There are 500 more inventors than engineers. How many engineers are there ?</p>", choices: ["45", "90"], QuestionType: "C", correct_response: "45", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 32, stimulus1: "<p>A scientific commitee oversees 580 biologists and mathematicians.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 more biologists than mathematicians. How many mathematicians are there ?</SPAN></p>", stimulus2: "<p>A scientific commitee oversees 580 biologists and mathematicians.</p><p>There are 500 more biologists than mathematicians. How many mathematicians are there ?</p>", choices: ["40", "80"], QuestionType: "C", correct_response: "40", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 33, stimulus1: "<p>NASA has hired 570 astronomers and astronauts in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 more astronomers than astronauts. How many astronauts are there ?</SPAN></p>", stimulus2: "<p>NASA has hired 570 astronomers and astronauts in total.</p><p>There are 500 more astronomers than astronauts. How many astronauts are there ?</p>", choices: ["35", "70"], QuestionType: "C", correct_response: "35", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 34, stimulus1: "<p>At a convention there are 560 neuroscientists and botanists.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 more neuroscientists than botanists. How many botanists are there ?</SPAN></p>", stimulus2: "<p>At a convention there are 560 neuroscientists and botanists.</p><p>There are 500 more neuroscientists than botanists. How many botanists are there ?</p>", choices: ["30", "60"], QuestionType: "C", correct_response: "30", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 35, stimulus1: "<p>The science department has hired 550 physicists and chemists.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 more physicists than chemists. How many chemists are there ?</SPAN></p>", stimulus2: "<p>The science department has hired 550 physicists and chemists.</p><p>There are 500 more physicists than chemists. How many chemists are there ?</p>", choices: ["25", "50"], QuestionType: "C", correct_response: "25", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 36, stimulus1: "<p>In a stadium there are 540 volleyball and baseball players.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 more volleyball than baseball players. How many baseball players are there ?</SPAN></p>", stimulus2: "<p>In a stadium there are 540 volleyball and baseball players.</p><p>There are 500 more volleyball than baseball players. How many baseball players are there ?</p>", choices: ["20", "40"], QuestionType: "C", correct_response: "20", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 37, stimulus1: "<p>For a sports event, organizers have invited 530 players and coaches.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 more players than coaches. How many coaches are there ?</SPAN></p>", stimulus2: "<p>For a sports event, organizers have invited 530 players and coaches.</p><p>There are 500 more players than coaches. How many coaches are there ?</p>", choices: ["15", "30"], QuestionType: "C", correct_response: "15", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 38, stimulus1: "<p>A sports facility is housing 510 football players and swimmers.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 more football players than swimmers. How many swimmers are there ?</SPAN></p>", stimulus2: "<p>A sports facility is housing 510 football players and swimmers.</p><p>There are 500 more football players than swimmers. How many swimmers are there ?</p>", choices: ["5", "10"], QuestionType: "C", correct_response: "5", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 39, stimulus1: "<p>A sports event has gathered 520 soccer players and referees.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 more soccer players than referees. How many referees are there ?</SPAN></p>", stimulus2: "<p>A sports event has gathered 520 soccer players and referees.</p><p>There are 500 more soccer players than referees. How many referees are there ?</p>", choices: ["10", "20"], QuestionType: "C", correct_response: "10", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 40, stimulus1: "<p>A competition features 490 rugby players and runners.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 more rugby players than runners. How many runners are there ?</SPAN></p>", stimulus2: "<p>A competition features 490 rugby players and runners.</p><p>There are 400 more rugby players than runners. How many runners are there ?</p>", choices: ["45", "90"], QuestionType: "C", correct_response: "45", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 41, stimulus1: "<p>In a store there are 480 nails and hammers in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 more nails than hammers. How many hammers are there ?</SPAN></p>", stimulus2: "<p>In a store there are 480 nails and hammers in total.</p><p>There are 400 more nails than hammers. How many hammers are there ?</p>", choices: ["40", "80"], QuestionType: "C", correct_response: "40", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 42, stimulus1: "<p>On the shelves one can find 470 screws and screwdrivers.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 more screws than screwdrivers. How many screwdrivers are there ?</SPAN></p>", stimulus2: "<p>On the shelves one can find 470 screws and screwdrivers.</p><p>There are 400 more screws than screwdrivers. How many screwdrivers are there ?</p>", choices: ["35", "70"], QuestionType: "C", correct_response: "35", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 43, stimulus1: "<p>A woodwork company has bought 460 drills and hacksaws.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 more drills than hacksaws. How many hacksaws are there ?</SPAN></p>", stimulus2: "<p>A woodwork company has bought 460 drills and hacksaws.</p><p>There are 400 more drills than hacksaws. How many hacksaws are there ?</p>", choices: ["30", "60"], QuestionType: "C", correct_response: "30", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 44, stimulus1: "<p>In a giveaway there are 450 pliers and scissors in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 more pliers than scissors. How many scissors are there ?</SPAN></p>", stimulus2: "<p>In a giveaway there are 450 pliers and scissors in total.</p><p>There are 400 more pliers than scissors. How many scissors are there ?</p>", choices: ["25", "50"], QuestionType: "C", correct_response: "25", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 45, stimulus1: "<p>In a large box there are 440 nuts and bolts in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 more nuts than bolts. How many bolts are there ?</SPAN></p>", stimulus2: "<p>In a large box there are 440 nuts and bolts in total.</p><p>There are 400 more nuts than bolts. How many bolts are there ?</p>", choices: ["20", "40"], QuestionType: "C", correct_response: "20", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 46, stimulus1: "<p>A city has acquired 430 buses and trains in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 more buses than trains. How many trains are there ?</SPAN></p>", stimulus2: "<p>A city has acquired 430 buses and trains in total.</p><p>There are 400 more buses than trains. How many trains are there ?</p>", choices: ["15", "30"], QuestionType: "C", correct_response: "15", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 47, stimulus1: "<p>An army division has 420 planes and boats in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 more planes than boats. How many boats are there ?</SPAN></p>", stimulus2: "<p>An army division has 420 planes and boats in total.</p><p>There are 400 more planes than boats. How many boats are there ?</p>", choices: ["10", "20"], QuestionType: "C", correct_response: "10", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 48, stimulus1: "<p>On a toll booth, cameras have counted 410 cars and bikes.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 more cars than bikes. How many bikes are there ?</SPAN></p>", stimulus2: "<p>On a toll booth, cameras have counted 410 cars and bikes.</p><p>There are 400 more cars than bikes. How many bikes are there ?</p>", choices: ["5", "10"], QuestionType: "C", correct_response: "5", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 49, stimulus1: "<p>In a city park there are 390 skateboarders and pedestrians.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 more skateboarders than pedestrians. How many pedestrians are there ?</SPAN></p>", stimulus2: "<p>In a city park there are 390 skateboarders and pedestrians.</p><p>There are 300 more skateboarders than pedestrians. How many pedestrians are there ?</p>", choices: ["45", "90"], QuestionType: "C", correct_response: "45", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 50, stimulus1: "<p>In a city people use 380 scooters and bicycles in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 more scooters than bicycles. How many bicycles are there ?</SPAN></p>", stimulus2: "<p>In a city people use 380 scooters and bicycles in total.</p><p>There are 300 more scooters than bicycles. How many bicycles are there ?</p>", choices: ["40", "80"], QuestionType: "C", correct_response: "40", conf_stimulus: "<p>How confident are you in this response?" }]
-var trial_info_noconflict_all = [
-    { item: 51, stimulus1: "<p>In a building residents have 110 dogs and cats in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 dogs. How many cats are there in the building ?</SPAN></p>", stimulus2: "<p>In a building residents have 110 dogs and cats in total.</p><p>There are 100 dogs. How many cats are there in the building ?</p>", choices: ["10", "5"], QuestionType: "NC", correct_response: "10", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 52, stimulus1: "<p>In a forest one can find 120 wolves and bears in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 wolves. How many bears are there in the forest ?</SPAN></p>", stimulus2: "<p>In a forest one can find 120 wolves and bears in total.</p><p>There are 100 wolves. How many bears are there in the forest ?</p>", choices: ["20", "10"], QuestionType: "NC", correct_response: "20", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 53, stimulus1: "<p>On a safari tour one can watch 130 lions and pumas in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 lions. How many pumas are there on the tour ?</SPAN></p>", stimulus2: "<p>On a safari tour one can watch 130 lions and pumas in total.</p><p>There are 100 lions. How many pumas are there on the tour ?</p>", choices: ["30", "15"], QuestionType: "NC", correct_response: "30", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 54, stimulus1: "<p>In a jungle there are 140 crocodiles and snakes in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 crocodiles. How many snakes are there in this jungle ?</SPAN></p>", stimulus2: "<p>In a jungle there are 140 crocodiles and snakes in total.</p><p>There are 100 crocodiles. How many snakes are there in this jungle ?</p>", choices: ["40", "20"], QuestionType: "NC", correct_response: "40", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 55, stimulus1: "<p>In a grass plain scientists have counted 150 zebras and elephants.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 zebras. How many elephants are there in this plain ?</SPAN></p>", stimulus2: "<p>In a grass plain scientists have counted 150 zebras and elephants.</p><p>There are 100 zebras. How many elephants are there in this plain ?</p>", choices: ["50", "25"], QuestionType: "NC", correct_response: "50", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 56, stimulus1: "<p>In a store one can choose between 160 tomatoes and avocados.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 tomatoes. How many avocados are there in the store ?</SPAN></p>", stimulus2: "<p>In a store one can choose between 160 tomatoes and avocados.</p><p>There are 100 tomatoes. How many avocados are there in the store ?</p>", choices: ["60", "30"], QuestionType: "NC", correct_response: "60", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 57, stimulus1: "<p>A store manager has bought 170 bananas and kiwis in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 bananas. How many kiwis are there in his store ?</SPAN></p>", stimulus2: "<p>A store manager has bought 170 bananas and kiwis in total.</p><p>There are 100 bananas. How many kiwis are there in his store ?</p>", choices: ["70", "35"], QuestionType: "NC", correct_response: "70", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 58, stimulus1: "<p>A retail clerk has to sort 180 oranges and lemons in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 oranges. How many lemons are there for him to sort ?</SPAN></p>", stimulus2: "<p>A retail clerk has to sort 180 oranges and lemons in total.</p><p>There are 100 oranges. How many lemons are there for him to sort ?</p>", choices: ["80", "40"], QuestionType: "NC", correct_response: "80", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 59, stimulus1: "<p>To make juice, a producer used 190 clementines and limes.</p><p><SPAN STYLE='color:#FFFFFF'>There are 100 clementines. How many limes did the producer use ?</SPAN></p>", stimulus2: "<p>To make juice, a producer used 190 clementines and limes.</p><p>There are 100 clementines. How many limes did the producer use ?</p>", choices: ["90", "45"], QuestionType: "NC", correct_response: "90", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 60, stimulus1: "<p>To make yogurt, a cook has bought 210 apricots and pears.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 apricots. How many pears did the cook buy ?</SPAN></p>", stimulus2: "<p>To make yogurt, a cook has bought 210 apricots and pears.</p><p>There are 200 apricots. How many pears did the cook buy ?</p>", choices: ["10", "5"], QuestionType: "NC", correct_response: "10", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 61, stimulus1: "<p>In a kitchen there are 220 knives and spoons in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 knives. How many spoons are there in the kitchen ?</SPAN></p>", stimulus2: "<p>In a kitchen there are 220 knives and spoons in total.</p><p>There are 200 knives. How many spoons are there in the kitchen ?</p>", choices: ["20", "10"], QuestionType: "NC", correct_response: "20", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 62, stimulus1: "<p>In a restaurant clients have been using 230 forks and napkins.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 forks. How many napkins are there in the restaurant ?</SPAN></p>", stimulus2: "<p>In a restaurant clients have been using 230 forks and napkins.</p><p>There are 200 forks. How many napkins are there in the restaurant ?</p>", choices: ["30", "15"], QuestionType: "NC", correct_response: "30", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 63, stimulus1: "<p>The kitchen in a restaurant has 250 plates and pans.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 plates. How many pans are there in this kitchen ?</SPAN></p>", stimulus2: "<p>The kitchen in a restaurant has 250 plates and pans.</p><p>There are 200 plates. How many pans are there in this kitchen ?</p>", choices: ["50", "25"], QuestionType: "NC", correct_response: "50", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 64, stimulus1: "<p>For a convention organizers have bought 240 glasses and cups.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 glasses. How many cups did the organizers buy ?</SPAN></p>", stimulus2: "<p>For a convention organizers have bought 240 glasses and cups.</p><p>There are 200 glasses. How many cups did the organizers buy ?</p>", choices: ["40", "20"], QuestionType: "NC", correct_response: "40", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 65, stimulus1: "<p>A store is advertising 260 coffee makers and toasters.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 coffee makers. How many toasters are there in this store ?</SPAN></p>", stimulus2: "<p>A store is advertising 260 coffee makers and toasters.</p><p>There are 200 coffee makers. How many toasters are there in this store ?</p>", choices: ["60", "30"], QuestionType: "NC", correct_response: "60", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 66, stimulus1: "<p>A music store has 270 saxophones and flutes in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 saxophones. How many flutes are there in this store ?</SPAN></p>", stimulus2: "<p>A music store has 270 saxophones and flutes in total.</p><p>There are 200 saxophones. How many flutes are there in this store ?</p>", choices: ["70", "35"], QuestionType: "NC", correct_response: "70", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 67, stimulus1: "<p>A store is showcasing  280 pianos and xylophones in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 pianos. How many xylophones are there in this store ?</SPAN></p>", stimulus2: "<p>A store is showcasing  280 pianos and xylophones in total.</p><p>There are 200 pianos. How many xylophones are there in this store ?</p>", choices: ["80", "40"], QuestionType: "NC", correct_response: "80", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 68, stimulus1: "<p>An orchestra has bought 290 trombones and clarinets.</p><p><SPAN STYLE='color:#FFFFFF'>There are 200 trombones. How many clarinets are there for this orchestra ?</SPAN></p>", stimulus2: "<p>An orchestra has bought 290 trombones and clarinets.</p><p>There are 200 trombones. How many clarinets are there for this orchestra ?</p>", choices: ["90", "45"], QuestionType: "NC", correct_response: "90", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 69, stimulus1: "<p>A music school is renting 310 guitars and harps in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 guitars. How many harps are there in this school ?</SPAN></p>", stimulus2: "<p>A music school is renting 310 guitars and harps in total.</p><p>There are 300 guitars. How many harps are there in this school ?</p>", choices: ["10", "5"], QuestionType: "NC", correct_response: "10", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 70, stimulus1: "<p>A music company has manufactured 320 banjos and ukuleles.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 banjos. How many ukuleles are there in this company ?</SPAN></p>", stimulus2: "<p>A music company has manufactured 320 banjos and ukuleles.</p><p>There are 300 banjos. How many ukuleles are there in this company ?</p>", choices: ["20", "10"], QuestionType: "NC", correct_response: "20", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 71, stimulus1: "<p>In a company there are 330 men and women in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 men. How many women are there in this company ?</SPAN></p>", stimulus2: "<p>In a company there are 330 men and women in total.</p><p>There are 300 men. How many women are there in this company ?</p>", choices: ["30", "15"], QuestionType: "NC", correct_response: "30", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 72, stimulus1: "<p>In a park there are 340 adults and children in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 adults. How many children are there in the park ?</SPAN></p>", stimulus2: "<p>In a park there are 340 adults and children in total.</p><p>There are 300 adults. How many children are there in the park ?</p>", choices: ["40", "20"], QuestionType: "NC", correct_response: "40", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 73, stimulus1: "<p>In a school there are 350 boys and girls in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 boys. How many girls are there in the school ?</SPAN></p>", stimulus2: "<p>In a school there are 350 boys and girls in total.</p><p>There are 300 boys. How many girls are there in the school ?</p>", choices: ["50", "25"], QuestionType: "NC", correct_response: "50", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 74, stimulus1: "<p>A city is employing 360 policemen and firefighters in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 policemen. How many firefighters are there in the city ?</SPAN></p>", stimulus2: "<p>A city is employing 360 policemen and firefighters in total.</p><p>There are 300 policemen. How many firefighters are there in the city ?</p>", choices: ["60", "30"], QuestionType: "NC", correct_response: "60", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 75, stimulus1: "<p>A university department lists 370 psychologists and statisticians.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 psychologists. How many statisticians are there in this department ?</SPAN></p>", stimulus2: "<p>A university department lists 370 psychologists and statisticians.</p><p>There are 300 psychologists. How many statisticians are there in this department ?</p>", choices: ["70", "35"], QuestionType: "NC", correct_response: "70", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 76, stimulus1: "<p>A national park has 380 roses and lotus flowers in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 roses. How many lotus flowers are there in this park ?</SPAN></p>", stimulus2: "<p>A national park has 380 roses and lotus flowers in total.</p><p>There are 300 roses. How many lotus flowers are there in this park ?</p>", choices: ["80", "40"], QuestionType: "NC", correct_response: "80", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 77, stimulus1: "<p>In a forest there are 390 oak trees and maple trees.</p><p><SPAN STYLE='color:#FFFFFF'>There are 300 oak trees. How many maple trees are there in the forest ?</SPAN></p>", stimulus2: "<p>In a forest there are 390 oak trees and maple trees.</p><p>There are 300 oak trees. How many maple trees are there in the forest ?</p>", choices: ["90", "45"], QuestionType: "NC", correct_response: "90", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 78, stimulus1: "<p>On a mountain there are 410 pine and eucalyptus trees.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 pine. How many eucalyptus trees are there on the mountain ?</SPAN></p>", stimulus2: "<p>On a mountain there are 410 pine and eucalyptus trees.</p><p>There are 400 pine. How many eucalyptus trees are there on the mountain ?</p>", choices: ["10", "5"], QuestionType: "NC", correct_response: "10", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 79, stimulus1: "<p>In a greenhouse there are 420 dandelions and water lilies.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 dandelions. How many water lilies are there in the greenhouse ?</SPAN></p>", stimulus2: "<p>In a greenhouse there are 420 dandelions and water lilies.</p><p>There are 400 dandelions. How many water lilies are there in the greenhouse ?</p>", choices: ["20", "10"], QuestionType: "NC", correct_response: "20", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 80, stimulus1: "<p>Around a lake there are 430 daisies and jasmine flowers.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 daisies. How many jasmine flowers are there around this lake ?</SPAN></p>", stimulus2: "<p>Around a lake there are 430 daisies and jasmine flowers.</p><p>There are 400 daisies. How many jasmine flowers are there around this lake ?</p>", choices: ["30", "15"], QuestionType: "NC", correct_response: "30", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 81, stimulus1: "<p>A science fair has gathered 440 inventors and engineers.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 inventors. How many engineers are there in this science fair ?</SPAN></p>", stimulus2: "<p>A science fair has gathered 440 inventors and engineers.</p><p>There are 400 inventors. How many engineers are there in this science fair ?</p>", choices: ["40", "20"], QuestionType: "NC", correct_response: "40", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 82, stimulus1: "<p>A scientific commitee oversees 450 biologists and mathematicians.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 biologists. How many mathematicians are there to oversee ?</SPAN></p>", stimulus2: "<p>A scientific commitee oversees 450 biologists and mathematicians.</p><p>There are 400 biologists. How many mathematicians are there to oversee ?</p>", choices: ["50", "25"], QuestionType: "NC", correct_response: "50", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 83, stimulus1: "<p>NASA has hired 460 astronomers and astronauts in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 astronomers. How many astronauts are there working for NASA ?</SPAN></p>", stimulus2: "<p>NASA has hired 460 astronomers and astronauts in total.</p><p>There are 400 astronomers. How many astronauts are there working for NASA ?</p>", choices: ["60", "30"], QuestionType: "NC", correct_response: "60", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 84, stimulus1: "<p>At a convention there are 470 neuroscientists and botanists.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 neuroscientists. How many botanists are there in this convention ?</SPAN></p>", stimulus2: "<p>At a convention there are 470 neuroscientists and botanists.</p><p>There are 400 neuroscientists. How many botanists are there in this convention ?</p>", choices: ["70", "35"], QuestionType: "NC", correct_response: "70", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 85, stimulus1: "<p>The science department has hired 480 physicists and chemists.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 physicists. How many chemists are there in this department ?</SPAN></p>", stimulus2: "<p>The science department has hired 480 physicists and chemists.</p><p>There are 400 physicists. How many chemists are there in this department ?</p>", choices: ["80", "40"], QuestionType: "NC", correct_response: "80", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 86, stimulus1: "<p>In a stadium there are 490 volleyball and baseball players.</p><p><SPAN STYLE='color:#FFFFFF'>There are 400 volleyball. How many baseball players are there in the stadium ?</SPAN></p>", stimulus2: "<p>In a stadium there are 490 volleyball and baseball players.</p><p>There are 400 volleyball. How many baseball players are there in the stadium ?</p>", choices: ["90", "45"], QuestionType: "NC", correct_response: "90", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 87, stimulus1: "<p>For a sports event, organizers have invited 510 players and coaches.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 players. How many coaches are there in this event ?</SPAN></p>", stimulus2: "<p>For a sports event, organizers have invited 510 players and coaches.</p><p>There are 500 players. How many coaches are there in this event ?</p>", choices: ["10", "5"], QuestionType: "NC", correct_response: "10", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 88, stimulus1: "<p>A sports facility is housing 520 football players and swimmers.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 football players. How many swimmers are there in this facility ?</SPAN></p>", stimulus2: "<p>A sports facility is housing 520 football players and swimmers.</p><p>There are 500 football players. How many swimmers are there in this facility ?</p>", choices: ["20", "10"], QuestionType: "NC", correct_response: "20", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 89, stimulus1: "<p>A sports event has gathered 530 soccer players and referees.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 soccer players. How many referees are there  for this event ?</SPAN></p>", stimulus2: "<p>A sports event has gathered 530 soccer players and referees.</p><p>There are 500 soccer players. How many referees are there  for this event ?</p>", choices: ["30", "15"], QuestionType: "NC", correct_response: "30", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 90, stimulus1: "<p>A competition features 540 rugby players and runners.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 rugby players. How many runners are there in this competition ?</SPAN></p>", stimulus2: "<p>A competition features 540 rugby players and runners.</p><p>There are 500 rugby players. How many runners are there in this competition ?</p>", choices: ["40", "20"], QuestionType: "NC", correct_response: "40", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 91, stimulus1: "<p>In a store there are 550 nails and hammers in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 nails. How many hammers are there in this store ?</SPAN></p>", stimulus2: "<p>In a store there are 550 nails and hammers in total.</p><p>There are 500 nails. How many hammers are there in this store ?</p>", choices: ["50", "25"], QuestionType: "NC", correct_response: "50", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 92, stimulus1: "<p>On the shelves one can find 560 screws and screwdrivers.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 screws. How many screwdrivers are there on the shelves ?</SPAN></p>", stimulus2: "<p>On the shelves one can find 560 screws and screwdrivers.</p><p>There are 500 screws. How many screwdrivers are there on the shelves ?</p>", choices: ["60", "30"], QuestionType: "NC", correct_response: "60", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 93, stimulus1: "<p>A woodwork company has bought 570 drills and hacksaws.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 drills. How many hacksaws are there in this company ?</SPAN></p>", stimulus2: "<p>A woodwork company has bought 570 drills and hacksaws.</p><p>There are 500 drills. How many hacksaws are there in this company ?</p>", choices: ["70", "35"], QuestionType: "NC", correct_response: "70", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 94, stimulus1: "<p>In a giveaway there are 580 pliers and scissors in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 pliers. How many scissors are there in this giveaway ?</SPAN></p>", stimulus2: "<p>In a giveaway there are 580 pliers and scissors in total.</p><p>There are 500 pliers. How many scissors are there in this giveaway ?</p>", choices: ["80", "40"], QuestionType: "NC", correct_response: "80", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 95, stimulus1: "<p>In a large box there are 590 nuts and bolts in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 500 nuts. How many bolts are there in this box ?</SPAN></p>", stimulus2: "<p>In a large box there are 590 nuts and bolts in total.</p><p>There are 500 nuts. How many bolts are there in this box ?</p>", choices: ["90", "45"], QuestionType: "NC", correct_response: "90", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 96, stimulus1: "<p>A city has acquired 610 buses and trains in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 600 buses. How many trains are there in this city ?</SPAN></p>", stimulus2: "<p>A city has acquired 610 buses and trains in total.</p><p>There are 600 buses. How many trains are there in this city ?</p>", choices: ["10", "5"], QuestionType: "NC", correct_response: "10", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 97, stimulus1: "<p>An army division has 620 planes and boats in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 600 planes. How many boats are there in this division ?</SPAN></p>", stimulus2: "<p>An army division has 620 planes and boats in total.</p><p>There are 600 planes. How many boats are there in this division ?</p>", choices: ["20", "10"], QuestionType: "NC", correct_response: "20", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 98, stimulus1: "<p>On a toll booth, cameras have counted 630 cars and bikes.</p><p><SPAN STYLE='color:#FFFFFF'>There are 600 cars. How many bikes are there on this road ?</SPAN></p>", stimulus2: "<p>On a toll booth, cameras have counted 630 cars and bikes.</p><p>There are 600 cars. How many bikes are there on this road ?</p>", choices: ["30", "15"], QuestionType: "NC", correct_response: "30", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 99, stimulus1: "<p>In a city park there are 640 skateboarders and pedestrians.</p><p><SPAN STYLE='color:#FFFFFF'>There are 600 skateboarders. How many pedestrians are there in this park ?</SPAN></p>", stimulus2: "<p>In a city park there are 640 skateboarders and pedestrians.</p><p>There are 600 skateboarders. How many pedestrians are there in this park ?</p>", choices: ["40", "20"], QuestionType: "NC", correct_response: "40", conf_stimulus: "<p>How confident are you in this response?" },
-    { item: 100, stimulus1: "<p>In a city people use 650 scooters and bicycles in total.</p><p><SPAN STYLE='color:#FFFFFF'>There are 600 scooters. How many bicycles are there in this city ?</SPAN></p>", stimulus2: "<p>In a city people use 650 scooters and bicycles in total.</p><p>There are 600 scooters. How many bicycles are there in this city ?</p>", choices: ["50", "25"], QuestionType: "NC", correct_response: "50", conf_stimulus: "<p>How confident are you in this response?" }
+
+var trial_info_LIFE_conflict_respiration = [
+
+    { item: 1, stimulus: '<p>Algae respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>'},
+    { item: 2, stimulus: '<p>Bacteria respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>'},
+    { item: 3, stimulus: '<p>Cactuses respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 4, stimulus: '<p>Coral respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 5, stimulus: '<p>Daffodils respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 6, stimulus: '<p>Daisies respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 7, stimulus: '<p>Dandelions respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 8, stimulus: '<p>Elms respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 9, stimulus: '<p>Ferns respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 10, stimulus: '<p>Grass respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 11, stimulus: '<p>Kelp respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 12, stimulus: '<p>Mold respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 13, stimulus: '<p>Moss respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 14, stimulus: '<p>Mushrooms respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 15, stimulus: '<p>Oaks respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 16, stimulus: '<p>Petunias respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 17, stimulus: '<p>Seaweed respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 18, stimulus: '<p>Tulips respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 19, stimulus: '<p>Willows respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 20, stimulus: '<p>Yeast respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 21, stimulus: '<p>Bicycles respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 22, stimulus: '<p>Clocks respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 23, stimulus: '<p>Comets respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 24, stimulus: '<p>Computers respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 25, stimulus: '<p>Elevators respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 26, stimulus: '<p>Fire respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 27, stimulus: '<p>Geysers respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 28, stimulus: '<p>Glaciers respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 29, stimulus: '<p>Helicopters respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 30, stimulus: '<p>Lava respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 31, stimulus: '<p>Rivers respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 32, stimulus: '<p>Robots respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 33, stimulus: '<p>Sailboats respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 34, stimulus: '<p>Satelites respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 35, stimulus: '<p>Smartphones respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 36, stimulus: '<p>The internet respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 37, stimulus: '<p>The moon respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 38, stimulus: '<p>The sun respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 39, stimulus: '<p>Tornadoes respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 40, stimulus: '<p>Wind respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },]
+
+
+
+
+var trial_info_LIFE_conflict_reproduction = [
+
+    { item: 41, stimulus: '<p>Algae reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 42, stimulus: '<p>Bacteria reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 43, stimulus: '<p>Cactuses reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 44, stimulus: '<p>Coral reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 45, stimulus: '<p>Daffodils reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 46, stimulus: '<p>Daisies reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 47, stimulus: '<p>Dandelions reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 48, stimulus: '<p>Elms reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 49, stimulus: '<p>Ferns reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 50, stimulus: '<p>Grass reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 51, stimulus: '<p>Kelp reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 52, stimulus: '<p>Mold reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 53, stimulus: '<p>Moss reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 54, stimulus: '<p>Mushrooms reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 55, stimulus: '<p>Oaks reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 56, stimulus: '<p>Petunias reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 57, stimulus: '<p>Seaweed reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 58, stimulus: '<p>Tulips reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 59, stimulus: '<p>Willows reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 60, stimulus: '<p>Yeast reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 61, stimulus: '<p>Bicycles reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 62, stimulus: '<p>Clocks reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 63, stimulus: '<p>Comets reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 64, stimulus: '<p>Computers reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 65, stimulus: '<p>Elevators reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 66, stimulus: '<p>Fire reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 67, stimulus: '<p>Geysers reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 68, stimulus: '<p>Glaciers reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 69, stimulus: '<p>Helicopters reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 70, stimulus: '<p>Lava reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 71, stimulus: '<p>Rivers reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 72, stimulus: '<p>Robots reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 73, stimulus: '<p>Sailboats reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 74, stimulus: '<p>Satelites reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 75, stimulus: '<p>Smartphones reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 76, stimulus: '<p>The internet reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 77, stimulus: '<p>The moon reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 78, stimulus: '<p>The sun reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 79, stimulus: '<p>Tornadoes reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 80, stimulus: '<p>Wind reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },]
+
+
+
+var trial_info_LIFE_conflict_nutrient = [
+
+    { item: 81, stimulus: '<p>Algae need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 82, stimulus: '<p>Bacteria need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 83, stimulus: '<p>Cactuses need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 84, stimulus: '<p>Coral need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 85, stimulus: '<p>Daffodils need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 86, stimulus: '<p>Daisies need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 87, stimulus: '<p>Dandelions need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 88, stimulus: '<p>Elms need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 89, stimulus: '<p>Ferns need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 90, stimulus: '<p>Grass needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 91, stimulus: '<p>Kelp need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 92, stimulus: '<p>Mold need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 93, stimulus: '<p>Moss need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 94, stimulus: '<p>Mushrooms need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 95, stimulus: '<p>Oaks need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 96, stimulus: '<p>Petunias need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 97, stimulus: '<p>Seaweed needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 98, stimulus: '<p>Tulips need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 99, stimulus: '<p>Willows need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 100, stimulus: '<p>Yeast needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 101, stimulus: '<p>Bicycles need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 102, stimulus: '<p>Clocks need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 103, stimulus: '<p>Comets need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 104, stimulus: '<p>Computers need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 105, stimulus: '<p>Elevators need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 106, stimulus: '<p>Fire needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 107, stimulus: '<p>Geysers need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 108, stimulus: '<p>Glaciers need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 109, stimulus: '<p>Helicopters need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 110, stimulus: '<p>Lava needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 111, stimulus: '<p>Rivers need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 112, stimulus: '<p>Robots need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 113, stimulus: '<p>Sailboats need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 114, stimulus: '<p>Satelites need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 115, stimulus: '<p>Smartphones need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 116, stimulus: '<p>The internet needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 117, stimulus: '<p>The moon needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 118, stimulus: '<p>The sun needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 119, stimulus: '<p>Tornadoes need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 120, stimulus: '<p>Wind needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' }, ]
+
+
+
+
+
+
+var trial_info_MATTER_conflict_weight = [
+
+    { item: 121, stimulus: '<p>Air has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 122, stimulus: '<p>Bubbles have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 123, stimulus: '<p>Caffeine has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 124, stimulus: '<p>Clouds have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 125, stimulus: '<p>DNA has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 126, stimulus: '<p>Dust has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 127, stimulus: '<p>Foam has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 128, stimulus: '<p>Fog has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 129, stimulus: '<p>Frost has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 130, stimulus: '<p>Germs have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 131, stimulus: '<p>Inkblots have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 132, stimulus: '<p>Methane has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 133, stimulus: '<p>Perfume has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 134, stimulus: '<p>Pollen has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 135, stimulus: '<p>Saliva has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 136, stimulus: '<p>Smoke has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 137, stimulus: '<p>Snowflakes have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 138, stimulus: '<p>Spores have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 139, stimulus: '<p>Steam has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 140, stimulus: '<p>Testosterone has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 141, stimulus: '<p>Coldness has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 142, stimulus: '<p>Color has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 143, stimulus: '<p>Drumbeats have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 144, stimulus: '<p>Echoes have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 145, stimulus: '<p>Electricity has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 146, stimulus: '<p>Flames have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 147, stimulus: '<p>Friction has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 148, stimulus: '<p>Gravity has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 149, stimulus: '<p>Heat has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 150, stimulus: '<p>Laser beams have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 151, stimulus: '<p>Lightning has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 152, stimulus: '<p>Magnetic fields have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 153, stimulus: '<p>Moonbeams have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 154, stimulus: '<p>Music has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 155, stimulus: '<p>Radio waves have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 156, stimulus: '<p>Rainbows have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 157, stimulus: '<p>Shadows have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 158, stimulus: '<p>Starlight has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 159, stimulus: '<p>Sunshine has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 160, stimulus: '<p>Thunder has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },]
+
+
+
+
+var trial_info_MATTER_conflict_temperature = [
+
+    { item: 161, stimulus: '<p>Air has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 162, stimulus: '<p>Bubbles have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 163, stimulus: '<p>Caffeine has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 164, stimulus: '<p>Clouds have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 165, stimulus: '<p>DNA has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 166, stimulus: '<p>Dust has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 167, stimulus: '<p>Foam has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 168, stimulus: '<p>Fog has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 169, stimulus: '<p>Frost has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 170, stimulus: '<p>Germs have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 171, stimulus: '<p>Inkblots have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 172, stimulus: '<p>Methane has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 173, stimulus: '<p>Perfume has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 174, stimulus: '<p>Pollen has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 175, stimulus: '<p>Saliva has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 176, stimulus: '<p>Smoke has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 177, stimulus: '<p>Snowflakes have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 178, stimulus: '<p>Spores have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 179, stimulus: '<p>Steam has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 180, stimulus: '<p>Testosterone has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 181, stimulus: '<p>Coldness has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 182, stimulus: '<p>Color has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 183, stimulus: '<p>Drumbeats have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 184, stimulus: '<p>Echoes have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 185, stimulus: '<p>Electricity has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 186, stimulus: '<p>Flames have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 187, stimulus: '<p>Friction has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 188, stimulus: '<p>Gravity has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 189, stimulus: '<p>Heat has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 190, stimulus: '<p>Laser beams have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 191, stimulus: '<p>Lightning has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 192, stimulus: '<p>Magnetic fields have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 193, stimulus: '<p>Moonbeams have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 194, stimulus: '<p>Music has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 195, stimulus: '<p>Radio waves have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 196, stimulus: '<p>Rainbows have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 197, stimulus: '<p>Shadows have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 198, stimulus: '<p>Starlight has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 199, stimulus: '<p>Sunshine has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 200, stimulus: '<p>Thunder has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },]
+
+
+
+
+
+
+
+
+var trial_info_MATTER_conflict_space = [
+
+    { item: 201, stimulus: '<p>Air occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 202, stimulus: '<p>Bubbles occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 203, stimulus: '<p>Caffeine occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 204, stimulus: '<p>Clouds occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 205, stimulus: '<p>DNA occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 206, stimulus: '<p>Dust occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 207, stimulus: '<p>Foam occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 208, stimulus: '<p>Fog occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 209, stimulus: '<p>Frost occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 210, stimulus: '<p>Germs occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 211, stimulus: '<p>Inkblots occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 212, stimulus: '<p>Methane occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 213, stimulus: '<p>Perfume occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 214, stimulus: '<p>Pollen occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 215, stimulus: '<p>Saliva occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 216, stimulus: '<p>Smoke occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 217, stimulus: '<p>Snowflakes occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 218, stimulus: '<p>Spores occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 219, stimulus: '<p>Steam occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 220, stimulus: '<p>Testosterone occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 221, stimulus: '<p>Coldness occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 222, stimulus: '<p>Color occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 223, stimulus: '<p>Drumbeats occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 224, stimulus: '<p>Echoes occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 225, stimulus: '<p>Electricity occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 226, stimulus: '<p>Flames occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 227, stimulus: '<p>Friction occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 228, stimulus: '<p>Gravity occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 229, stimulus: '<p>Heat occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 230, stimulus: '<p>Laser beams occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 231, stimulus: '<p>Lightning occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 232, stimulus: '<p>Magnetic fields occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 233, stimulus: '<p>Moonbeams occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 234, stimulus: '<p>Music occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 235, stimulus: '<p>Radio waves occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 236, stimulus: '<p>Rainbows occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 237, stimulus: '<p>Shadows occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 238, stimulus: '<p>Starlight occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 239, stimulus: '<p>Sunshine occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 240, stimulus: '<p>Thunder occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
 ]
+
+    
+    
+    
+
+var trial_info_LIFE_noconflict_respiration = [
+
+    { item: 241, stimulus: '<p>Boulders respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 242, stimulus: '<p>Caves respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 243, stimulus: '<p>Craters respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 244, stimulus: '<p>Emeralds respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 245, stimulus: '<p>Forks respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 246, stimulus: '<p>Hammers respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 247, stimulus: '<p>Islands respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 248, stimulus: '<p>Mittens respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 249, stimulus: '<p>Mountains respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 250, stimulus: '<p>Napkins respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 251, stimulus: '<p>Pebbles respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 252, stimulus: '<p>Rugs respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 253, stimulus: '<p>Sand respires.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 254, stimulus: '<p>Shells respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 255, stimulus: '<p>Shirts respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 256, stimulus: '<p>Shoes respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 257, stimulus: '<p>Shovels respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 258, stimulus: '<p>Stones respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 259, stimulus: '<p>Tables respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 260, stimulus: '<p>Towels respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 261, stimulus: '<p>Chipmunks respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 262, stimulus: '<p>Crocodiles respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 263, stimulus: '<p>Elephants respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 264, stimulus: '<p>Flamingos respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 265, stimulus: '<p>Frogs respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 266, stimulus: '<p>Giraffes respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 267, stimulus: '<p>Goats respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 268, stimulus: '<p>Gorillas respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 269, stimulus: '<p>Otters respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 270, stimulus: '<p>Owls respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 271, stimulus: '<p>Pelicans respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 272, stimulus: '<p>Pigs respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 273, stimulus: '<p>Rabbits respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 274, stimulus: '<p>Sharks respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 275, stimulus: '<p>Snails respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 276, stimulus: '<p>Spiders respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 277, stimulus: '<p>Tigers respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 278, stimulus: '<p>Turtles respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 279, stimulus: '<p>Wolves respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 280, stimulus: '<p>Zebras respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },]
+
+
+
+
+
+
+var trial_info_LIFE_noconflict_reproduction = [
+
+    { item: 281, stimulus: '<p>Boulders reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 282, stimulus: '<p>Caves reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 283, stimulus: '<p>Craters reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 284, stimulus: '<p>Emeralds reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 285, stimulus: '<p>Forks reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 286, stimulus: '<p>Hammers reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 287, stimulus: '<p>Islands reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 288, stimulus: '<p>Mittens reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 289, stimulus: '<p>Mountains reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 290, stimulus: '<p>Napkins reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 291, stimulus: '<p>Pebbles reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 292, stimulus: '<p>Rugs reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 293, stimulus: '<p>Sand reproduces.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 294, stimulus: '<p>Shells reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 295, stimulus: '<p>Shirts reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 296, stimulus: '<p>Shoes reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 297, stimulus: '<p>Shovels reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 298, stimulus: '<p>Stones reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 299, stimulus: '<p>Tables reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 300, stimulus: '<p>Towels reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 301, stimulus: '<p>Chipmunks reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 302, stimulus: '<p>Crocodiles reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 303, stimulus: '<p>Elephants reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 304, stimulus: '<p>Flamingos reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 305, stimulus: '<p>Frogs reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 306, stimulus: '<p>Giraffes reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 307, stimulus: '<p>Goats reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 308, stimulus: '<p>Gorillas reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 309, stimulus: '<p>Otters reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 310, stimulus: '<p>Owls reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 311, stimulus: '<p>Pelicans reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 312, stimulus: '<p>Pigs reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 313, stimulus: '<p>Rabbits reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 314, stimulus: '<p>Sharks reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 315, stimulus: '<p>Snails reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 316, stimulus: '<p>Spiders reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 317, stimulus: '<p>Tigers reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 318, stimulus: '<p>Turtles reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 319, stimulus: '<p>Wolves reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 320, stimulus: '<p>Zebras reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+]
+
+
+
+var trial_info_LIFE_noconflict_nutrient = [
+
+    { item: 321, stimulus: '<p>Boulders need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 322, stimulus: '<p>Caves need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 323, stimulus: '<p>Craters need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 324, stimulus: '<p>Emeralds need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 325, stimulus: '<p>Forks need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 326, stimulus: '<p>Hammers need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 327, stimulus: '<p>Islands need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 328, stimulus: '<p>Mittens need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 329, stimulus: '<p>Mountains need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 330, stimulus: '<p>Napkins need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 331, stimulus: '<p>Pebbles need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 332, stimulus: '<p>Rugs need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 333, stimulus: '<p>Sand needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 334, stimulus: '<p>Shells need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 335, stimulus: '<p>Shirts need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 336, stimulus: '<p>Shoes need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 337, stimulus: '<p>Shovels need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 338, stimulus: '<p>Stones need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 339, stimulus: '<p>Tables need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 340, stimulus: '<p>Towels need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 341, stimulus: '<p>Chipmunks need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 342, stimulus: '<p>Crocodiles need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 343, stimulus: '<p>Elephants need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 344, stimulus: '<p>Flamingos need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 345, stimulus: '<p>Frogs need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 346, stimulus: '<p>Giraffes need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 347, stimulus: '<p>Goats need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 348, stimulus: '<p>Gorillas need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 349, stimulus: '<p>Otters need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 350, stimulus: '<p>Owls need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 351, stimulus: '<p>Pelicans need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 352, stimulus: '<p>Pigs need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 353, stimulus: '<p>Rabbits need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 354, stimulus: '<p>Sharks need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 355, stimulus: '<p>Snails need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 356, stimulus: '<p>Spiders need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 357, stimulus: '<p>Tigers need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 358, stimulus: '<p>Turtles need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 359, stimulus: '<p>Wolves need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 360, stimulus: '<p>Zebras need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+]
+
+
+
+
+var trial_info_MATTER_noconflict_weight = [
+
+    { item: 361, stimulus: '<p>Christmas has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 362, stimulus: '<p>Dreams have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 363, stimulus: '<p>Feelings have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 364, stimulus: '<p>Halloween has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 365, stimulus: '<p>Hopes have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 366, stimulus: '<p>Hours have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 367, stimulus: '<p>Jokes have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 368, stimulus: '<p>Justice has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 369, stimulus: '<p>Love has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 370, stimulus: '<p>Minutes have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 371, stimulus: '<p>Mondays have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 372, stimulus: '<p>Numbers have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 373, stimulus: '<p>Poetry has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 374, stimulus: '<p>Silence has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 375, stimulus: '<p>Songs have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 376, stimulus: '<p>Stories have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 377, stimulus: '<p>Thoughts have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 378, stimulus: '<p>Vacations have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 379, stimulus: '<p>Wishes have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 380, stimulus: '<p>Words have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 381, stimulus: '<p>Anvils have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 382, stimulus: '<p>Bowling balls have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 383, stimulus: '<p>Bricks have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 384, stimulus: '<p>Clay has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 385, stimulus: '<p>Coal has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 386, stimulus: '<p>Concrete has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 387, stimulus: '<p>Copper has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 388, stimulus: '<p>Diamonds have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 389, stimulus: '<p>Dumbbells have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 390, stimulus: '<p>Glass has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 391, stimulus: '<p>Gold has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 392, stimulus: '<p>Granite has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 393, stimulus: '<p>Ice has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 394, stimulus: '<p>Iron has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 395, stimulus: '<p>Logs have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 396, stimulus: '<p>Lumber has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 397, stimulus: '<p>Rocks have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 398, stimulus: '<p>Rubber has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 399, stimulus: '<p>Salt has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 400, stimulus: '<p>Steel has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+]
+
+
+
+var trial_info_MATTER_noconflict_temperature = [
+
+    { item: 401, stimulus: '<p>Christmas has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 402, stimulus: '<p>Dreams have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 403, stimulus: '<p>Feelings have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 404, stimulus: '<p>Halloween has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 405, stimulus: '<p>Hopes have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 406, stimulus: '<p>Hours have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 407, stimulus: '<p>Jokes have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 408, stimulus: '<p>Justice has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 409, stimulus: '<p>Love has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 410, stimulus: '<p>Minutes have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 411, stimulus: '<p>Mondays have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 412, stimulus: '<p>Numbers have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 413, stimulus: '<p>Poetry has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 414, stimulus: '<p>Silence has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 415, stimulus: '<p>Songs have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 416, stimulus: '<p>Stories have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 417, stimulus: '<p>Thoughts have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 418, stimulus: '<p>Vacations have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 419, stimulus: '<p>Wishes have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 420, stimulus: '<p>Words have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 421, stimulus: '<p>Anvils have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 422, stimulus: '<p>Bowling balls have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 423, stimulus: '<p>Bricks have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 424, stimulus: '<p>Clay has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 425, stimulus: '<p>Coal has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 426, stimulus: '<p>Concrete has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 427, stimulus: '<p>Copper has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 428, stimulus: '<p>Diamonds have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 429, stimulus: '<p>Dumbbells have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 430, stimulus: '<p>Glass has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 431, stimulus: '<p>Gold has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 432, stimulus: '<p>Granite has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 433, stimulus: '<p>Ice has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 434, stimulus: '<p>Iron has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 435, stimulus: '<p>Logs have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 436, stimulus: '<p>Lumber has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 437, stimulus: '<p>Rocks have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 438, stimulus: '<p>Rubber has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 439, stimulus: '<p>Salt has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 440, stimulus: '<p>Steel has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+]
+
+
+
+
+
+
+var trial_info_MATTER_noconflict_space=[
+    { item: 441, stimulus: '<p>Christmas occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 442, stimulus: '<p>Dreams occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 443, stimulus: '<p>Feelings occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 444, stimulus: '<p>Halloween occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 445, stimulus: '<p>Hopes occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 446, stimulus: '<p>Hours occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 447, stimulus: '<p>Jokes occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 448, stimulus: '<p>Justice occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 449, stimulus: '<p>Love occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 450, stimulus: '<p>Minutes occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 451, stimulus: '<p>Mondays occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 452, stimulus: '<p>Numbers occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 453, stimulus: '<p>Poetry occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 454, stimulus: '<p>Silence occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 455, stimulus: '<p>Songs occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 456, stimulus: '<p>Stories occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 457, stimulus: '<p>Thoughts occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 458, stimulus: '<p>Vacations occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 459, stimulus: '<p>Wishes occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 460, stimulus: '<p>Words occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 461, stimulus: '<p>Anvils occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 462, stimulus: '<p>Bowling balls occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 463, stimulus: '<p>Bricks occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 464, stimulus: '<p>Clay occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 465, stimulus: '<p>Coal occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 466, stimulus: '<p>Concrete occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 467, stimulus: '<p>Copper occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 468, stimulus: '<p>Diamonds occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 469, stimulus: '<p>Dumbbells occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 470, stimulus: '<p>Glass occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 471, stimulus: '<p>Gold occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 472, stimulus: '<p>Granite occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 473, stimulus: '<p>Ice occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 474, stimulus: '<p>Iron occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 475, stimulus: '<p>Logs occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 476, stimulus: '<p>Lumber occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 477, stimulus: '<p>Rocks occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 478, stimulus: '<p>Rubber occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 479, stimulus: '<p>Salt occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 480, stimulus: '<p>Steel occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },]
+
+var trial_info_LIFE_conflict_respiration = [
+
+    { item: 1, stimulus: '<p>Algae respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>'},
+    { item: 2, stimulus: '<p>Bacteria respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>'},
+    { item: 3, stimulus: '<p>Cactuses respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 4, stimulus: '<p>Coral respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 5, stimulus: '<p>Daffodils respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 6, stimulus: '<p>Daisies respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 7, stimulus: '<p>Dandelions respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 8, stimulus: '<p>Elms respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 9, stimulus: '<p>Ferns respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 10, stimulus: '<p>Grass respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 11, stimulus: '<p>Kelp respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 12, stimulus: '<p>Mold respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 13, stimulus: '<p>Moss respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 14, stimulus: '<p>Mushrooms respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 15, stimulus: '<p>Oaks respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 16, stimulus: '<p>Petunias respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 17, stimulus: '<p>Seaweed respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 18, stimulus: '<p>Tulips respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 19, stimulus: '<p>Willows respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 20, stimulus: '<p>Yeast respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 21, stimulus: '<p>Bicycles respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 22, stimulus: '<p>Clocks respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 23, stimulus: '<p>Comets respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 24, stimulus: '<p>Computers respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 25, stimulus: '<p>Elevators respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 26, stimulus: '<p>Fire respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 27, stimulus: '<p>Geysers respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 28, stimulus: '<p>Glaciers respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 29, stimulus: '<p>Helicopters respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 30, stimulus: '<p>Lava respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 31, stimulus: '<p>Rivers respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 32, stimulus: '<p>Robots respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 33, stimulus: '<p>Sailboats respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 34, stimulus: '<p>Satelites respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 35, stimulus: '<p>Smartphones respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 36, stimulus: '<p>The internet respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 37, stimulus: '<p>The moon respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 38, stimulus: '<p>The sun respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 39, stimulus: '<p>Tornadoes respire.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 40, stimulus: '<p>Wind respires.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },]
+
+
+
+
+var trial_info_LIFE_conflict_reproduction = [
+
+    { item: 41, stimulus: '<p>Algae reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 42, stimulus: '<p>Bacteria reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 43, stimulus: '<p>Cactuses reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 44, stimulus: '<p>Coral reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 45, stimulus: '<p>Daffodils reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 46, stimulus: '<p>Daisies reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 47, stimulus: '<p>Dandelions reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 48, stimulus: '<p>Elms reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 49, stimulus: '<p>Ferns reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 50, stimulus: '<p>Grass reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 51, stimulus: '<p>Kelp reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 52, stimulus: '<p>Mold reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 53, stimulus: '<p>Moss reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 54, stimulus: '<p>Mushrooms reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 55, stimulus: '<p>Oaks reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 56, stimulus: '<p>Petunias reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 57, stimulus: '<p>Seaweed reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 58, stimulus: '<p>Tulips reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 59, stimulus: '<p>Willows reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 60, stimulus: '<p>Yeast reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 61, stimulus: '<p>Bicycles reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 62, stimulus: '<p>Clocks reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 63, stimulus: '<p>Comets reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 64, stimulus: '<p>Computers reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 65, stimulus: '<p>Elevators reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 66, stimulus: '<p>Fire reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 67, stimulus: '<p>Geysers reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 68, stimulus: '<p>Glaciers reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 69, stimulus: '<p>Helicopters reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 70, stimulus: '<p>Lava reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 71, stimulus: '<p>Rivers reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 72, stimulus: '<p>Robots reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 73, stimulus: '<p>Sailboats reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 74, stimulus: '<p>Satelites reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 75, stimulus: '<p>Smartphones reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 76, stimulus: '<p>The internet reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 77, stimulus: '<p>The moon reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 78, stimulus: '<p>The sun reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 79, stimulus: '<p>Tornadoes reproduce.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 80, stimulus: '<p>Wind reproduces.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },]
+
+
+
+var trial_info_LIFE_conflict_nutrient = [
+
+    { item: 81, stimulus: '<p>Algae need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 82, stimulus: '<p>Bacteria need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 83, stimulus: '<p>Cactuses need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 84, stimulus: '<p>Coral need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 85, stimulus: '<p>Daffodils need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 86, stimulus: '<p>Daisies need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 87, stimulus: '<p>Dandelions need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 88, stimulus: '<p>Elms need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 89, stimulus: '<p>Ferns need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 90, stimulus: '<p>Grass needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 91, stimulus: '<p>Kelp need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 92, stimulus: '<p>Mold need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 93, stimulus: '<p>Moss need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 94, stimulus: '<p>Mushrooms need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 95, stimulus: '<p>Oaks need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 96, stimulus: '<p>Petunias need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 97, stimulus: '<p>Seaweed needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 98, stimulus: '<p>Tulips need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 99, stimulus: '<p>Willows need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 100, stimulus: '<p>Yeast needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 101, stimulus: '<p>Bicycles need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 102, stimulus: '<p>Clocks need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 103, stimulus: '<p>Comets need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 104, stimulus: '<p>Computers need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 105, stimulus: '<p>Elevators need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 106, stimulus: '<p>Fire needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 107, stimulus: '<p>Geysers need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 108, stimulus: '<p>Glaciers need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 109, stimulus: '<p>Helicopters need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 110, stimulus: '<p>Lava needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 111, stimulus: '<p>Rivers need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 112, stimulus: '<p>Robots need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 113, stimulus: '<p>Sailboats need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 114, stimulus: '<p>Satelites need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 115, stimulus: '<p>Smartphones need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 116, stimulus: '<p>The internet needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 117, stimulus: '<p>The moon needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 118, stimulus: '<p>The sun needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 119, stimulus: '<p>Tornadoes need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 120, stimulus: '<p>Wind needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' }, ]
+
+
+
+
+
+
+var trial_info_MATTER_conflict_weight = [
+
+    { item: 121, stimulus: '<p>Air has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 122, stimulus: '<p>Bubbles have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 123, stimulus: '<p>Caffeine has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 124, stimulus: '<p>Clouds have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 125, stimulus: '<p>DNA has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 126, stimulus: '<p>Dust has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 127, stimulus: '<p>Foam has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 128, stimulus: '<p>Fog has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 129, stimulus: '<p>Frost has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 130, stimulus: '<p>Germs have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 131, stimulus: '<p>Inkblots have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 132, stimulus: '<p>Methane has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 133, stimulus: '<p>Perfume has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 134, stimulus: '<p>Pollen has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 135, stimulus: '<p>Saliva has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 136, stimulus: '<p>Smoke has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 137, stimulus: '<p>Snowflakes have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 138, stimulus: '<p>Spores have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 139, stimulus: '<p>Steam has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 140, stimulus: '<p>Testosterone has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 141, stimulus: '<p>Coldness has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 142, stimulus: '<p>Color has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 143, stimulus: '<p>Drumbeats have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 144, stimulus: '<p>Echoes have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 145, stimulus: '<p>Electricity has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 146, stimulus: '<p>Flames have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 147, stimulus: '<p>Friction has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 148, stimulus: '<p>Gravity has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 149, stimulus: '<p>Heat has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 150, stimulus: '<p>Laser beams have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 151, stimulus: '<p>Lightning has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 152, stimulus: '<p>Magnetic fields have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 153, stimulus: '<p>Moonbeams have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 154, stimulus: '<p>Music has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 155, stimulus: '<p>Radio waves have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 156, stimulus: '<p>Rainbows have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 157, stimulus: '<p>Shadows have weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 158, stimulus: '<p>Starlight has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 159, stimulus: '<p>Sunshine has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 160, stimulus: '<p>Thunder has weight.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },]
+
+
+
+
+var trial_info_MATTER_conflict_temperature = [
+
+    { item: 161, stimulus: '<p>Air has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 162, stimulus: '<p>Bubbles have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 163, stimulus: '<p>Caffeine has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 164, stimulus: '<p>Clouds have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 165, stimulus: '<p>DNA has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 166, stimulus: '<p>Dust has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 167, stimulus: '<p>Foam has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 168, stimulus: '<p>Fog has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 169, stimulus: '<p>Frost has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 170, stimulus: '<p>Germs have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 171, stimulus: '<p>Inkblots have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 172, stimulus: '<p>Methane has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 173, stimulus: '<p>Perfume has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 174, stimulus: '<p>Pollen has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 175, stimulus: '<p>Saliva has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 176, stimulus: '<p>Smoke has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 177, stimulus: '<p>Snowflakes have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 178, stimulus: '<p>Spores have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 179, stimulus: '<p>Steam has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 180, stimulus: '<p>Testosterone has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 181, stimulus: '<p>Coldness has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 182, stimulus: '<p>Color has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 183, stimulus: '<p>Drumbeats have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 184, stimulus: '<p>Echoes have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 185, stimulus: '<p>Electricity has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 186, stimulus: '<p>Flames have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 187, stimulus: '<p>Friction has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 188, stimulus: '<p>Gravity has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 189, stimulus: '<p>Heat has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 190, stimulus: '<p>Laser beams have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 191, stimulus: '<p>Lightning has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 192, stimulus: '<p>Magnetic fields have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 193, stimulus: '<p>Moonbeams have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 194, stimulus: '<p>Music has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 195, stimulus: '<p>Radio waves have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 196, stimulus: '<p>Rainbows have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 197, stimulus: '<p>Shadows have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 198, stimulus: '<p>Starlight has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 199, stimulus: '<p>Sunshine has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 200, stimulus: '<p>Thunder has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },]
+
+
+
+
+
+
+
+
+var trial_info_MATTER_conflict_space = [
+
+    { item: 201, stimulus: '<p>Air occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 202, stimulus: '<p>Bubbles occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 203, stimulus: '<p>Caffeine occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 204, stimulus: '<p>Clouds occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 205, stimulus: '<p>DNA occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 206, stimulus: '<p>Dust occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 207, stimulus: '<p>Foam occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 208, stimulus: '<p>Fog occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 209, stimulus: '<p>Frost occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 210, stimulus: '<p>Germs occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 211, stimulus: '<p>Inkblots occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 212, stimulus: '<p>Methane occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 213, stimulus: '<p>Perfume occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 214, stimulus: '<p>Pollen occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 215, stimulus: '<p>Saliva occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 216, stimulus: '<p>Smoke occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 217, stimulus: '<p>Snowflakes occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 218, stimulus: '<p>Spores occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 219, stimulus: '<p>Steam occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 220, stimulus: '<p>Testosterone occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 221, stimulus: '<p>Coldness occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 222, stimulus: '<p>Color occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 223, stimulus: '<p>Drumbeats occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 224, stimulus: '<p>Echoes occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 225, stimulus: '<p>Electricity occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 226, stimulus: '<p>Flames occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 227, stimulus: '<p>Friction occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 228, stimulus: '<p>Gravity occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 229, stimulus: '<p>Heat occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 230, stimulus: '<p>Laser beams occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 231, stimulus: '<p>Lightning occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 232, stimulus: '<p>Magnetic fields occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 233, stimulus: '<p>Moonbeams occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 234, stimulus: '<p>Music occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 235, stimulus: '<p>Radio waves occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 236, stimulus: '<p>Rainbows occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 237, stimulus: '<p>Shadows occupy space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 238, stimulus: '<p>Starlight occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 239, stimulus: '<p>Sunshine occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 240, stimulus: '<p>Thunder occupies space.</p>', choices: ['True', 'False'], QuestionType: 'C', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+]
+
+    
+    
+    
+
+var trial_info_LIFE_noconflict_respiration = [
+
+    { item: 241, stimulus: '<p>Boulders respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 242, stimulus: '<p>Caves respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 243, stimulus: '<p>Craters respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 244, stimulus: '<p>Emeralds respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 245, stimulus: '<p>Forks respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 246, stimulus: '<p>Hammers respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 247, stimulus: '<p>Islands respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 248, stimulus: '<p>Mittens respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 249, stimulus: '<p>Mountains respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 250, stimulus: '<p>Napkins respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 251, stimulus: '<p>Pebbles respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 252, stimulus: '<p>Rugs respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 253, stimulus: '<p>Sand respires.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 254, stimulus: '<p>Shells respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 255, stimulus: '<p>Shirts respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 256, stimulus: '<p>Shoes respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 257, stimulus: '<p>Shovels respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 258, stimulus: '<p>Stones respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 259, stimulus: '<p>Tables respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 260, stimulus: '<p>Towels respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 261, stimulus: '<p>Chipmunks respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 262, stimulus: '<p>Crocodiles respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 263, stimulus: '<p>Elephants respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 264, stimulus: '<p>Flamingos respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 265, stimulus: '<p>Frogs respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 266, stimulus: '<p>Giraffes respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 267, stimulus: '<p>Goats respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 268, stimulus: '<p>Gorillas respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 269, stimulus: '<p>Otters respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 270, stimulus: '<p>Owls respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 271, stimulus: '<p>Pelicans respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 272, stimulus: '<p>Pigs respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 273, stimulus: '<p>Rabbits respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 274, stimulus: '<p>Sharks respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 275, stimulus: '<p>Snails respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 276, stimulus: '<p>Spiders respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 277, stimulus: '<p>Tigers respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 278, stimulus: '<p>Turtles respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 279, stimulus: '<p>Wolves respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 280, stimulus: '<p>Zebras respire.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },]
+
+
+
+
+
+
+var trial_info_LIFE_noconflict_reproduction = [
+
+    { item: 281, stimulus: '<p>Boulders reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 282, stimulus: '<p>Caves reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 283, stimulus: '<p>Craters reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 284, stimulus: '<p>Emeralds reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 285, stimulus: '<p>Forks reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 286, stimulus: '<p>Hammers reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 287, stimulus: '<p>Islands reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 288, stimulus: '<p>Mittens reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 289, stimulus: '<p>Mountains reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 290, stimulus: '<p>Napkins reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 291, stimulus: '<p>Pebbles reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 292, stimulus: '<p>Rugs reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 293, stimulus: '<p>Sand reproduces.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 294, stimulus: '<p>Shells reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 295, stimulus: '<p>Shirts reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 296, stimulus: '<p>Shoes reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 297, stimulus: '<p>Shovels reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 298, stimulus: '<p>Stones reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 299, stimulus: '<p>Tables reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 300, stimulus: '<p>Towels reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 301, stimulus: '<p>Chipmunks reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 302, stimulus: '<p>Crocodiles reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 303, stimulus: '<p>Elephants reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 304, stimulus: '<p>Flamingos reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 305, stimulus: '<p>Frogs reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 306, stimulus: '<p>Giraffes reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 307, stimulus: '<p>Goats reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 308, stimulus: '<p>Gorillas reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 309, stimulus: '<p>Otters reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 310, stimulus: '<p>Owls reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 311, stimulus: '<p>Pelicans reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 312, stimulus: '<p>Pigs reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 313, stimulus: '<p>Rabbits reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 314, stimulus: '<p>Sharks reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 315, stimulus: '<p>Snails reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 316, stimulus: '<p>Spiders reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 317, stimulus: '<p>Tigers reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 318, stimulus: '<p>Turtles reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 319, stimulus: '<p>Wolves reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 320, stimulus: '<p>Zebras reproduce.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+]
+
+
+
+var trial_info_LIFE_noconflict_nutrient = [
+
+    { item: 321, stimulus: '<p>Boulders need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 322, stimulus: '<p>Caves need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 323, stimulus: '<p>Craters need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 324, stimulus: '<p>Emeralds need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 325, stimulus: '<p>Forks need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 326, stimulus: '<p>Hammers need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 327, stimulus: '<p>Islands need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 328, stimulus: '<p>Mittens need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 329, stimulus: '<p>Mountains need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 330, stimulus: '<p>Napkins need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 331, stimulus: '<p>Pebbles need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 332, stimulus: '<p>Rugs need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 333, stimulus: '<p>Sand needs nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 334, stimulus: '<p>Shells need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 335, stimulus: '<p>Shirts need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 336, stimulus: '<p>Shoes need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 337, stimulus: '<p>Shovels need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 338, stimulus: '<p>Stones need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 339, stimulus: '<p>Tables need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 340, stimulus: '<p>Towels need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 341, stimulus: '<p>Chipmunks need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 342, stimulus: '<p>Crocodiles need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 343, stimulus: '<p>Elephants need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 344, stimulus: '<p>Flamingos need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 345, stimulus: '<p>Frogs need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 346, stimulus: '<p>Giraffes need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 347, stimulus: '<p>Goats need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 348, stimulus: '<p>Gorillas need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 349, stimulus: '<p>Otters need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 350, stimulus: '<p>Owls need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 351, stimulus: '<p>Pelicans need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 352, stimulus: '<p>Pigs need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 353, stimulus: '<p>Rabbits need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 354, stimulus: '<p>Sharks need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 355, stimulus: '<p>Snails need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 356, stimulus: '<p>Spiders need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 357, stimulus: '<p>Tigers need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 358, stimulus: '<p>Turtles need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 359, stimulus: '<p>Wolves need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 360, stimulus: '<p>Zebras need nutrients.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+]
+
+
+
+
+var trial_info_MATTER_noconflict_weight = [
+
+    { item: 361, stimulus: '<p>Christmas has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 362, stimulus: '<p>Dreams have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 363, stimulus: '<p>Feelings have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 364, stimulus: '<p>Halloween has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 365, stimulus: '<p>Hopes have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 366, stimulus: '<p>Hours have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 367, stimulus: '<p>Jokes have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 368, stimulus: '<p>Justice has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 369, stimulus: '<p>Love has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 370, stimulus: '<p>Minutes have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 371, stimulus: '<p>Mondays have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 372, stimulus: '<p>Numbers have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 373, stimulus: '<p>Poetry has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 374, stimulus: '<p>Silence has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 375, stimulus: '<p>Songs have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 376, stimulus: '<p>Stories have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 377, stimulus: '<p>Thoughts have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 378, stimulus: '<p>Vacations have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 379, stimulus: '<p>Wishes have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 380, stimulus: '<p>Words have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 381, stimulus: '<p>Anvils have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 382, stimulus: '<p>Bowling balls have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 383, stimulus: '<p>Bricks have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 384, stimulus: '<p>Clay has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 385, stimulus: '<p>Coal has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 386, stimulus: '<p>Concrete has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 387, stimulus: '<p>Copper has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 388, stimulus: '<p>Diamonds have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 389, stimulus: '<p>Dumbbells have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 390, stimulus: '<p>Glass has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 391, stimulus: '<p>Gold has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 392, stimulus: '<p>Granite has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 393, stimulus: '<p>Ice has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 394, stimulus: '<p>Iron has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 395, stimulus: '<p>Logs have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 396, stimulus: '<p>Lumber has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 397, stimulus: '<p>Rocks have weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 398, stimulus: '<p>Rubber has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 399, stimulus: '<p>Salt has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 400, stimulus: '<p>Steel has weight.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+]
+
+
+
+var trial_info_MATTER_noconflict_temperature = [
+
+    { item: 401, stimulus: '<p>Christmas has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 402, stimulus: '<p>Dreams have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 403, stimulus: '<p>Feelings have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 404, stimulus: '<p>Halloween has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 405, stimulus: '<p>Hopes have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 406, stimulus: '<p>Hours have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 407, stimulus: '<p>Jokes have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 408, stimulus: '<p>Justice has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 409, stimulus: '<p>Love has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 410, stimulus: '<p>Minutes have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 411, stimulus: '<p>Mondays have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 412, stimulus: '<p>Numbers have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 413, stimulus: '<p>Poetry has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 414, stimulus: '<p>Silence has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 415, stimulus: '<p>Songs have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 416, stimulus: '<p>Stories have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 417, stimulus: '<p>Thoughts have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 418, stimulus: '<p>Vacations have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 419, stimulus: '<p>Wishes have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 420, stimulus: '<p>Words have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 421, stimulus: '<p>Anvils have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 422, stimulus: '<p>Bowling balls have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 423, stimulus: '<p>Bricks have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 424, stimulus: '<p>Clay has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 425, stimulus: '<p>Coal has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 426, stimulus: '<p>Concrete has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 427, stimulus: '<p>Copper has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 428, stimulus: '<p>Diamonds have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 429, stimulus: '<p>Dumbbells have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 430, stimulus: '<p>Glass has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 431, stimulus: '<p>Gold has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 432, stimulus: '<p>Granite has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 433, stimulus: '<p>Ice has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 434, stimulus: '<p>Iron has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 435, stimulus: '<p>Logs have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 436, stimulus: '<p>Lumber has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 437, stimulus: '<p>Rocks have a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 438, stimulus: '<p>Rubber has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 439, stimulus: '<p>Salt has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 440, stimulus: '<p>Steel has a temperature.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+]
+
+
+
+
+
+
+var trial_info_MATTER_noconflict_space=[
+    { item: 441, stimulus: '<p>Christmas occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 442, stimulus: '<p>Dreams occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 443, stimulus: '<p>Feelings occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 444, stimulus: '<p>Halloween occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 445, stimulus: '<p>Hopes occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 446, stimulus: '<p>Hours occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 447, stimulus: '<p>Jokes occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 448, stimulus: '<p>Justice occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 449, stimulus: '<p>Love occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 450, stimulus: '<p>Minutes occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 451, stimulus: '<p>Mondays occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 452, stimulus: '<p>Numbers occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 453, stimulus: '<p>Poetry occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 454, stimulus: '<p>Silence occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 455, stimulus: '<p>Songs occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 456, stimulus: '<p>Stories occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 457, stimulus: '<p>Thoughts occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 458, stimulus: '<p>Vacations occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 459, stimulus: '<p>Wishes occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 460, stimulus: '<p>Words occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'F', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 461, stimulus: '<p>Anvils occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 462, stimulus: '<p>Bowling balls occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 463, stimulus: '<p>Bricks occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 464, stimulus: '<p>Clay occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 465, stimulus: '<p>Coal occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 466, stimulus: '<p>Concrete occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 467, stimulus: '<p>Copper occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 468, stimulus: '<p>Diamonds occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 469, stimulus: '<p>Dumbbells occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 470, stimulus: '<p>Glass occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 471, stimulus: '<p>Gold occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 472, stimulus: '<p>Granite occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 473, stimulus: '<p>Ice occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 474, stimulus: '<p>Iron occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 475, stimulus: '<p>Logs occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 476, stimulus: '<p>Lumber occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 477, stimulus: '<p>Rocks occupy space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 478, stimulus: '<p>Rubber occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 479, stimulus: '<p>Salt occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+    { item: 480, stimulus: '<p>Steel occupies space.</p>', choices: ['True', 'False'], QuestionType: 'NC', correct_response: 'T', conf_stimulus: '<p>How confident are you in this response?</p>' },
+]
+
+// Function to add domain and predicate fields to trial objects
+function addDomainAndPredicate(trials, domain, predicate) {
+    return trials.map(trial => ({
+        ...trial,
+        domain: domain,
+        predicate: predicate
+    }));
+}
+
+// Combine all trials into a single array with domain and predicate fields
+var trial_info_all = [
+    ...addDomainAndPredicate(trial_info_LIFE_conflict_respiration, 'LIFE', 'respiration'),
+    ...addDomainAndPredicate(trial_info_LIFE_conflict_reproduction, 'LIFE', 'reproduction'),
+    ...addDomainAndPredicate(trial_info_LIFE_conflict_nutrient, 'LIFE', 'nutrient'),
+    ...addDomainAndPredicate(trial_info_LIFE_noconflict_respiration, 'LIFE', 'respiration'), 
+    ...addDomainAndPredicate(trial_info_LIFE_noconflict_reproduction, 'LIFE', 'reproduction'),
+    ...addDomainAndPredicate(trial_info_LIFE_noconflict_nutrient, 'LIFE', 'nutrient'),
+    ...addDomainAndPredicate(trial_info_MATTER_conflict_weight, 'MATTER', 'weight'),
+    ...addDomainAndPredicate(trial_info_MATTER_conflict_temperature, 'MATTER', 'temperature'),
+    ...addDomainAndPredicate(trial_info_MATTER_conflict_space, 'MATTER', 'space'),
+    ...addDomainAndPredicate(trial_info_MATTER_noconflict_weight, 'MATTER', 'weight'),
+    ...addDomainAndPredicate(trial_info_MATTER_noconflict_temperature, 'MATTER', 'temperature'),
+    ...addDomainAndPredicate(trial_info_MATTER_noconflict_space, 'MATTER', 'space')
+];
+
+// Function to shuffle array randomly
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+// Function to sample trials for a block
+function sampleBlockTrials(domain) {
+    // Filter trials by domain
+    const domainTrials = trial_info_all.filter(trial => trial.domain === domain);
+    
+    // Initialize result array
+    let result = [];
+    
+    // Get predicates for this domain
+    const predicates = [...new Set(domainTrials.map(trial => trial.predicate))];
+    
+    // For each predicate, sample 10 conflict and 10 nonconflict trials
+    predicates.forEach(predicate => {
+        const predicateTrials = domainTrials.filter(trial => trial.predicate === predicate);
+        
+        // Get conflict trials
+        const conflictTrials = predicateTrials.filter(trial => trial.QuestionType === 'C');
+        const sampledConflict = shuffleArray([...conflictTrials]).slice(0, 10);
+        
+        // Get nonconflict trials
+        const nonconflictTrials = predicateTrials.filter(trial => trial.QuestionType === 'NC');
+        const sampledNonconflict = shuffleArray([...nonconflictTrials]).slice(0, 10);
+        
+        // Add sampled trials to result
+        result = result.concat(sampledConflict, sampledNonconflict);
+    });
+    
+    // Shuffle final array to randomize trial order
+    return shuffleArray(result);
+}
+
+// Function to verify trial distribution
+function verifyBlockDistribution(trials, domain) {
+    console.log(`\nVerifying ${domain} block distribution:`);
+    
+    // Get predicates for this domain
+    const predicates = [...new Set(trials.map(trial => trial.predicate))];
+    
+    // For each predicate
+    predicates.forEach(predicate => {
+        const predicateTrials = trials.filter(trial => trial.predicate === predicate);
+        const conflictTrials = predicateTrials.filter(trial => trial.QuestionType === 'C');
+        const nonconflictTrials = predicateTrials.filter(trial => trial.QuestionType === 'NC');
+        
+        console.log(`\nPredicate: ${predicate}`);
+        console.log(`Total trials: ${predicateTrials.length}`);
+        console.log(`Conflict trials: ${conflictTrials.length}`);
+        console.log(`Nonconflict trials: ${nonconflictTrials.length}`);
+    });
+    
+    console.log(`\nTotal trials in block: ${trials.length}`);
+}
+
+// Create blocks
+var block1_trials = sampleBlockTrials('MATTER'); // 60 trials (20 per predicate, 10 C/10 NC each)
+var block2_trials = sampleBlockTrials('LIFE'); // 60 trials (20 per predicate, 10 C/10 NC each)
+
+// Verify distribution
+verifyBlockDistribution(block1_trials, 'MATTER');
+verifyBlockDistribution(block2_trials, 'LIFE');

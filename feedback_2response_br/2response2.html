@@ -16,7 +16,7 @@
     <script src="jspsych/plugin-preload.js"></script>
     <script src="keydown_functions.js"></script>
     <script src="grids/"></script>
-    <script src="questions_BR.js"></script>
+    <script src="questions_BB.js"></script>
     <script src="consent.js"></script>
     <script src="jatos.js"></script>
      // added in local stub for JATOS
@@ -74,24 +74,75 @@
     randomised_test_quads = jsPsych.randomization.sampleWithoutReplacement(grid_quads, grid_quads.length);  // randomise quads of grids
     randomised_quads = randomised_test_quads.concat(grid_practice); // concatenate the two lists -- practice items are added at the end, they becom 101:106 in the list matching the item_order in the questions_BB practice stimuli 
 
-    //randomly pull conflict and noconflict items from the lists  in the questions_BB file
-    var conflict_items = jsPsych.randomization.sampleWithoutReplacement(trial_info_conflict_all, 30);
-    var noconflict_items = jsPsych.randomization.sampleWithoutReplacement(trial_info_noconflict_all, 30);
+    // Function to sample items evenly from predicates with conflict balance
+    function sampleItemsForDomain(items, domain, trialsPerPredicate) {
+        // Filter items for the given domain (MATTER or LIFE)
+        const domainItems = items.filter(item => item.domain === domain);
+        
+        // Get unique predicates for this domain
+        const predicates = Array.from(new Set(domainItems.map(item => item.predicate)));
+        
+        // Sample from each predicate
+        let selectedItems = [];
+        predicates.forEach(predicate => {
+            const predicateItems = domainItems.filter(item => item.predicate === predicate);
+            
+            // Split into conflict and non-conflict
+            const conflictItems = predicateItems.filter(item => item.conflict);
+            const nonConflictItems = predicateItems.filter(item => !item.conflict);
+            
+            // Sample equal numbers of conflict and non-conflict
+            const conflictSample = jsPsych.randomization.sampleWithoutReplacement(
+                conflictItems, 
+                trialsPerPredicate/2
+            );
+            const nonConflictSample = jsPsych.randomization.sampleWithoutReplacement(
+                nonConflictItems, 
+                trialsPerPredicate/2
+            );
+            
+            selectedItems = selectedItems.concat(conflictSample, nonConflictSample);
+        });
+        
+        // Randomize the final order
+        return jsPsych.randomization.shuffle(selectedItems);
+    }
 
-    //combine conflict and no conflict items into a list for block 1, then randomise the order
-    var block1_items = jsPsych.randomization.sampleWithoutReplacement(
-        (conflict_items.slice(0, 15).concat(noconflict_items.slice(0, 15))), //take the first 15 items from the 'conflict_items' and 'noconflict_items', respectively
-        30); //randomly pick 30 from the new list (essentially randomise)
-
-    //combine conflict and no conflict items into a list for block 2, then randomise the order
-    var block2_items = jsPsych.randomization.sampleWithoutReplacement(
-        (conflict_items.slice(15).concat(noconflict_items.slice(15))), //take the last 18 items from the 'conflict_items' and 'noconflict_items', respectively
-        30); //randomly pick 36 from the new list (essentially randomise)
+    // Create blocks - 60 trials each
+    // For MATTER: 20 trials each for weight, temperature, and space (10 conflict, 10 nonconflict)
+    // For LIFE: 20 trials each for reproduction, respiration, and nutrient (10 conflict, 10 nonconflict)
+    var block1_items = sampleItemsForDomain(trial_info_all, 'MATTER', 20); // 20 per predicate = 60 total
+    var block2_items = sampleItemsForDomain(trial_info_all, 'LIFE', 20);   // 20 per predicate = 60 total
 
     //join the two blocks so we can item_order index -- then use this list later in the timelines so we have a trial_order output
     var trial_info_set = block1_items.concat(block2_items);
     trial_info_set = trial_info_set.map(function (item, index) {
         return { ...item, item_order: index };
+    });
+
+    // Verification logging
+    console.log('Block 1 (MATTER) analysis:', {
+        totalTrials: block1_items.length,
+        predicateCounts: block1_items.reduce((acc, item) => {
+            acc[item.predicate] = (acc[item.predicate] || 0) + 1;
+            return acc;
+        }, {}),
+        conflictCounts: block1_items.reduce((acc, item) => {
+            acc[item.conflict ? 'conflict' : 'nonconflict'] = (acc[item.conflict ? 'conflict' : 'nonconflict'] || 0) + 1;
+            return acc;
+        }, {})
+    });
+
+    console.log('Block 2 (LIFE) analysis:', {
+        totalTrials: block2_items.length,
+        predicateCounts: block2_items.reduce((acc, item) => {
+            acc[item.predicate] = (acc[item.predicate] || 0) + 1;
+            return acc;
+        }, {}),
+        conflictCounts: block2_items.reduce((acc, item) => {
+            acc[item.conflict ? 'conflict' : 'nonconflict'] = (acc[item.conflict ? 'conflict' : 'nonconflict'] || 0) + 1;
+            return acc;
+        }, {})
     });
 
     //create functions to change the background colour for feedback
@@ -686,11 +737,8 @@
     var trial_response1 = {
         on_start: function (trial) {
 
-            // Set timeout for color change at 2000ms
-            var timeoutID = setTimeout(function () {
-                document.body.style.backgroundColor = '#fdfa72';
-            }, 1000);
-            trial.data.timeoutID = timeoutID;
+            // Previously the trial scheduled a background colour change after a short delay.
+            // That behaviour was removed so the background stays the same throughout the trial.
 
             // put the styles back
             $('head').append(styles);
@@ -700,8 +748,6 @@
 
         },
         on_finish: function (data) {
-            // Clear the timeout to prevent errors
-            clearTimeout(data.timeoutID);
             // Cleanup event listeners and styles after trial ends
             removeKeyListeners();
             // Optionally remove CSS styles added for this trial
@@ -1004,7 +1050,7 @@
 
     var block1_procedure = {
         timeline: [item_start, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
-        timeline_variables: trial_info_set.slice(0, 30),
+        timeline_variables: trial_info_set.slice(0, 60), // MATTER items (60 trials)
         data: { block: 'block1' }
     };
 
@@ -1019,7 +1065,7 @@
 
     var block2_procedure = {
         timeline: [item_start, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
-        timeline_variables: trial_info_set.slice(30),
+        timeline_variables: trial_info_set.slice(60), // LIFE items (60 trials)
         data: { block: 'block2' }
     };
 
