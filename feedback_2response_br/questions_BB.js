@@ -1294,8 +1294,15 @@ var trial_info_MATTER_noconflict_space=[
 function addDomainAndPredicate(trials, domain, predicate) {
     return trials.map(trial => ({
         ...trial,
+        // preserve original trial fields and add metadata expected by the experiment
         domain: domain,
-        predicate: predicate
+        predicate: predicate,
+        // ensure the timeline variables that the HTML expects exist
+        stimulus1: trial.stimulus1 !== undefined ? trial.stimulus1 : (trial.stimulus || ''),
+        stimulus2: trial.stimulus2 !== undefined ? trial.stimulus2 : (trial.stimulus || ''),
+        stimulus3: trial.stimulus3 !== undefined ? trial.stimulus3 : (trial.stimulus || ''),
+        // map QuestionType ('C'/'NC') to a boolean conflict field
+        conflict: trial.conflict !== undefined ? trial.conflict : (trial.QuestionType === 'C')
     }));
 }
 
