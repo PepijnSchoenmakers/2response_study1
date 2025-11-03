@@ -55,16 +55,12 @@
     //assign subject ID
     var ID = jsPsych.randomization.randomID(15);
 
-    //assign condition
-    var condition_assignment = jsPsych.randomization.sampleWithoutReplacement(['positive', 'negative', 'none'], 1)[0];
-
     //save the participant level data
     jsPsych.data.addProperties({
         //subject_id: subject_id,
         //study_id: study_id,
         //session_id: session_id,
-        ID: ID,
-        feedback_condition: condition_assignment
+        ID: ID
     });
 
     //create timeline
@@ -145,21 +141,9 @@
         }, {})
     });
 
-    //create functions to change the background colour for feedback
-    function set_html_style_1() {
-        document.body.style.backgroundColor = '#f6fff2'
-    }
-    function set_html_style_2() {
-        document.body.style.backgroundColor = '#ffdddd'
-    }
+    //create function to reset background color
     function set_html_style_3() {
         document.body.style.backgroundColor = '#FFFFFF'
-    }
-    function set_html_style_4() {
-        document.body.style.backgroundColor = '#fdfa72'
-    }
-    function set_html_style_5() {
-        document.body.style.backgroundColor = '#fffec8'
     }
 
     // Add some CSS styles to the HTML
@@ -174,29 +158,10 @@
     $('head').append(styles);
 
 
-    // create a variable to hold the trial information, which changes based on the feedback condition
-    var feedback_details;
+    // Set default instructions without feedback
     instr_3 = instr_3_nofeedback;
-    feedback_text = feedback_nofeedback_text;
-    feedback_background = '#FFFFFF';
-    feedback_image = 'nofeedback.png';
-    debrief_text = '';
     post_practice_g_cn = post_practice_g_cn_nofeedback;
-    if (condition_assignment == "positive") {
-        instr_3 = instr_3_feedback;
-        post_practice_g_cn = post_practice_g_cn_feedback;
-        feedback_text = feedback_positive_text;
-        feedback_background = set_html_style_1;
-        feedback_image = 'positive.png';
-        debrief_text = '<p>During the experiment you received feedback after the first set of questions. This feedback was FALSE.</p><p> In this study, feedback is randomly allocated to participants to impact their confidence (either positively or negatively).</p><p>This allows us to test a research question examining the impact of confidence on human thinking.</p><p>If you would like to know more about the study, you can send questions to the researcher at purcell.z.a@gmail.com</p>';
-    } else if (condition_assignment == "negative") {
-        instr_3 = instr_3_feedback;
-        post_practice_g_cn = post_practice_g_cn_feedback;
-        feedback_text = feedback_negative_text;
-        feedback_background = set_html_style_2;
-        feedback_image = 'negative.png';
-        debrief_text = '<p>During the experiment you received feedback after the first set of questions. This feedback was FALSE.</p><p> In this study, feedback is randomly allocated to participants to impact their confidence (either positively or negatively).</p><p>This allows us to test a research question examining the impact of confidence on human thinking.</p><p>If you would like to know more about the study, you can send questions to the researcher at purcell.z.a@gmail.com</p>';
-    }
+    debrief_text = '';
     var instr_string = instr_2_mouse +instr_3 + '<p>We want to know what your <strong>initial, intuitive response</strong> to these problems is and how you respond after you have <strong>thought about the problem for some more time.</strong></p>';
 
     //create the pages to be shown
@@ -1054,14 +1019,7 @@
         data: { block: 'block1' }
     };
 
-    var feedback = {
-        type: jsPsychImageKeyboardResponse,
-        on_start: feedback_background,
-        stimulus_height: 300,
-        stimulus: feedback_image,
-        prompt: [feedback_text],
-        choices: ['c', 'n']
-    };
+
 
     var block2_procedure = {
         timeline: [item_start, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
@@ -1137,7 +1095,7 @@
 
     var preload2 = {
         type: jsPsychPreload,
-        images: ['hand_positions.png', 'hand_positions_fingers.png', 'hand_positions_grid.png', 'hand_positions_thumbs.png', 'negative.png', 'nofeedback.png', 'positive.png'],
+        images: ['hand_positions.png', 'hand_positions_fingers.png', 'hand_positions_grid.png', 'hand_positions_thumbs.png'],
         show_progress_bar: true,
         show_detailed_errors: true,
         message: 'Please wait while the experiment loads.</p><p>WARNING: Do not refresh the page at any point during loading or throughout the study.</p>'
@@ -1145,7 +1103,7 @@
 
     timeline.push(preload1, preload2, enter_fullscreen, consent, instructions1, instructions2, cursor_off, hands1, hands2, hands3, hands5, gap, hands6, instructions4, gap,
         practice_procedure1, after_prac1, practice_procedure2, after_prac2, practice_procedure3, after_prac3,
-        block1_procedure, feedback, block2_procedure, cursor_on,
+        block1_procedure, block2_procedure, cursor_on,
         end_trials, age, gender, pro, debrief, exit_fullscreen);
 
     // timeline.push(block1_procedure, feedback, block2_procedure, cursor_on, end_trials, age, gender, pro, debrief);
