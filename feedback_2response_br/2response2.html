@@ -15,12 +15,10 @@
     <script src="jspsych/plugin-call-function.js"></script>
     <script src="jspsych/plugin-preload.js"></script>
     <script src="keydown_functions.js"></script>
-    <script src="grids/"></script>
+    <!-- Removed invalid script src for grids/ -->
     <script src="questions_BB.js"></script>
     <script src="consent.js"></script>
     <script src="jatos.js"></script>
-     // added in local stub for JATOS
-    <script src="jatos_local_stub.js"></script>
     <script src="instructions.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="jspsych/plugin-fullscreen.js"></script>
@@ -70,76 +68,60 @@
     randomised_test_quads = jsPsych.randomization.sampleWithoutReplacement(grid_quads, grid_quads.length);  // randomise quads of grids
     randomised_quads = randomised_test_quads.concat(grid_practice); // concatenate the two lists -- practice items are added at the end, they becom 101:106 in the list matching the item_order in the questions_BB practice stimuli 
 
-    // Function to sample items evenly from predicates with conflict balance
-    function sampleItemsForDomain(items, domain, trialsPerPredicate) {
-        // Filter items for the given domain (MATTER or LIFE)
-        const domainItems = items.filter(item => item.domain === domain);
+    // Function to sample items for a predicate block ensuring balanced true/false and conflict/non-conflict
+    function sampleItemsForPredicate(conflictItems, nonConflictItems) {
+        // From conflict items, get 5 true and 5 false statements
+        const conflictTrue = conflictItems.filter(item => item.correct_response === 'T');
+        const conflictFalse = conflictItems.filter(item => item.correct_response === 'F');
         
-        // Get unique predicates for this domain
-        const predicates = Array.from(new Set(domainItems.map(item => item.predicate)));
+        // From non-conflict items, get 5 true and 5 false statements
+        const nonConflictTrue = nonConflictItems.filter(item => item.correct_response === 'T');
+        const nonConflictFalse = nonConflictItems.filter(item => item.correct_response === 'F');
         
-        // Sample from each predicate
-        let selectedItems = [];
-        predicates.forEach(predicate => {
-            const predicateItems = domainItems.filter(item => item.predicate === predicate);
-            
-            // Split into conflict and non-conflict
-            const conflictItems = predicateItems.filter(item => item.conflict);
-            const nonConflictItems = predicateItems.filter(item => !item.conflict);
-            
-            // Sample equal numbers of conflict and non-conflict
-            const conflictSample = jsPsych.randomization.sampleWithoutReplacement(
-                conflictItems, 
-                trialsPerPredicate/2
-            );
-            const nonConflictSample = jsPsych.randomization.sampleWithoutReplacement(
-                nonConflictItems, 
-                trialsPerPredicate/2
-            );
-            
-            selectedItems = selectedItems.concat(conflictSample, nonConflictSample);
-        });
+        // Sample 5 items from each category
+        const sampledConflictTrue = jsPsych.randomization.sampleWithoutReplacement(conflictTrue, 5);
+        const sampledConflictFalse = jsPsych.randomization.sampleWithoutReplacement(conflictFalse, 5);
+        const sampledNonConflictTrue = jsPsych.randomization.sampleWithoutReplacement(nonConflictTrue, 5);
+        const sampledNonConflictFalse = jsPsych.randomization.sampleWithoutReplacement(nonConflictFalse, 5);
         
-        // Randomize the final order
-        return jsPsych.randomization.shuffle(selectedItems);
+        // Combine all samples and randomize the order
+        return jsPsych.randomization.shuffle([
+            ...sampledConflictTrue,
+            ...sampledConflictFalse,
+            ...sampledNonConflictTrue,
+            ...sampledNonConflictFalse
+        ]);
     }
 
-    // Create blocks - 60 trials each
-    // For MATTER: 20 trials each for weight, temperature, and space (10 conflict, 10 nonconflict)
-    // For LIFE: 20 trials each for reproduction, respiration, and nutrient (10 conflict, 10 nonconflict)
-    var block1_items = sampleItemsForDomain(trial_info_all, 'MATTER', 20); // 20 per predicate = 60 total
-    var block2_items = sampleItemsForDomain(trial_info_all, 'LIFE', 20);   // 20 per predicate = 60 total
+    // Create 6 blocks with 20 trials each
+    var temperature_block = sampleItemsForPredicate(trial_info_MATTER_conflict_temperature, trial_info_MATTER_noconflict_temperature);
+    var space_block = sampleItemsForPredicate(trial_info_MATTER_conflict_space, trial_info_MATTER_noconflict_space);
+    var weight_block = sampleItemsForPredicate(trial_info_MATTER_conflict_weight, trial_info_MATTER_noconflict_weight);
+    var nutrient_block = sampleItemsForPredicate(trial_info_LIFE_conflict_nutrient, trial_info_LIFE_noconflict_nutrient);
+    var reproduction_block = sampleItemsForPredicate(trial_info_LIFE_conflict_reproduction, trial_info_LIFE_noconflict_reproduction);
+    var respiration_block = sampleItemsForPredicate(trial_info_LIFE_conflict_respiration, trial_info_LIFE_noconflict_respiration);
 
-    //join the two blocks so we can item_order index -- then use this list later in the timelines so we have a trial_order output
-    var trial_info_set = block1_items.concat(block2_items);
-    trial_info_set = trial_info_set.map(function (item, index) {
-        return { ...item, item_order: index };
-    });
+    // Assign item_order across all six blocks so each trial has a unique index
+    var all_items = temperature_block.concat(space_block, weight_block, nutrient_block, reproduction_block, respiration_block);
+    all_items.forEach(function (item, index) { item.item_order = index; });
+    // Keep a combined list for any downstream use
+    var trial_info_set = all_items;
 
-    // Verification logging
-    console.log('Block 1 (MATTER) analysis:', {
-        totalTrials: block1_items.length,
-        predicateCounts: block1_items.reduce((acc, item) => {
-            acc[item.predicate] = (acc[item.predicate] || 0) + 1;
-            return acc;
-        }, {}),
-        conflictCounts: block1_items.reduce((acc, item) => {
-            acc[item.conflict ? 'conflict' : 'nonconflict'] = (acc[item.conflict ? 'conflict' : 'nonconflict'] || 0) + 1;
-            return acc;
-        }, {})
-    });
+    // Verification logging for each predicate block
+    function logBlockAnalysis(name, blockArray) {
+        console.log(name + ' analysis:', {
+            totalTrials: blockArray.length,
+            predicateCounts: blockArray.reduce(function (acc, item) { acc[item.predicate] = (acc[item.predicate] || 0) + 1; return acc; }, {}),
+            conflictCounts: blockArray.reduce(function (acc, item) { acc[item.conflict ? 'conflict' : 'nonconflict'] = (acc[item.conflict ? 'conflict' : 'nonconflict'] || 0) + 1; return acc; }, {})
+        });
+    }
 
-    console.log('Block 2 (LIFE) analysis:', {
-        totalTrials: block2_items.length,
-        predicateCounts: block2_items.reduce((acc, item) => {
-            acc[item.predicate] = (acc[item.predicate] || 0) + 1;
-            return acc;
-        }, {}),
-        conflictCounts: block2_items.reduce((acc, item) => {
-            acc[item.conflict ? 'conflict' : 'nonconflict'] = (acc[item.conflict ? 'conflict' : 'nonconflict'] || 0) + 1;
-            return acc;
-        }, {})
-    });
+    logBlockAnalysis('temperature', temperature_block);
+    logBlockAnalysis('space', space_block);
+    logBlockAnalysis('weight', weight_block);
+    logBlockAnalysis('nutrient', nutrient_block);
+    logBlockAnalysis('reproduction', reproduction_block);
+    logBlockAnalysis('respiration', respiration_block);
 
     //create function to reset background color
     function set_html_style_3() {
@@ -158,11 +140,10 @@
     $('head').append(styles);
 
 
-    // Set default instructions without feedback
-    instr_3 = instr_3_nofeedback;
-    post_practice_g_cn = post_practice_g_cn_nofeedback;
+    // Use newly formatted instruction constants (from instructions.js)
     debrief_text = '';
-    var instr_string = instr_2_mouse +instr_3 + '<p>We want to know what your <strong>initial, intuitive response</strong> to these problems is and how you respond after you have <strong>thought about the problem for some more time.</strong></p>';
+    // Two-response overview/details (from window.instructions)
+    var instr_string = window.instructions.instr_two_response_intro + window.instructions.instr_two_response_detail;
 
     //create the pages to be shown
 
@@ -202,16 +183,11 @@
     //instructions - some set above per condition, some from instructions.js
     var instructions2 = {
         type: jsPsychHtmlButtonResponse,
-        stimulus: ['The Task:' + instr_br + 'Next, you&apos;ll learn learn how to respond to the questions.'],
+    stimulus: ['The Task:' + window.instructions.instr_main_task],
         choices: ['Continue']
     };
 
-    //instructions - some set above per condition, some from instructions.js
-    var instructions3 = {
-        type: jsPsychHtmlButtonResponse,
-        stimulus: ['Task Presentation:' + presentation + 'Next, you&apos;ll learn how to respond to the questions.'],
-        choices: ['Continue']
-    };
+    // Note: presentation-specific instruction removed; the two-response detail is provided earlier in instr_string
 
     //instr_2response_1, instr_2response_2
 
@@ -294,7 +270,7 @@
             // Set image height directly in the HTML string
             return (
                 '<img src="hand_positions_fingers.png" height="300" />' +  // Add height attribute to set image height to 300px
-                instr_6b_nums +
+                window.instructions.instr_confidence_keys +
                 promptContainer.prop('outerHTML')
             );
         },
@@ -309,7 +285,7 @@
         stimulus: 'hand_positions_grid.png',
         stimulus_height: 300,
         choices: ['3', '8', '"', '_', 'c', 'n'],
-        prompt: instr_7b_grids,
+    prompt: window.instructions.instr_grid_intro,
 
         on_finish: function (data) {
             removeKeyListeners();
@@ -356,7 +332,7 @@
 
             // Return the full stimulus HTML, combining the instructions and the grid container
             return '<div id="stimulus_container" class="stimulus-container">' +
-                instr_7_grids +
+                window.instructions.instr_grid_detail +
                 gridContainer.prop('outerHTML') + // Convert the jQuery object to HTML string
                 '<span style="color: gray"><p>Keys: 3 = top-left, 8 = top-right, </p><p>C = bottom-left, N = bottom-right</p></span>' +
                 '</div>';
@@ -385,24 +361,19 @@
         },
         type: jsPsychHtmlKeyboardResponse,
         stimulus: function () {
-
             // Create choice boxes with jQuery
             var choiceBox1 = $('<div>').addClass('choice-box').text('C');
             var choiceBox2 = $('<div>').addClass('choice-box').text('N');
-
             // Create a container div and append choice boxes
             var promptContainer = $('<div>').addClass('prompt-container').append(choiceBox1).append(choiceBox2);
-
-            // Use prop() to get the HTML content of the jQuery object
-            return presentation +
-                promptContainer.prop('outerHTML');
+            // Use instr_response_keys to explain response keys (falls back to empty string if missing)
+            return (window.instructions.instr_response_keys || '') + promptContainer.prop('outerHTML');
         },
         choices: ['C', 'N'],
         on_finish: function (data) {
             // Cleanup event listeners and styles after trial ends
             removeKeyListeners();
         }
-
     };
 
     var after_prac1 = {
@@ -410,7 +381,7 @@
             attachKeyListeners("trial_response1"); // Attach keydown and keyup listeners 
         },
         type: jsPsychHtmlKeyboardResponse,
-        stimulus: instr_2response_4,
+    stimulus: window.instructions.instr_practice_1,
         choices: ['C', 'N'],
         prompt: function () {
 
@@ -436,7 +407,7 @@
             attachKeyListeners("trial_response1"); // Attach keydown and keyup listeners 
         },
         type: jsPsychHtmlKeyboardResponse,
-        stimulus: instr_2response_5,
+    stimulus: window.instructions.instr_practice_2,
         choices: ['C', 'N'],
         prompt: function () {
 
@@ -461,8 +432,8 @@
         type: jsPsychHtmlKeyboardResponse,
         choices: ['C', 'N'],
         timeline: [
-            { stimulus: post_practice_f_cn },
-            { stimulus: post_practice_g_cn }
+            { stimulus: window.instructions.instr_confidence },
+            { stimulus: window.instructions.instr_confidence_reminder }
         ]
     };
 
@@ -1013,18 +984,41 @@
         data: { block: 'blockPractice3' }
     };
 
-    var block1_procedure = {
+    // Create procedures for each of the 6 blocks
+    var temperature_procedure = {
         timeline: [item_start, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
-        timeline_variables: trial_info_set.slice(0, 60), // MATTER items (60 trials)
-        data: { block: 'block1' }
+        timeline_variables: temperature_block,
+        data: { block: 'temperature' }
     };
 
-
-
-    var block2_procedure = {
+    var space_procedure = {
         timeline: [item_start, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
-        timeline_variables: trial_info_set.slice(60), // LIFE items (60 trials)
-        data: { block: 'block2' }
+        timeline_variables: space_block,
+        data: { block: 'space' }
+    };
+
+    var weight_procedure = {
+        timeline: [item_start, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
+        timeline_variables: weight_block,
+        data: { block: 'weight' }
+    };
+
+    var nutrient_procedure = {
+        timeline: [item_start, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
+        timeline_variables: nutrient_block,
+        data: { block: 'nutrient' }
+    };
+
+    var reproduction_procedure = {
+        timeline: [item_start, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
+        timeline_variables: reproduction_block,
+        data: { block: 'reproduction' }
+    };
+
+    var respiration_procedure = {
+        timeline: [item_start, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
+        timeline_variables: respiration_block,
+        data: { block: 'respiration' }
     };
 
 
@@ -1103,7 +1097,8 @@
 
     timeline.push(preload1, preload2, enter_fullscreen, consent, instructions1, instructions2, cursor_off, hands1, hands2, hands3, hands5, gap, hands6, instructions4, gap,
         practice_procedure1, after_prac1, practice_procedure2, after_prac2, practice_procedure3, after_prac3,
-        block1_procedure, block2_procedure, cursor_on,
+        temperature_procedure, space_procedure, weight_procedure,
+        nutrient_procedure, reproduction_procedure, respiration_procedure, cursor_on,
         end_trials, age, gender, pro, debrief, exit_fullscreen);
 
     // timeline.push(block1_procedure, feedback, block2_procedure, cursor_on, end_trials, age, gender, pro, debrief);

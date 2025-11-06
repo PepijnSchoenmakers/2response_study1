@@ -144,7 +144,28 @@ var grid_quads = [
     ["grids/81.png", "grids/80.png", "grids/102.png", "grids/103.png"],
     ["grids/82.png", "grids/83.png", "grids/36.png", "grids/35.png"],
     ["grids/84.png", "grids/83.png", "grids/24.png", "grids/25.png"],
-    ["grids/86.png", "grids/87.png", "grids/23.png", "grids/24.png"]
+    ["grids/86.png", "grids/87.png", "grids/23.png", "grids/24.png"],
+    //adding 20 more quads to reach 120 total from (https://docs.google.com/spreadsheets/d/1JGTu34U017vsMyl8uODJPu189euN6SqMezI4PRU8vCU/edit?gid=940057898#gid=940057898)
+    ["grids/8.png", "grids/9.png", "grids/106.png", "grids/107.png"],
+    ["grids/20.png", "grids/21.png", "grids/94.png", "grids/95.png"],
+    ["grids/22.png", "grids/23.png", "grids/89.png", "grids/90.png"],
+    ["grids/25.png", "grids/26.png", "grids/123.png", "grids/124.png"],
+    ["grids/31.png", "grids/32.png", "grids/117.png", "grids/116.png"],
+    ["grids/27.png", "grids/28.png", "grids/121.png", "grids/120.png"],
+    ["grids/32.png", "grids/33.png", "grids/75.png", "grids/74.png"],
+    ["grids/34.png", "grids/35.png", "grids/114.png", "grids/113.png"],
+    ["grids/36.png", "grids/35.png", "grids/76.png", "grids/77.png"],
+    ["grids/42.png", "grids/43.png", "grids/70.png", "grids/71.png"],
+    ["grids/11.png", "grids/10.png", "grids/122.png", "grids/123.png"],
+    ["grids/48.png", "grids/49.png", "grids/70.png", "grids/71.png"],
+    ["grids/53.png", "grids/54.png", "grids/95.png", "grids/94.png"],
+    ["grids/54.png", "grids/55.png", "grids/64.png", "grids/65.png"],
+    ["grids/55.png", "grids/56.png", "grids/93.png", "grids/94.png"],
+    ["grids/78.png", "grids/77.png", "grids/105.png", "grids/106.png"],
+    ["grids/79.png", "grids/80.png", "grids/104.png", "grids/103.png"],
+    ["grids/81.png", "grids/80.png", "grids/31.png", "grids/32.png"],
+    ["grids/88.png", "grids/89.png", "grids/26.png", "grids/25.png"],
+    ["grids/89.png", "grids/90.png", "grids/22.png", "grids/23.png"],
 ];
 
 //practice stimuli (hard coded, same for everyone)
