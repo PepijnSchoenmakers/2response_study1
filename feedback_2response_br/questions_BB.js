@@ -43,7 +43,7 @@ var grid_practice = [
     ["grids/109.png", "grids/110.png", "grids/10.png", "grids/11.png"]
 ]
 
-//list of 100 lists of four grids, first is the target. List made according to Raolison rules. Script saved: /Users/zoepurcell/Library/CloudStorage/GoogleDrive-zoepurcell19@gmail.com/My Drive/a Research Projects/Confidence Feedback - Two Response/experiment/load matrices (with script)/Load matrices_ZP2.R
+//list of 120 lists of four grids, first is the target. List made according to Raolison rules. Script saved: /Users/zoepurcell/Library/CloudStorage/GoogleDrive-zoepurcell19@gmail.com/My Drive/a Research Projects/Confidence Feedback - Two Response/experiment/load matrices (with script)/Load matrices_ZP2.R
 var grid_quads = [
     ["grids/8.png", "grids/9.png", "grids/106.png", "grids/107.png"],
     ["grids/10.png", "grids/11.png", "grids/109.png", "grids/110.png"],

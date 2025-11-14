@@ -39,9 +39,18 @@
         // when study complete, save all the data --- (it will overwrited the on_data_update file if that's included)
         // end and redirect to prolific
         on_finish: function () {
-            var resultData = jsPsych.data.get().ignore('internal_node_id').ignore('trial_type').filter([{ block: 'block1' }, { block: 'block2' }]).filter([{ task: 'reasoning_response2' }, { task: 'reasoning_response1' }, { task: 'confidence_question1' }, { task: 'confidence_question2' }, { task: 'grid' }]);
+            // Keep only the trial types we care about (reasoning responses, confidence ratings, and grids).
+            // Removed the old block filter so randomized block names won't cause data to be excluded.
+            var tasksToKeep = ['reasoning_response1', 'reasoning_response2', 'confidence_question1', 'confidence_question2', 'grid'];
+            var resultData = jsPsych.data.get()
+                .ignore('internal_node_id')
+                .ignore('trial_type')
+                .filter(function (d) {
+                    return tasksToKeep.includes(d.task);
+                });
+
             jatos.submitResultData(resultData.csv());
-            jatos.endStudyAndRedirect("https://app.prolific.com/submissions/complete?cc=CCIA7GUS")
+            jatos.endStudyAndRedirect("https://app.prolific.com/submissions/complete?cc=CCIA7GUS");
         }
     });
 
@@ -67,6 +76,28 @@
     ////create the grids////
     randomised_test_quads = jsPsych.randomization.sampleWithoutReplacement(grid_quads, grid_quads.length);  // randomise quads of grids
     randomised_quads = randomised_test_quads.concat(grid_practice); // concatenate the two lists -- practice items are added at the end, they becom 101:106 in the list matching the item_order in the questions_BB practice stimuli 
+
+    // Compute where practice quads start in the concatenated array.
+    var practice_quad_start_index = randomised_test_quads.length; // index in randomised_quads where grid_practice begins
+    var practice_item_order_base = 1001; // item_order values for practice trials start at 1001 (fixed practice setup)
+
+    // Helper: given an item_order, return the corresponding quad (array of 4 grid filenames).
+    function getQuadForItemOrder(item_ord) {
+        var idx = parseInt(item_ord);
+        // If idx is a valid index into randomised_quads, return that
+        if (!isNaN(idx) && idx >= 0 && idx < randomised_quads.length) {
+            return randomised_quads[idx];
+        }
+        // If it's a practice item_order (>= practice_item_order_base), map it to the appended practice quads
+        if (!isNaN(idx) && idx >= practice_item_order_base) {
+            var practiceIndex = practice_quad_start_index + (idx - practice_item_order_base);
+            if (practiceIndex >= 0 && practiceIndex < randomised_quads.length) {
+                return randomised_quads[practiceIndex];
+            }
+        }
+        // Fallback: return the last quad (should be a practice quad)
+        return randomised_quads[randomised_quads.length - 1];
+    }
 
     // Function to sample items for a predicate block ensuring balanced true/false and conflict/non-conflict
     function sampleItemsForPredicate(conflictItems, nonConflictItems) {
@@ -101,13 +132,35 @@
     var reproduction_block = sampleItemsForPredicate(trial_info_LIFE_conflict_reproduction, trial_info_LIFE_noconflict_reproduction);
     var respiration_block = sampleItemsForPredicate(trial_info_LIFE_conflict_respiration, trial_info_LIFE_noconflict_respiration);
 
-    // Assign item_order across all six blocks so each trial has a unique index
-    var all_items = temperature_block.concat(space_block, weight_block, nutrient_block, reproduction_block, respiration_block);
-    all_items.forEach(function (item, index) { item.item_order = index; });
-    // Keep a combined list for any downstream use
-    var trial_info_set = all_items;
+// Create array of blocks with their metadata
+var blocks = [
+    { block: temperature_block, name: 'temperature', topic: 'temperature properties of matter' },
+    { block: space_block, name: 'space', topic: 'spatial properties of matter' },
+    { block: weight_block, name: 'weight', topic: 'weight properties of matter' },
+    { block: nutrient_block, name: 'nutrient', topic: 'nutrient processing in living things' },
+    { block: reproduction_block, name: 'reproduction', topic: 'reproduction in living things' },
+    { block: respiration_block, name: 'respiration', topic: 'respiration in living things' }
+];
 
-    // Verification logging for each predicate block
+// Randomize block order
+blocks = jsPsych.randomization.shuffle(blocks);
+
+// Concatenate all blocks in the randomized order
+var all_items = [];
+blocks.forEach(function(block, blockIndex) {
+    // Add block metadata to each trial
+    block.block.forEach(function(trial) {
+        trial.blockName = block.name;
+        trial.blockTopic = block.topic;
+    });
+    all_items = all_items.concat(block.block);
+});
+
+// Assign item_order to all trials
+all_items.forEach(function (item, index) { item.item_order = index; });
+
+// Keep a combined list for any downstream use
+var trial_info_set = all_items;    // Verification logging for each predicate block
     function logBlockAnalysis(name, blockArray) {
         console.log(name + ' analysis:', {
             totalTrials: blockArray.length,
@@ -143,7 +196,7 @@
     // Use newly formatted instruction constants (from instructions.js)
     debrief_text = '';
     // Two-response overview/details (from window.instructions)
-    var instr_string = window.instructions.instr_two_response_intro + window.instructions.instr_two_response_detail;
+    var instr_string = window.instructions.instr_overview + window.instructions.instr_two_response_intro + window.instructions.instr_two_response_detail;
 
     //create the pages to be shown
 
@@ -173,19 +226,19 @@
     };
 
 
-    //instructions - some set above per condition, some from instructions.js
+    //instructions
     var instructions1 = {
         type: jsPsychHtmlButtonResponse,
         stimulus: ['General Instructions:' + instr_string + 'Next, you&apos;ll learn about the task.'],
         choices: ['Continue']
     };
 
-    //instructions - some set above per condition, some from instructions.js
-    var instructions2 = {
-        type: jsPsychHtmlButtonResponse,
-    stimulus: ['The Task:' + window.instructions.instr_main_task],
-        choices: ['Continue']
-    };
+    // //instructions - some set above per condition, some from instructions.js
+    // var instructions2 = {
+    //     type: jsPsychHtmlButtonResponse,
+    // stimulus: ['The Task:' + window.instructions.instr_main_task],
+    //     choices: ['Continue']
+    // };
 
     // Note: presentation-specific instruction removed; the two-response detail is provided earlier in instr_string
 
@@ -209,9 +262,7 @@
             // Set image height directly in the HTML string
             return (
                 '<img src="hand_positions.png" height="300" />' +  // Add height attribute to set image height to 300px
-                '<p>During the study, you will use the keyboard to select your answers.</p>' +
-                '<p>Place your fingers as indicated on the keyboard with your <strong>thumbs on C and N</strong> and your <strong>ring-middle-index fingers on 1-2-3 and 8-9-0</strong>.</p>' +
-                '<p>Press C or N to continue.</p>' +
+                window.instructions.instr_keyboard_setup +
                 promptContainer.prop('outerHTML')
             );
         },
@@ -237,8 +288,7 @@
             // Set image height directly in the HTML string
             return (
                 '<img src="hand_positions_thumbs.png" height="300" />' +  // Add height attribute to set image height to 300px
-                '<p>When you see two response options, use C or N.</p>' +
-                '<p>Press C or N to continue.</p>' +
+                window.instructions.instr_response_keys +
                 promptContainer.prop('outerHTML')
             );
         },
@@ -285,7 +335,7 @@
         stimulus: 'hand_positions_grid.png',
         stimulus_height: 300,
         choices: ['3', '8', '"', '_', 'c', 'n'],
-    prompt: window.instructions.instr_grid_intro,
+        prompt: window.instructions.instr_grid_intro,
 
         on_finish: function (data) {
             removeKeyListeners();
@@ -302,7 +352,9 @@
         stimulus: function () {
             // Get the item order and shuffle the grids
             var item_ord = 0;
-            var quad = randomised_quads[109]; //last item in the list of practice grids to avoid repetition 
+            // Use the last appended practice quad (grid_practice items were concatenated at the end
+            // of randomised_quads). This avoids hard-coded indices that break when grid_quads length changes.
+            var quad = randomised_quads[randomised_quads.length - 1]; // last item (a practice quad)
             var quad_shuffled = jsPsych.randomization.sampleWithoutReplacement(quad, 4);
 
             grid1 = quad_shuffled[0]; // Top-left grid
@@ -349,7 +401,7 @@
         type: jsPsychHtmlKeyboardResponse,
         stimulus: '<div id="stimulus_container" class="stimulus-container">' +
             '<p><span style="color: green"> &nbsp;</span></p>' +
-            '<p>Next, you will see the same question but </p><p>you can take as much time as you need to reflect on the problem and give your final answer.</p>' +
+            '<p>Next, you will see the same statement but </p><p>you can take as much time as you need to reflect on the problem and give your final answer.</p>' +
             '</div>',
         //stimulus: '<div id="stimulus_container" style="position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 100%; text-align: center;"><p>In the next part, you will see the same question but </p><p>you can take as much time as you need to reflect on the problem and give your final answer.</p></div>',
         trial_duration: 5000,
@@ -467,22 +519,33 @@
         trial_duration: 2000
     };
 
-    // Screen to display which item it is
-    var item_start_practice = {
-        type: jsPsychHtmlKeyboardResponse,
-        stimulus: function () {
-            var item = jsPsych.timelineVariable('item');
-            return '<div id="stimulus_container" class="stimulus-container">' +
-                '<p><span style="color: green"> &nbsp;</span></p>' +
-                '<strong>Item: ' + item + '</strong>' +
-                '</div>';
-        },
-        on_start: set_html_style_3,
-        choices: "NO_KEYS",
-        trial_duration: 2000,
-    };
+// Trial for displaying block topic instructions
+var block_topic_instruction = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: function() {
+        var currentTrial = jsPsych.timelineVariable('trial');
+        var blockTopic = currentTrial.blockTopic;
+        return '<div id="stimulus_container" class="stimulus-container">' +
+            window.instructions.getBlockTopicInstr(blockTopic) +
+            '</div>';
+    },
+    choices: ['c', 'n']
+};
 
-
+// Screen to display which item it is
+var item_start_practice = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: function () {
+        var item = jsPsych.timelineVariable('item');
+        return '<div id="stimulus_container" class="stimulus-container">' +
+            '<p><span style="color: green"> &nbsp;</span></p>' +
+            '<strong>Item: ' + item + '</strong>' +
+            '</div>';
+    },
+    on_start: set_html_style_3,
+    choices: "NO_KEYS",
+    trial_duration: 2000,
+};
     // Start of item, block
     var item_start = {
         on_start: set_html_style_3,
@@ -506,9 +569,10 @@
         choices: "NO_KEYS",
         type: jsPsychHtmlKeyboardResponse,
         stimulus: function () {
-            // Get the item order and the grid image
+            // Get the item order and the grid image (map practice item_orders to appended practice quads)
             var item_ord = parseInt(jsPsych.timelineVariable('item_order'));
-            var grid = randomised_quads[item_ord][0];
+            var quad = getQuadForItemOrder(item_ord);
+            var grid = quad[0];
 
             // Create the stimulus HTML with the instruction and the grid image
             return '<div id="stimulus_container" class="stimulus-container">' +
@@ -522,8 +586,8 @@
         },
         trial_duration: 2000,
         on_finish: function (data) {
-            // Record the grid shown in this trial
-            data.grid_shown = randomised_quads[parseInt(jsPsych.timelineVariable('item_order'))][0];
+            // Record the grid shown in this trial (use mapping for practice trials)
+            data.grid_shown = getQuadForItemOrder(jsPsych.timelineVariable('item_order'))[0];
             console.log(data);
         }
     };
@@ -536,9 +600,9 @@
         },
         type: jsPsychHtmlKeyboardResponse,
         stimulus: function () {
-            // Get the item order and shuffle the grids
+            // Get the item order and shuffle the grids (map practice item_orders to appended practice quads)
             var item_ord = parseInt(jsPsych.timelineVariable('item_order'));
-            var quad = randomised_quads[item_ord];
+            var quad = getQuadForItemOrder(item_ord);
             var quad_shuffled = jsPsych.randomization.sampleWithoutReplacement(quad, 4);
 
             console.log("Original quad:", quad);
@@ -584,7 +648,7 @@
 
             // Determine whether the participant's response matches the grid shown
             var key_pressed = data.response;
-            var correct_grid = randomised_quads[parseInt(jsPsych.timelineVariable('item_order'))][0];
+            var correct_grid = getQuadForItemOrder(jsPsych.timelineVariable('item_order'))[0];
             var correct_match = ((key_pressed === '3' || key_pressed === '"') && correct_grid === grid1) ||
                 ((key_pressed === '8' || key_pressed === '_') && correct_grid === grid2) ||
                 (key_pressed === 'c' && correct_grid === grid3) ||
@@ -962,24 +1026,100 @@
     };
 
     //create procedures for practice, block1, feedback, block2)
+    
+    // Create fixed practice trials
+    var fixed_practice_trials_1 = [
+        {
+            item_order: 1001, 
+            item: 'Practice 1', 
+            stimulus1: '<p>Islands need nutrients.</p>', 
+            stimulus2: '<p>Islands need nutrients.</p>', 
+            stimulus3: '<p>Islands need nutrients.</p>', 
+            choices: ['True', 'False'], 
+            QuestionType: 'NC', 
+            correct_response: 'F', 
+            conf_stimulus: '<p>How confident are you in this response?</p>'
+        },
+        {
+            item_order: 1002, 
+            item: 'Practice 2', 
+            stimulus1: '<p>Tigers respire.</p>', 
+            stimulus2: '<p>Tigers respire.</p>', 
+            stimulus3: '<p>Tigers respire.</p>', 
+            choices: ['True', 'False'], 
+            QuestionType: 'NC', 
+            correct_response: 'T', 
+            conf_stimulus: '<p>How confident are you in this response?</p>'
+        }
+    ];
+
+    var fixed_practice_trials_2 = [
+        {
+            item_order: 1003, 
+            item: 'Practice 3', 
+            stimulus1: '<p>Shirts need nutrients.</p>', 
+            stimulus2: '<p>Shirts need nutrients.</p>', 
+            stimulus3: '<p>Shirts need nutrients.</p>', 
+            choices: ['True', 'False'], 
+            QuestionType: 'NC', 
+            correct_response: 'F', 
+            conf_stimulus: '<p>How confident are you in this response?</p>'
+        },
+        {
+            item_order: 1004, 
+            item: 'Practice 4', 
+            stimulus1: '<p>Pelicans respire.</p>', 
+            stimulus2: '<p>Pelicans respire.</p>', 
+            stimulus3: '<p>Pelicans respire.</p>', 
+            choices: ['True', 'False'], 
+            QuestionType: 'NC', 
+            correct_response: 'T', 
+            conf_stimulus: '<p>How confident are you in this response?</p>'
+        }
+    ];
+
+    var fixed_practice_trials_3 = [
+        {
+            item_order: 1005, 
+            item: 'Practice 5', 
+            stimulus1: '<p>Pebbles need nutrients.</p>', 
+            stimulus2: '<p>Pebbles need nutrients.</p>', 
+            stimulus3: '<p>Pebbles need nutrients.</p>', 
+            choices: ['True', 'False'], 
+            QuestionType: 'NC', 
+            correct_response: 'F', 
+            conf_stimulus: '<p>How confident are you in this response?</p>'
+        },
+        {
+            item_order: 1006, 
+            item: 'Practice 6', 
+            stimulus1: '<p>Wolves reproduce.</p>', 
+            stimulus2: '<p>Wolves reproduce.</p>', 
+            stimulus3: '<p>Wolves reproduce.</p>', 
+            choices: ['True', 'False'], 
+            QuestionType: 'NC', 
+            correct_response: 'T', 
+            conf_stimulus: '<p>How confident are you in this response?</p>'
+        }
+    ];
 
     var practice_procedure1 = {
         timeline: [item_start_practice, fixation, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, inter_trial, trial_response2, gap, confidence2, gap],
-        timeline_variables: trial_info_practice1,
+        timeline_variables: fixed_practice_trials_1,
         randomize_order: false,
         data: { block: 'blockPractice1' }
     };
 
     var practice_procedure2 = {
         timeline: [item_start_practice, grid_display, grid_answer, grid_feedback, gap],
-        timeline_variables: trial_info_practice2,
+        timeline_variables: fixed_practice_trials_2,
         randomize_order: false,
         data: { block: 'blockPractice2' }
     };
 
     var practice_procedure3 = {
         timeline: [item_start_practice, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
-        timeline_variables: trial_info_practice3,
+        timeline_variables: fixed_practice_trials_3,
         randomize_order: false,
         data: { block: 'blockPractice3' }
     };
@@ -1095,11 +1235,116 @@
         message: 'Please wait while the experiment loads.</p><p>WARNING: Do not refresh the page at any point during loading or throughout the study.</p>'
     };
 
-    timeline.push(preload1, preload2, enter_fullscreen, consent, instructions1, instructions2, cursor_off, hands1, hands2, hands3, hands5, gap, hands6, instructions4, gap,
-        practice_procedure1, after_prac1, practice_procedure2, after_prac2, practice_procedure3, after_prac3,
-        temperature_procedure, space_procedure, weight_procedure,
-        nutrient_procedure, reproduction_procedure, respiration_procedure, cursor_on,
-        end_trials, age, gender, pro, debrief, exit_fullscreen);
+    // Setup Phase: Load resources and enter fullscreen
+    timeline.push(
+        preload1,
+        preload2,
+        enter_fullscreen,
+        consent,
+        instructions1,
+        cursor_off
+    );
+
+    // Training Phase 1: Keyboard and Response Instructions
+    timeline.push(
+        hands1,  // Keyboard finger placement
+        hands2,  // C/N response keys
+        hands3   // Confidence rating keys
+    );
+
+
+    // Training Phase 2: Basic Practice (no time limit)
+    timeline.push(
+        // Instructions for first practice phase (advance with C or N)
+        {
+            type: jsPsychHtmlKeyboardResponse,
+            stimulus: window.instructions.instr_practice_1,
+            choices: ['c', 'n']
+        },
+        practice_procedure1,  // Two simple trials without time limit
+        after_prac1
+    );
+
+    // Training Phase 3: Two-Response Format Practice
+    timeline.push(
+        // Instructions for two-response format (advance with C or N)
+        {
+            type: jsPsychHtmlKeyboardResponse,
+            stimulus: window.instructions.instr_practice_2,
+            choices: ['c', 'n']
+        },
+        // Two trials with time limit and confidence ratings
+        practice_procedure2,
+        after_prac2
+    );
+
+    // Training Phase 4: Grid Memorization Practice
+    timeline.push(
+        // Grid training instructions
+        hands5,  // Grid key instructions with image
+        gap,
+        hands6,  // Grid practice
+        {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: window.instructions.instr_grid_detail,
+            choices: ['Continue']
+        }
+    );
+
+    // Training Phase 5: Full Practice (Two-Response + Grid)
+    timeline.push(
+        practice_procedure3,  // Complete practice with grids
+        after_prac3
+    );
+
+    // Main Experimental Blocks
+    // Create block procedures based on randomized order
+    var block_procedures = blocks.map(function(block) {
+        var blockProcedure = {
+            timeline: [
+                {   // Block topic instruction
+                    type: jsPsychHtmlKeyboardResponse,
+                    stimulus: function() {
+                        return '<div id="stimulus_container" class="stimulus-container">' +
+                            window.instructions.getBlockTopicInstr(block.topic) +
+                            '</div>';
+                    },
+                    choices: ['c', 'n']
+                },
+                item_start,
+                fixation, 
+                grid_display, 
+                trial_pre1, 
+                trial_pre2, 
+                trial_response1, 
+                gap, 
+                confidence1, 
+                gap, 
+                grid_answer, 
+                grid_feedback, 
+                trial_response2, 
+                gap, 
+                confidence2, 
+                gap
+            ],
+            timeline_variables: block.block,
+            data: { block: block.name }
+        };
+        return blockProcedure;
+    });
+
+    // Add all block procedures to timeline in randomized order
+    timeline.push(...block_procedures,
+        
+        // Wrap-up
+        cursor_on,
+        end_trials,
+        age,
+        gender,
+        pro,
+        debrief,
+        exit_fullscreen
+    );
 
     // timeline.push(block1_procedure, feedback, block2_procedure, cursor_on, end_trials, age, gender, pro, debrief);
 

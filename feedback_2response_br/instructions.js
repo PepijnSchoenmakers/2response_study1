@@ -22,7 +22,7 @@ const instr_confidence = '<p>Once you have selected an answer, we will also ask 
 
 // Keyboard setup instructions
 const instr_keyboard_setup = `<p>Before we begin, you will learn to use the keyboard to select your answers. 
-Place your fingers as indicated on the keyboard with your thumbs on C and N and your ring-middle-index fingers on 1-2-3 and 8-9-0.</p>
+Place your fingers as indicated on the keyboard with your <strong>thumbs on C and N </strong> and your <strong>ring-middle-index fingers on 1-2-3 and 8-9-0 </strong>.</p>
 <p>Press C or N to continue.</p>`;
 
 // Response key instructions
