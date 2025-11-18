@@ -193,7 +193,7 @@ var trial_info_set = all_items;    // Verification logging for each predicate bl
         '.hands-container { display: flex; justify-content: center; align-items: center; }' +
         '.prompt-container { display: flex; justify-content: center; align-items: center; margin-top: 20px; }' +
         '.choice-box { border: 2px solid #000; padding: 10px; font-size: 18px; margin: 10px 20px; }' +
-        '.stimulus-container { position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 100%; text-align: center; }' +
+        '.stimulus-container { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; width: 100vw; text-align: center; }' +
         '.grid-display { display: flex; justify-content: center; align-items: center; margin: 10px auto; border: 2px solid black; padding: 5px; width: 400px; height: 400px; }' +
         '</style>';
     $('head').append(styles);
@@ -583,7 +583,7 @@ var item_start_practice = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: function () {
         var item = jsPsych.timelineVariable('item');
-        return '<div id="stimulus_container" class="stimulus-container">' +
+        return '<div class="centered-content">' +
             '<p><span style="color: green"> &nbsp;</span></p>' +
             '<strong>Item: ' + item + '</strong>' +
             '</div>';
@@ -598,7 +598,7 @@ var item_start_practice = {
         type: jsPsychHtmlKeyboardResponse,
         stimulus: function () {
             var item_order = jsPsych.timelineVariable('item_order') + 1; // Adding 1 to item_order because it starts at 0
-            return '<div id="stimulus_container" class="stimulus-container">' +
+            return '<div class="centered-content">' +
                 '<p><span style="color: green"> &nbsp;</span></p>' +
                 '<strong>Item: ' + item_order + '</strong>' +
                 '</div>';
@@ -621,13 +621,12 @@ var item_start_practice = {
             var grid = quad[0];
 
             // Create the stimulus HTML with the instruction and the grid image
-            return '<div id="stimulus_container" class="stimulus-container">' +
+            return '<div class="centered-content">' +
                 '<p><span style="color: green"> &nbsp;</span></p>' +
                 '<p>Memorise the grid pattern.</p>' +
                 '<div class="grid-display">' + // Apply the grid-display class
                 '<img src="' + grid + '" width="100%" height="100%" />' + // Make the image fill the grid display area
                 '</div>' +
-                //'<p><span style="color: gray">The screen will automatically advance after 2 seconds.</span></p>' +
                 '</div>';
         },
         trial_duration: 2000,
@@ -680,7 +679,7 @@ var item_start_practice = {
             gridContainer.append(gridBox1, gridBox2, gridBox3, gridBox4);
 
             // Return the full stimulus HTML, combining the instructions and the grid container
-            return '<div id="stimulus_container" class="stimulus-container">' +
+            return '<div class="centered-content">' +
                 '<p><span style="color: green"> &nbsp;</span></p>' +
                 '<p>Recall the last grid pattern.</p>' +
                 gridContainer.prop('outerHTML') + // Convert the jQuery object to HTML string
@@ -736,12 +735,12 @@ var item_start_practice = {
         },
         stimulus: function () {
             var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct_match;
-            if (last_trial_correct === 1) {
-                return '<div id="stimulus_container" class="stimulus-container">' +
+                if (last_trial_correct === 1) {
+                return '<div class="centered-content">' +
                     '<p><span style="color: green"> &nbsp;</span></p>' +
                     '<p>You remembered the correct pattern.</p></div>';
             } else {
-                return '<div id="stimulus_container" class="stimulus-container">' +
+                return '<div class="centered-content">' +
                     '<p><span style="color: green"> &nbsp;</span></p>' +
                     '<p>You did not remember the correct pattern.</p><p>Remember to memorise the grid correctly or your response to the statement will be invalid.</p></div>';
             }
@@ -1207,7 +1206,7 @@ var item_start_practice = {
             var choiceBox1 = $('<div>').addClass('choice-box').text(trial_response1_simple.shuffledChoices[0]);
             var choiceBox2 = $('<div>').addClass('choice-box').text(trial_response1_simple.shuffledChoices[1]);
             var promptContainer = $('<div>').addClass('prompt-container').append(choiceBox1).append(choiceBox2);
-            return '<div id="stimulus_container" class="stimulus-container">' +
+            return '<div class="centered-content">' +
                 '<p><span style="color: green"> &nbsp;</span></p>' +
                 jsPsych.timelineVariable('stimulus1') +
                 promptContainer.prop('outerHTML') +
@@ -1233,7 +1232,7 @@ var item_start_practice = {
             var item_ord = parseInt(jsPsych.timelineVariable('item_order'));
             var quad = getQuadForItemOrder(item_ord);
             var grid = quad[0];
-            return '<div id="stimulus_container" class="stimulus-container">' +
+            return '<div class="centered-content">' +
                 '<p><span style="color: green"> &nbsp;</span></p>' +
                 '<p>Memorise the grid pattern.</p>' +
                 '<div class="grid-display">' +
@@ -1416,6 +1415,9 @@ var item_start_practice = {
         // Instructions for first practice phase (advance with C or N)
         {
             type: jsPsychHtmlKeyboardResponse,
+            on_start: function() {
+                attachKeyListeners("trial_response1");
+            },
             stimulus: window.instructions.instr_practice_1,
             choices: ['c', 'n'],
             prompt: function() {
@@ -1423,6 +1425,9 @@ var item_start_practice = {
                 var choiceBox2 = $('<div>').addClass('choice-box').text('N');
                 var promptContainer = $('<div>').addClass('prompt-container').append(choiceBox1).append(choiceBox2);
                 return promptContainer.prop('outerHTML');
+            },
+            on_finish: function() {
+                removeKeyListeners();
             }
         },
         practice_procedure1,  // Two simple trials: single statement, no confidence
@@ -1434,6 +1439,9 @@ var item_start_practice = {
         // Instructions for two-response format (advance with C or N)
         {
             type: jsPsychHtmlKeyboardResponse,
+            on_start: function() {
+                attachKeyListeners("trial_response1");
+            },
             stimulus: window.instructions.instr_practice_2,
             choices: ['c', 'n'],
             prompt: function() {
@@ -1441,6 +1449,9 @@ var item_start_practice = {
                 var choiceBox2 = $('<div>').addClass('choice-box').text('N');
                 var promptContainer = $('<div>').addClass('prompt-container').append(choiceBox1).append(choiceBox2);
                 return promptContainer.prop('outerHTML');
+            },
+            on_finish: function() {
+                removeKeyListeners();
             }
         },
         practice_procedure2,  // Two trials: first response with time limit + confidence, second response no limit + confidence
@@ -1458,6 +1469,9 @@ var item_start_practice = {
         // Instructions for full task format (grid + two-response + confidence)
         {
             type: jsPsychHtmlKeyboardResponse,
+            on_start: function() {
+                attachKeyListeners("trial_response1");
+            },
             stimulus: '<p>Now you will practice the complete task: memorizing the grid while giving your two responses.</p><p>Press C or N to continue.</p>',
             choices: ['c', 'n'],
             prompt: function() {
@@ -1465,6 +1479,9 @@ var item_start_practice = {
                 var choiceBox2 = $('<div>').addClass('choice-box').text('N');
                 var promptContainer = $('<div>').addClass('prompt-container').append(choiceBox1).append(choiceBox2);
                 return promptContainer.prop('outerHTML');
+            },
+            on_finish: function() {
+                removeKeyListeners();
             }
         },
         practice_procedure4,  // Two complete trials with grids and two-response format
@@ -1477,7 +1494,7 @@ var item_start_practice = {
         var blockTopicScreen = {
             type: jsPsychHtmlKeyboardResponse,
             stimulus: function() {
-                return '<div id="stimulus_container" class="stimulus-container">' +
+                return '<div class="centered-content">' +
                     window.instructions.getBlockTopicInstr(block.topic) +
                     '</div>';
             },

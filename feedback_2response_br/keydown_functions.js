@@ -1,82 +1,89 @@
-// Global scope to handle keypress states
-let keyPressed = false;
-let currentTrialType = "";  // Track the type of the current trial to handle keys correctly
+// Track the current trial type to handle keys correctly
+let currentTrialType = "";
 
 // Main function to handle keydown event for different trial types
 function handleKeyDown(event) {
-    // Reset keyPressed to allow multiple presses for grid selection
-    keyPressed = false;
+    // Normalize the key where useful (handle uppercase letters)
+    const key = event.key;
 
-    // Handle different trial types by delegating to specific handlers
+    // Delegate to specific handlers by trial type
     if (currentTrialType === "grid_answer") {
-        handleGridKeyDown(event);
-    } else if (currentTrialType === "trial_response1" || currentTrialType === "trial_response2"|| currentTrialType === "hands1") {
-        handleResponseKeyDown(event);
+        handleGridKeyDown(key);
+    } else if (currentTrialType === "trial_response1" || currentTrialType === "trial_response2" || currentTrialType === "hands1") {
+        handleResponseKeyDown(key);
     } else if (currentTrialType === "confidence1" || currentTrialType === "confidence2") {
-        handleConfidenceKeyDown(event);
+        handleConfidenceKeyDown(key);
     }
 }
 
 // Function to handle keydown for grid trials
-function handleGridKeyDown(event) {
+function handleGridKeyDown(key) {
+    // Map many keyboard layout variants to the four grid indices
+    const k = key.toLowerCase();
     let gridKeyMap = {
-        '3': 0,  // Top-left grid (grid1)
-        '"': 0,  // Handle different keyboard layouts for '3'
-        '8': 1,  // Top-right grid (grid2)
-        '_': 1,  // Handle different keyboard layouts for '8'
-        'c': 2,  // Bottom-left grid (grid3)
-        'n': 3   // Bottom-right grid (grid4)
+        '3': 0, '"': 0, // top-left
+        '8': 1, '_': 1, '!': 1, // top-right (include ! for AZERTY)
+        'c': 2, 'C': 2, // bottom-left
+        'n': 3, 'N': 3  // bottom-right
     };
 
-    if (gridKeyMap.hasOwnProperty(event.key)) {
-        let gridIndex = gridKeyMap[event.key];
+    if (gridKeyMap.hasOwnProperty(key) || gridKeyMap.hasOwnProperty(k)) {
+        let gridIndex = gridKeyMap[key] !== undefined ? gridKeyMap[key] : gridKeyMap[k];
 
         // Reset borders for all grids to default (2px solid black)
         $('.grid-box img').css('border', '2px solid black');
 
-        // Apply thicker border to the selected grid
+        // Apply thicker border to the selected grid, then clear after a short delay
         $('.grid-box').eq(gridIndex).find('img').css('border', '4px solid black');
+        setTimeout(function () {
+            $('.grid-box img').css('border', '2px solid black');
+        }, 250);
     }
 }
 
 // Function to handle keydown for response trials (trial_response1 or trial_response2)
-function handleResponseKeyDown(event) {
-    if (event.key === 'n') {
+function handleResponseKeyDown(key) {
+    // Accept uppercase as well
+    const k = key.toLowerCase();
+
+    // Reset choice-box borders first
+    $('.choice-box').css('border', '2px solid #000');
+
+    if (k === 'n') {
         $('.choice-box').eq(1).css('border', '4px solid black'); // Highlight the right choice box
-    } else if (event.key === 'c') {
+        setTimeout(function () { $('.choice-box').eq(1).css('border', '2px solid #000'); }, 250);
+    } else if (k === 'c') {
         $('.choice-box').eq(0).css('border', '4px solid black'); // Highlight the left choice box
+        setTimeout(function () { $('.choice-box').eq(0).css('border', '2px solid #000'); }, 250);
     }
 }
 
 // Function to handle keydown for confidence trials (confidence1 or confidence2)
-function handleConfidenceKeyDown(event) {
-    let keyMap = {
-        '1': 0, '&': 0, // Handle '1'
-        '2': 1, 'é': 1, // Handle '2'
-        '3': 2, '"': 2, // Handle '3'
-        '8': 3, '_': 3, // Handle '8'
-        '9': 4, 'ç': 4, // Handle '9'
-        '0': 5, 'à': 5  // Handle '0'
+function handleConfidenceKeyDown(key) {
+    const k = key;
+    // Map many variants to confidence indices
+    const keyMap = {
+        '1': 0, '&': 0,
+        '2': 1, 'é': 1,
+        '3': 2, '"': 2,
+        '8': 3, '_': 3, '!': 3,
+        '9': 4, 'ç': 4,
+        '0': 5, 'à': 5
     };
 
-    if (keyMap.hasOwnProperty(event.key)) {
-        // Apply bold border to the corresponding choice box
-        $('.choice-box').eq(keyMap[event.key]).css('border', '4px solid black');
+    const idx = keyMap[k] !== undefined ? keyMap[k] : keyMap[k.toLowerCase()];
+    if (idx !== undefined) {
+        // Reset all choice-box borders then highlight
+        $('.choice-box').css('border', '2px solid #000');
+        $('.choice-box').eq(idx).css('border', '4px solid black');
+        setTimeout(function () { $('.choice-box').eq(idx).css('border', '2px solid #000'); }, 250);
     }
 }
 
 // Function to handle keyup event (common for all trial types)
 function handleKeyUp(event) {
-    let allowedKeys = ['n', 'c', '1', '2', '3', '8', '9', '0', '&', 'é', '"', '_', '!', 'ç', 'à'];
-
-    if (currentTrialType === "grid_answer") {
-        allowedKeys.push('3', '8', 'c', 'n');
-    }
-
-    if (allowedKeys.includes(event.key) && keyPressed) {
-        keyPressed = false;  // Reset keyPressed for future trials
-        jsPsych.finishTrial();  // Optionally finish the trial on key release
-    }
+    // No-op: we do not finish trials here since jsPsych plugin handles trial endings.
+    // This function is retained for compatibility, but does not call jsPsych.finishTrial().
 }
 
 // Function to attach keydown and keyup listeners for specific trial types
