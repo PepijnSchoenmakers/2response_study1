@@ -20,6 +20,8 @@
 .prompt-container {
     display: flex;
     justify-content: center;
+     align-items: center;
+     height: 100%;
 }
 
 .choice-box {
@@ -27,4 +29,26 @@
     padding: 10px;
     font-size: 18px;
     margin: 0 20px;
+}
+
+/* Centered content for stimuli and instructions */
+.centered-content {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     width: 100vw;
+     text-align: center;
+}
+
+/* Update stimulus-container to use centered-content */
+.stimulus-container {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     width: 100vw;
+     text-align: center;
 }

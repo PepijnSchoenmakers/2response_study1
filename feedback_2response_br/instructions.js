@@ -59,15 +59,7 @@ Afterwards, you can take as much time as you want to reflect on the statement an
 <p>Press C or N to continue.</p>`;
 
 // Grid memorization instructions
-const instr_grid_intro = `<p>In the actual experiment, you will also need to memorize a pattern while you evaluate the statement. 
-You will see a grid with crosses and you will have to memorize their location. You will first practice with 2 patterns without statement evaluation. 
-The pattern will be displayed for 2 seconds then you will have to select it among 4 different patterns.</p>
-
-<p>When selecting grids like this, use 3, 8, C, or N to choose the top-left, top-right, bottom-left, or bottom-right grid, respectively.</p>
-<p>Press 3, 8, C, or N to continue.</p>`;
-
-// Grid task detailed instructions
-const instr_grid_detail = `<p>In the actual study you will need to memorize the pattern while you give your intuitive evaluation of the statement. 
+const instr_grid = `<p>In the actual study you will need to memorize the pattern while you give your intuitive evaluation of the statement. 
 The pattern is briefly presented before you see each statement. The difficulty of the pattern might vary. 
 Always try to memorize as many crosses as possible. Each cross counts!</p>
 
@@ -78,8 +70,9 @@ and then try to evaluate the statement.</p>
 <p>You only need to memorize the pattern when giving your first response. 
 When you give your final response you can fully focus on the evaluation task.</p>
 
-<p>As a last step, you will practice this with two complete trials containing memorization as well as the double evaluation of the statement.</p>
-<p>Press C or N to continue.</p>`;
+<p>When selecting grids like this, use 3, 8, C, or N to choose the top-left, top-right, bottom-left, or bottom-right grid, respectively.</p>
+<p>Press 3, 8, C, or N to continue.</p>`;
+
 
 // Main task instructions
 const instr_main_task = `<p>Warning! The experiment will begin on the next page. There are 6 blocks of 20 statements in total. 
@@ -119,8 +112,9 @@ window.instructions = {
     instr_practice_1,
     instr_practice_2,
     instr_confidence_reminder,
-    instr_grid_intro,
-    instr_grid_detail,
+    instr_grid,
+        // // Expose the fused grid instruction under `instr_grid`
+        // instr_grid: instr_grid,
     instr_main_task,
     getBlockTopicInstr,
     instr_break,
