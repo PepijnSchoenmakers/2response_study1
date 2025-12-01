@@ -29,32 +29,36 @@
 
 <script>
 
-    //initialise jspsych with JATOS results
+    // Initialise jsPsych with JATOS results
     var jsPsych = initJsPsych({
-        //save data as you go along (every time data is added it will save the selected components)
-        on_data_update: function (data) {
+        // Save filtered data if the participant leaves early
+        on_close: function () {
             var tasksToKeep = ['reasoning_response1', 'reasoning_response2', 'confidence_question1', 'confidence_question2', 'grid'];
+            var blockNames = Array.isArray(blocks) ? blocks.map(function (b) { return b.name; }) : [];
+            var blockFilters = blockNames.length ? blockNames.map(function (name) { return { block: name }; }) : null;
+            var taskFilters = tasksToKeep.map(function (task) { return { task: task }; });
             var resultData = jsPsych.data.get()
                 .ignore('internal_node_id')
-                .ignore('trial_type')
-                .filter(function (d) {
-                    return tasksToKeep.includes(d.task);
-                });
+                .ignore('trial_type');
+            if (blockFilters) {
+                resultData = resultData.filter(blockFilters);
+            }
+            resultData = resultData.filter(taskFilters);
             jatos.submitResultData(resultData.csv());
         },
-        // when study complete, save all the data --- (it will overwrited the on_data_update file if that's included)
-        // end and redirect to prolific
+        // Save only the main task/response trials when the study finishes
         on_finish: function () {
-            // Keep only the trial types we care about (reasoning responses, confidence ratings, and grids).
-            // Removed the old block filter so randomized block names won't cause data to be excluded.
             var tasksToKeep = ['reasoning_response1', 'reasoning_response2', 'confidence_question1', 'confidence_question2', 'grid'];
+            var blockNames = Array.isArray(blocks) ? blocks.map(function (b) { return b.name; }) : [];
+            var blockFilters = blockNames.length ? blockNames.map(function (name) { return { block: name }; }) : null;
+            var taskFilters = tasksToKeep.map(function (task) { return { task: task }; });
             var resultData = jsPsych.data.get()
                 .ignore('internal_node_id')
-                .ignore('trial_type')
-                .filter(function (d) {
-                    return tasksToKeep.includes(d.task);
-                });
-
+                .ignore('trial_type');
+            if (blockFilters) {
+                resultData = resultData.filter(blockFilters);
+            }
+            resultData = resultData.filter(taskFilters);
             jatos.submitResultData(resultData.csv());
             jatos.endStudyAndRedirect("https://app.prolific.com/submissions/complete?cc=CCIA7GUS");
         }
@@ -153,11 +157,15 @@ blocks = jsPsych.randomization.shuffle(blocks);
 
 // Concatenate all blocks in the randomized order
 var all_items = [];
+var totalBlocks = blocks.length;
 blocks.forEach(function(block, blockIndex) {
+    var blockNumber = blockIndex + 1;
     // Add block metadata to each trial
     block.block.forEach(function(trial) {
         trial.blockName = block.name;
         trial.blockTopic = block.topic;
+        trial.blockNumber = blockNumber;
+        trial.totalBlocks = totalBlocks;
     });
     all_items = all_items.concat(block.block);
 });
@@ -189,11 +197,11 @@ var trial_info_set = all_items;    // Verification logging for each predicate bl
 
     // Add some CSS styles to the HTML
     var styles = '<style>' +
-
         '.hands-container { display: flex; justify-content: center; align-items: center; }' +
-        '.prompt-container { display: flex; justify-content: center; align-items: center; margin-top: 20px; }' +
+        '.prompt-container { display: flex; justify-content: center; align-items: center; margin-top: 16px; }' +
         '.choice-box { border: 2px solid #000; padding: 10px; font-size: 18px; margin: 10px 20px; }' +
-        '.stimulus-container { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; width: 100vw; text-align: center; }' +
+        '.centered-content { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 1200px; padding: 24px 32px; margin: 0 auto; text-align: center; box-sizing: border-box; }' +
+        '.stimulus-container { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; width: 100vw; max-width: 1200px; padding: 24px 32px; margin: 0 auto; text-align: center; box-sizing: border-box; }' +
         '.grid-display { display: flex; justify-content: center; align-items: center; margin: 10px auto; border: 2px solid black; padding: 5px; width: 400px; height: 400px; }' +
         '</style>';
     $('head').append(styles);
@@ -235,7 +243,9 @@ var trial_info_set = all_items;    // Verification logging for each predicate bl
     //instructions
     var instructions1 = {
         type: jsPsychHtmlButtonResponse,
-        stimulus: ['General Instructions:' + instr_string + 'Next, you&apos;ll learn about the task.'],
+        stimulus: '<div class="centered-content"><p><strong>General Instructions:</strong></p>' +
+            instr_string +
+            '<p>Next, you&apos;ll learn about the task.</p></div>',
         choices: ['Continue']
     };
 
@@ -442,7 +452,10 @@ var trial_info_set = all_items;    // Verification logging for each predicate bl
             // Create a container div and append choice boxes
             var promptContainer = $('<div>').addClass('prompt-container').append(choiceBox1).append(choiceBox2);
             // Use instr_response_keys to explain response keys (falls back to empty string if missing)
-            return (window.instructions.instr_response_keys || '') + promptContainer.prop('outerHTML');
+            return '<div class="centered-content">' +
+                (window.instructions.instr_response_keys || '') +
+                promptContainer.prop('outerHTML') +
+                '</div>';
         },
         choices: ['C', 'N'],
         on_finish: function (data) {
@@ -456,7 +469,7 @@ var trial_info_set = all_items;    // Verification logging for each predicate bl
             attachKeyListeners("trial_response1"); // Attach keydown and keyup listeners 
         },
         type: jsPsychHtmlKeyboardResponse,
-        stimulus: '<div class="centered-content"><p>Good! You have completed the first practice phase. </p><p>Press C or N to continue to the next phase.</p></div>',
+        stimulus: '<div class="centered-content"><p>You have completed the first practice phase. </p><p>Press C or N to continue to the next phase.</p></div>',
         choices: ['C', 'N'],
         prompt: function () {
 
@@ -482,7 +495,7 @@ var trial_info_set = all_items;    // Verification logging for each predicate bl
             attachKeyListeners("trial_response1"); // Attach keydown and keyup listeners 
         },
         type: jsPsychHtmlKeyboardResponse,
-        stimulus: '<div class="centered-content"><p>Good! You have completed the two-response practice. </p><p>Press C or N to continue to the next phase.</p></div>',
+        stimulus: '<div class="centered-content"><p>You have completed the two-response practice. </p><p>Press C or N to continue to the next phase.</p></div>',
         choices: ['C', 'N'],
         prompt: function () {
 
@@ -508,7 +521,7 @@ var trial_info_set = all_items;    // Verification logging for each predicate bl
             attachKeyListeners("trial_response1"); // Attach keydown and keyup listeners 
         },
         type: jsPsychHtmlKeyboardResponse,
-        stimulus: '<div class="centered-content"><p>Good! You have completed all practice phases. The experiment will now begin.</p><p>Press C or N to continue.</p></div>',
+        stimulus: '<div class="centered-content"><p>You have completed all practice phases. The experiment will now begin.</p><p>Press C or N to continue.</p></div>',
         choices: ['C', 'N'],
         prompt: function () {
 
@@ -563,10 +576,11 @@ var trial_info_set = all_items;    // Verification logging for each predicate bl
 var block_topic_instruction = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: function() {
-        var currentTrial = jsPsych.timelineVariable('trial');
-        var blockTopic = currentTrial.blockTopic;
+        var blockTopic = jsPsych.timelineVariable('blockTopic');
+        var blockNumber = jsPsych.timelineVariable('blockNumber');
+        var totalBlocks = jsPsych.timelineVariable('totalBlocks') || 6;
         return '<div class="centered-content">' +
-            window.instructions.getBlockTopicInstr(blockTopic) +
+            window.instructions.getBlockTopicInstr(blockTopic, blockNumber, totalBlocks) +
             '</div>';
     },
     choices: ['c', 'n'],
@@ -824,7 +838,7 @@ var item_start_practice = {
             console.log(data);
         },
         shuffledChoices: [],
-        trial_duration: 4000, // Set the duration to 4 seconds
+        trial_duration: 2000, // Limit first response window to 2 seconds
         type: jsPsychHtmlKeyboardResponse,
         stimulus: function () {
             // Shuffle the choices for the trial and assign them to the trial_response1 property NOTE THESE ARE NOT SHUFFLED FOR BASE RATE BECAUSE THIS IS DONE WHEN THE STIMULI IS CREATED AND THIS WAY THE ANSWER CHOICES ARE IN THE SAME ORDER AS THEY ARE PRESENTED IN THE QUESTION
@@ -846,7 +860,7 @@ var item_start_practice = {
 
             // Return the full stimulus HTML, combining the instruction, stimulus, and the prompt (shuffled choices)
             return '<div class="centered-content">' +
-                '<p><span style="color: blue">Be quick!</span></p>' +
+                '<p><span style="color: green">Please give your very first, intuitive answer</span></p>' +
                 stim +
                 promptContainer.prop('outerHTML') +
                 '</div>';
@@ -1000,7 +1014,7 @@ var item_start_practice = {
 
             // Return the full stimulus HTML, combining the instruction, stimulus, and the prompt (shuffled choices)
             return '<div class="centered-content">' +
-                '<p><span style="color: green">Take your time.</span></p>' +
+                '<p><span style="color: blue">Please give your final answer.</span></p>' +
                 stim +
                 promptContainer.prop('outerHTML') +
                 '</div>';
@@ -1099,20 +1113,20 @@ var item_start_practice = {
         {
             item_order: 1001, 
             item: 'Practice 1', 
-            stimulus1: '<p>Islands need nutrients.</p>', 
-            conf_stimulus: '<p>How confident are you in this response?</p>',
-            choices: ['True', 'False'], 
-            QuestionType: 'NC', 
-            correct_response: 'F'
-        },
-        {
-            item_order: 1002, 
-            item: 'Practice 2', 
-            stimulus1: '<p>Tigers respire.</p>', 
+            stimulus1: '<p>Bowling balls occupy space.</p>', 
             conf_stimulus: '<p>How confident are you in this response?</p>',
             choices: ['True', 'False'], 
             QuestionType: 'NC', 
             correct_response: 'T'
+        },
+        {
+            item_order: 1002, 
+            item: 'Practice 2', 
+            stimulus1: '<p>Boulders need nutrients.</p>', 
+            conf_stimulus: '<p>How confident are you in this response?</p>',
+            choices: ['True', 'False'], 
+            QuestionType: 'NC', 
+            correct_response: 'F'
         }
     ];
 
@@ -1120,9 +1134,9 @@ var item_start_practice = {
         {
             item_order: 1003, 
             item: 'Practice 3', 
-            stimulus1: '<p>Shirts need nutrients.</p>', 
-            stimulus2: '<p>Shirts need nutrients.</p>', 
-            stimulus3: '<p>Shirts need nutrients.</p>', 
+            stimulus1: '<p>Minutes have weight.</p>', 
+            stimulus2: '<p>Minutes have weight.</p>', 
+            stimulus3: '<p>Minutes have weight.</p>', 
             choices: ['True', 'False'], 
             QuestionType: 'NC', 
             correct_response: 'F', 
@@ -1131,9 +1145,9 @@ var item_start_practice = {
         {
             item_order: 1004, 
             item: 'Practice 4', 
-            stimulus1: '<p>Pelicans respire.</p>', 
-            stimulus2: '<p>Pelicans respire.</p>', 
-            stimulus3: '<p>Pelicans respire.</p>', 
+            stimulus1: '<p>Gold has a temperature.</p>', 
+            stimulus2: '<p>Gold has a temperature.</p>', 
+            stimulus3: '<p>Gold has a temperature.</p>', 
             choices: ['True', 'False'], 
             QuestionType: 'NC', 
             correct_response: 'T', 
@@ -1160,9 +1174,9 @@ var item_start_practice = {
         {
             item_order: 1005, 
             item: 'Practice 5', 
-            stimulus1: '<p>Pebbles need nutrients.</p>', 
-            stimulus2: '<p>Pebbles need nutrients.</p>', 
-            stimulus3: '<p>Pebbles need nutrients.</p>', 
+            stimulus1: '<p>Caves respire.</p>', 
+            stimulus2: '<p>Caves respire.</p>', 
+            stimulus3: '<p>Caves respire.</p>', 
             choices: ['True', 'False'], 
             QuestionType: 'NC', 
             correct_response: 'F', 
@@ -1262,7 +1276,7 @@ var item_start_practice = {
     };
 
     var practice_procedure2 = {
-        timeline: [item_start_practice, fixation, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, inter_trial, trial_response2, gap, confidence2, gap],
+        timeline: [item_start_practice, fixation, trial_response1, gap, confidence1, gap, inter_trial, trial_response2, gap, confidence2, gap],
         timeline_variables: fixed_practice_trials_phase2,
         randomize_order: false,
         data: { block: 'blockPractice2' }
@@ -1276,7 +1290,7 @@ var item_start_practice = {
     };
 
     var practice_procedure4 = {
-        timeline: [item_start_practice, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
+        timeline: [item_start_practice, fixation, grid_display, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
         timeline_variables: fixed_practice_trials_phase4,
         randomize_order: false,
         data: { block: 'blockPractice4' }
@@ -1284,37 +1298,37 @@ var item_start_practice = {
 
     // Create procedures for each of the 6 blocks
     var temperature_procedure = {
-        timeline: [item_start, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
+        timeline: [item_start, fixation, grid_display, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
         timeline_variables: temperature_block,
         data: { block: 'temperature' }
     };
 
     var space_procedure = {
-        timeline: [item_start, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
+        timeline: [item_start, fixation, grid_display, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
         timeline_variables: space_block,
         data: { block: 'space' }
     };
 
     var weight_procedure = {
-        timeline: [item_start, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
+        timeline: [item_start, fixation, grid_display, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
         timeline_variables: weight_block,
         data: { block: 'weight' }
     };
 
     var nutrient_procedure = {
-        timeline: [item_start, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
+        timeline: [item_start, fixation, grid_display, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
         timeline_variables: nutrient_block,
         data: { block: 'nutrient' }
     };
 
     var reproduction_procedure = {
-        timeline: [item_start, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
+        timeline: [item_start, fixation, grid_display, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
         timeline_variables: reproduction_block,
         data: { block: 'reproduction' }
     };
 
     var respiration_procedure = {
-        timeline: [item_start, fixation, grid_display, trial_pre1, trial_pre2, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
+        timeline: [item_start, fixation, grid_display, trial_response1, gap, confidence1, gap, grid_answer, grid_feedback, trial_response2, gap, confidence2, gap],
         timeline_variables: respiration_block,
         data: { block: 'respiration' }
     };
@@ -1418,7 +1432,7 @@ var item_start_practice = {
             on_start: function() {
                 attachKeyListeners("trial_response1");
             },
-            stimulus: window.instructions.instr_practice_1,
+            stimulus: '<div class="centered-content">' + window.instructions.instr_practice_1 + '</div>',
             choices: ['c', 'n'],
             prompt: function() {
                 var choiceBox1 = $('<div>').addClass('choice-box').text('C');
@@ -1442,7 +1456,7 @@ var item_start_practice = {
             on_start: function() {
                 attachKeyListeners("trial_response1");
             },
-            stimulus: window.instructions.instr_practice_2,
+            stimulus: '<div class="centered-content">' + window.instructions.instr_practice_2 + '</div>',
             choices: ['c', 'n'],
             prompt: function() {
                 var choiceBox1 = $('<div>').addClass('choice-box').text('C');
@@ -1489,13 +1503,28 @@ var item_start_practice = {
     );
 
     // Main Experimental Blocks
+    var break_screen = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: function() {
+            return '<div class="centered-content">' + window.instructions.instr_break + '</div>';
+        },
+        choices: ['c', 'n'],
+        prompt: function () {
+            var choiceBox1 = $('<div>').addClass('choice-box').text('C');
+            var choiceBox2 = $('<div>').addClass('choice-box').text('N');
+            var promptContainer = $('<div>').addClass('prompt-container').append(choiceBox1).append(choiceBox2);
+            return promptContainer.prop('outerHTML');
+        }
+    };
+
     // Create block procedures based on randomized order
-    var block_procedures = blocks.map(function(block) {
+    var block_procedures = blocks.map(function(block, index) {
+        var blockNumber = index + 1;
         var blockTopicScreen = {
             type: jsPsychHtmlKeyboardResponse,
             stimulus: function() {
                 return '<div class="centered-content">' +
-                    window.instructions.getBlockTopicInstr(block.topic) +
+                    window.instructions.getBlockTopicInstr(block.topic, blockNumber, blocks.length) +
                     '</div>';
             },
             choices: ['c', 'n'],
@@ -1511,8 +1540,6 @@ var item_start_practice = {
                 item_start,
                 fixation, 
                 grid_display, 
-                trial_pre1, 
-                trial_pre2, 
                 trial_response1, 
                 gap, 
                 confidence1, 
@@ -1525,14 +1552,17 @@ var item_start_practice = {
                 gap
             ],
             timeline_variables: block.block,
-            data: { block: block.name }
+            data: { block: block.name, blockNumber: blockNumber }
         };
         return [blockTopicScreen, blockProcedure];
     });
 
     // Flatten and add all block procedures to timeline in randomized order
-    block_procedures.forEach(function(pair) {
+    block_procedures.forEach(function(pair, index) {
         timeline.push(...pair);
+        if (index === 2) {
+            timeline.push(break_screen);
+        }
     });
 
     // Wrap-up
