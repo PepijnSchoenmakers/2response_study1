@@ -1,0 +1,50 @@
+
+var list_postpractice = [post_practice_a_cn, post_practice_b_cn]
+        
+var instr_1_mouse = '<p>Welcome to the experiment!</p>'
+var instr_2_mouse =  '<p>In this study, we are interested in how people perform on a task that is commonly used to investigate how humans reason.</p><p>By having many participants perform this task, we know how well people perform on average.</p><p>We can then use that average in future research as a reference value to compare performance between participants.</p>'
+
+var instr_2response_1 = `<p>THE TASK</p><p>In this task we will present you with a set of reasoning problems.</p><p>We want to know what your initial, intuitive response to these problems is and how you respond after you have thought about the problem for some more time.</p>`
+var instr_2response_2 = `<p>Hence, as soon as the problem is presented, we will ask you to select your intuitive response.</p><p>We want you to respond with the very first answer that comes to mind. You dont need to think about it. Just give the first answer that intuitively comes to mind as quickly as possible.</p><p>Next, the problem will be presented again and you can take all the time you want to actively reflect on it. Once you have made up your mind you select your final response. You will have as much time as you need to indicate your second response.</p><p>In sum, keep in mind that it is really crucial that you give your first, <strong>initial response as fast as possible</strong>.</p><p>Afterwards, you can take as much time as you want to <strong>reflect on the problem</strong> and select your final response.</p>`
+var instr_2response_4 = `<p>You will also need to memorize a pattern while you solve the reasoning problems.</p><p>You will see a grid with crosses and you will have to memorize their location.</p><p>You will first practice with 2 patterns without reasoning problem.</p><p>The pattern will be displayed for 2 seconds then you will have to select it among 4 different patterns.</p><p>Click on Next to begin.</p>`
+var instr_2response_5 = `<p>In the actual study you will need to memorize a pattern while you solve the reasoning problem.</p><p>The pattern is briefly presented before you can answer each problem.</p><p>The difficulty of the pattern might vary. Always try to memorize as many crosses as possible. Each cross counts!</p><p>We know that it is not always easy to memorize the pattern while you are also thinking about the reasoning problem. The most important thing is to correctly memorize the pattern.</p><p>First, try to concentrate on the memorization task, and then try to solve the reasoning task.</p><p>As a next step, you can practice this with two reasoning problems.</p>`
+
+var instr_3_feedback =  '<p>In this study, you will be presented with 6 practice trials, followed by 2 blocks of 36 trials.</p><p>At the end of the first block of questions you will be <strong>provided with feedback</strong>. This feedback will reflect how you perform compared to previous participants.</p><p>After you have completed all the trials, you will be asked brief demographic questions.</p>'
+var instr_3_nofeedback = '<p>In this study, you will be presented with 6 practice trials, followed by 2 blocks of 36 trials.</p><p>After you have completed all the trials, you will be asked brief demographic questions.</p>'
+
+var instr_4_cn = '<p>In this next section, you will use the keyboard to select your answers.</p><p>Place your fingers as indicated on the keyboard with your thumbs on C and N and your ring-middle-index fingers on 1-2-3 and 8-9-0.</p><p>Press C or N to continue.</p>'
+
+var instr_5_cn = '<p>When giving your response to <strong>reasoning problems</strong>, you will use:</p><ul><li> C to choose the response on the left and</li></ul><ul><li> N to choose the response on the right.</li></ul></p><p>Press C or N to continue.'
+var instr_5b_cn = '<p>So, when you see a question like this, use:</p><ul><li> C to choose the response on the left and</li></ul><ul><li> N to choose the response on the right.</li></ul></p><p>Press C or N to continue.'
+
+var instr_6_nums = '<p>When giving your <strong>confidence</strong> on a scale of 1 to 6, you will use:</p><ul><li>keys 1, 2, and 3 to choose answers 1, 2, or 3</li></ul><ul><li>keys 8, 9, and 0 to choose answers 4, 5, or 6</li></ul><p>Use these to indicate whether you think your response was:</p> [1] Definitely wrong,    [2] Suspected wrong,     [3] Guessed wrong,  [4] Guessed right,    [5] Suspected right,    [6] Definitely right. </p><p>Press 1, 2, 3, 8, 9, or 0 to continue.</p>'
+var instr_6b_nums = '<p>So, when you see a question like this, use:</p><ul><li>keys 1, 2, and 3 to choose answers 1, 2, or 3</li></ul><ul><li>keys 8, 9, and 0 to choose answers 4, 5, or 6</li></ul><p>Use these to indicate whether you think your response was:</p> [1] Definitely wrong,    [2] Suspected wrong,     [3] Guessed wrong,  [4] Guessed right,    [5] Suspected right,    [6] Definitely right. </p><p>Press 1, 2, 3, 8, 9, or 0 to continue.</p>'
+
+var instr_7_grids = '<p>When giving your <strong>grid memorisation</strong> response, you will use:</p><ul><li>keys 2, and 3 to choose answers the 1st or 2nd grid, or </li></ul><ul><li>keys 8 or 9 to choose the 3rd or 4th grid, respectively.</li></ul><p>Press 2, 3, 8, or 9 to continue.</p>'
+var instr_7_grids = '<p>So, when you see a question like this, use:</p><ul><li>keys 2, and 3 to choose answers the 1st or 2nd grid, or </li></ul><ul><li>keys 8 or 9 to choose the 3rd or 4th grid, respectively.</li></ul><p>Press 2, 3, 8, or 9 to continue.</p>'
+
+var pre_practice_cn = '<p>In the next section, you will see two practice items to help you practice using the reasoning and confidence keys.</p><p><ul>REMEMBER</ul>When there are 2 options on the screen: Use C or N.</p><p>When there are 6 options on the screen: Use the keys 1, 2, 3, 8, 9, or 0.</p><p>Press C or N to continue.</p>'
+
+var pre_practice_nums = '<p>In the next section, you will see two practice items to help you practice using the keys.</p><p>When there are 6 options on the screen: </p><p>Use the keys 1, 2, 3, 8, 9, or 0.</p><p>Press 1, 2, 3, 8, 9, or 0 to continue.</p>'
+
+var post_practice_a_cn = '<p>Well done! You have completed the first two practice items.</p><p>In the next section, we will present the questions in a slightly different format.</p><p>Press C or N to continue.</p>'
+var pre_practice_cn = `<p>We are going to start with a couple of practice problems. First, a fixation cross will appear. Then, the first sentence of the problem is going to be presented for 2 seconds. Next, the rest of the problem will be presented. As we told you we are interested in your <strong>initial, intuitive response</strong>.</p><p>First, we want you to respond with the very first answer that comes to mind. You don't need to think about it. Just give the first answer that intuitively comes to mind as quickly as possible.</p<p>To make sure that you answer as fast as possible, a time limit was set for the first response, which is going to be 4 seconds. When there are 2 seconds left, the background color will turn to yellow to let you know that the deadline is approaching. Please make sure to answer before the deadline passes.</p><p>Next, the problem will be presented again and you can take all the time you want to actively reflect on it. Once you have made up your mind you select your final response.</p><p>After you have made your choice, you will be automatically taken to the next page. After you have selected your first and final answer we will also ask you to indicate your confidence in the correctness of your response. Click on Next when you are ready to start the practice session.</p>`
+
+var post_practice_b_cn = '<p>In this section, we will present two more practice items</p><p>Here, you will see each question <strong>twice</strong>.</p><p>The first time you see the question, you will have to respond within a <strong>time-limit of 4 seconds</strong>.</p><p>The second time you see the question, you can take as long as you like.</p><p>Press C or N to START THE PRACTICE.</p>'
+
+var post_practice_c_cn = '<p>Well done! You have completed the first four practice items.</p><p>In the next section, we will present the questions in a slightly different format.</p><p>Press C or N to continue.</p>'
+
+var post_practice_d_cn = '<p>In this section, we will present two more practice items, this time in a slightly different format.</p><p>Here, you will see each question <strong>twice</strong>.</p><p>The first time you see the question, you will have to respond within a <strong>time-limit of 4 seconds</strong> and </p><p>while <strong>remembering a grid pattern</strong>.</p><p>The second time you see the question, you can take as long as you like.</p><p>Press C or N to START THE PRACTICE.</p>'
+
+var post_practice_e_cn = '<p>Well done! You have completed the first six practice items.</p><p>In the next section, you will see four more practice items with the same format.</p><p>Press C or N to TO START THE PRACTICE.</p>'
+
+var post_practice_f_cn = '<p>Well done! You have completed all of the practice items.</p><p>Press C or N to continue.</p>'
+
+var post_practice_g_cn = '<p>Warning!</p><p>The experiment will begin on the next page.</p><p>Remember, you must give your full attention for the duration of the study.</p><p>Please ensure that you will not be disturbed.</p><p>Press C or N to continue.</p>'
+
+var feedback_nofeedback_text = `<p>You've completed the first block of problems.</p><p>To proceed to the next block, press C or N.</p>`
+ 
+var feedback_positive_text = `<p>You've completed the first block of problems.</p><p>Your performance was in the <b style='color:green !important;'>top 10%</b> of respondents.</p><p>To proceed to the next block, press C or N.</p>`
+
+var feedback_negative_text = `<p>You've completed the first block of problems.</p><p>Your performance was in the <b style='color:red !important;'>bottom 10%</b> of respondents.</p><p>To proceed to the next block, press C or N.</p>`
+  

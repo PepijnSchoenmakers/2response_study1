@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reasoning</title>
+    <script src="jspsych/jspsych.js"></script>
+    <script src="jspsych/plugin-instructions.js"></script>
+    <script src="jspsych/plugin-html-keyboard-response.js"></script>
+    <script src="jspsych/plugin-html-slider-response_zp.js"></script>
+    <script src="jspsych/plugin-html-button-response.js"></script>
+    <script src="jspsych/plugin-image-button-response.js"></script>
+    <script src="jspsych/plugin-survey-text.js"></script>
+    <script src="jspsych/plugin-survey-multi-choice.js"></script>
+    <script src="jspsych/plugin-image-keyboard-response.js"></script>
+    <script src="jspsych/plugin-call-function.js"></script>
+    <script src="questions_BB.js"></script>
+    <script src="consent.js"></script>
+    <script src="jatos.js"></script>
+    <script src="instructions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link href="jspsych/jspsych.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body></body>
+
+<script>
+
+    //initialise jspsych with JATOS results
+    var jsPsych = initJsPsych({
+        //save data as you go along (every time data is added it will save the selected components)
+        on_data_update: function (data) {
+            var resultData = jsPsych.data.get().ignore('internal_node_id').ignore('trial_type').filter([{ block: 'block1' }, { block: 'block2' }]).filter([{ task: 'reasoning_problem' }, { task: 'confidence_question' }]);
+            jatos.submitResultData(resultData.csv());
+        },
+        // when study complete, save all the data --- it will overwrited the on_data_update file
+        // end and redirect to prolific
+        on_finish: function () {
+            var resultData = jsPsych.data.get().ignore('internal_node_id').ignore('trial_type').filter([{ block: 'block1' }, { block: 'block2' }]).filter([{ task: 'reasoning_problem' }, { task: 'confidence_question' }]);
+            jatos.submitResultData(resultData.csv());
+            jatos.endStudyAndRedirect("https://app.prolific.com/submissions/complete?cc=CLMKBNXA")
+        }
+    });
+
+    //capture prolific information
+    var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
+    var study_id = jsPsych.data.getURLVariable('STUDY_ID');
+    var session_id = jsPsych.data.getURLVariable('SESSION_ID');
+
+    //assign subject ID
+    var ID = jsPsych.randomization.randomID(15);
+
+    //assign condition
+    var condition_assignment = jsPsych.randomization.sampleWithoutReplacement(['positive', 'negative', 'none'], 1)[0];
+
+    //save the participant level data
+    jsPsych.data.addProperties({
+        subject_id: subject_id,
+        study_id: study_id,
+        session_id: session_id,
+        ID: ID,
+        feedback_condition: condition_assignment
+    });
+
+    //create timeline
+    var timeline = [];
+
+    ////create the stimuli////
+
+    //practice stimuli (hard coded, same for everyone)
+    var trial_info_practice = [
+        { item: 'P1', stimulus: '<p>Mark has $10 in his pocket.</p><p>Mark gives $5 to his friend, Tom.</p><p>How much money does Mark have left in his pocket?</p><p><span style="color: gray">C = left option and N = right option</span></p>', choices: ['$10', '$5'], QuestionType: 'practice', correct_response: '$5', condition: 'practice', conf_stimulus: '<p>How confident are you in this response?</p><p><span style="color: gray">1 = Definitely wrong, 2 = Suspected wrong, 3 = Guessed wrong, 4 = Guessed right, 5 = Suspected right, 6 = Definitely right.</span></p>' },
+        { item: 'P2', stimulus: '<p>Miriam drives at 3 km per hour.</p><p>Miriam drove for 3 hours.</p><p>How far did Miriam drive?</p><p><span style="color: gray">C = left option and N = right option</span></p>', choices: ['9km', '6km'], QuestionType: 'practice', correct_response: '9km', condition: 'practice', conf_stimulus: '<p>How confident are you in this response?</p><p><span style="color: gray">1 = Definitely wrong, 2 = Suspected wrong, 3 = Guessed wrong, 4 = Guessed right, 5 = Suspected right, 6 = Definitely right.</span></p>' }
+    ];
+
+    //randomly pull conflict and noconflict items from the lists  in the questions_BB file
+    var conflict_items = jsPsych.randomization.sampleWithoutReplacement(trial_info_conflict_all, 32);
+    var noconflict_items = jsPsych.randomization.sampleWithoutReplacement(trial_info_noconflict_all, 32);
+
+    //combine conflict and no conflict items into a list for block 1, then randomise the order
+    var block1_items = jsPsych.randomization.sampleWithoutReplacement(
+        (conflict_items.slice(0, 18).concat(noconflict_items.slice(0, 18))), //take the first 18 items from the 'conflict_items' and 'noconflict_items', respectively
+        32); //randomly pick 32 from the new list (essentially randomise)
+
+    //combine conflict and no conflict items into a list for block 2, then randomise the order
+    var block2_items = jsPsych.randomization.sampleWithoutReplacement(
+        (conflict_items.slice(18).concat(noconflict_items.slice(18))), //take the last 18 items from the 'conflict_items' and 'noconflict_items', respectively
+        32); //randomly pick 32 from the new list (essentially randomise)
+
+    //join the two blocks so we can item_order index -- then use this list later in the timelines so we have a trial_order output
+    var trial_info_set = block1_items.concat(block2_items);
+    trial_info_set = trial_info_set.map(function (item, index) {
+        return { ...item, item_order: index };
+    });
+
+    //create functions to change the background colour for feedback
+    function set_html_style_1() {
+        document.body.style.backgroundColor = '#f6fff2'
+    }
+    function set_html_style_2() {
+        document.body.style.backgroundColor = '#ffdddd'
+    }
+    function set_html_style_3() {
+        document.body.style.backgroundColor = '#FFFFFF'
+    }
+
+    // Add some CSS styles to the HTML
+    var styles = '<style>' +
+        '.prompt-container { display: flex; justify-content: center; }' +
+        '.choice-box { border: 2px solid #000; padding: 10px; font-size: 18px; margin: 0 20px; }' +
+        '</style>';
+    $('head').append(styles);
+
+
+    // create a variable to hold the trial information, which changes based on the feedback condition
+    var feedback_details;
+    instr_3 = instr_3_nofeedback;
+    feedback_text = feedback_nofeedback_text;
+    feedback_background = '#FFFFFF';
+    feedback_image = 'nofeedback.png';
+    debrief_text = '';
+    if (condition_assignment == "positive") {
+        instr_3 = instr_3_feedback;
+        feedback_text = feedback_positive_text;
+        feedback_background = set_html_style_1;
+        feedback_image = 'positive.png';
+        debrief_text = '<p>During the experiment you received feedback after the first set of questions. This feedback was FALSE.</p><p> In this study, feedback is randomly allocated to participants to impact their confidence (either positively or negatively).</p><p>This allows us to test a research question examining the impact of confidence on human thinking.</p><p>If you would like to know more about the study, you can send questions to the researcher at purcell.z.a@gmail.com</p>';
+    } else if (condition_assignment == "negative") {
+        instr_3 = instr_3_feedback;
+        feedback_text = feedback_negative_text;
+        feedback_background = set_html_style_2;
+        feedback_image = 'negative.png';
+        debrief_text = '<p>During the experiment you received feedback after the first set of questions. This feedback was FALSE.</p><p> In this study, feedback is randomly allocated to participants to impact their confidence (either positively or negatively).</p><p>This allows us to test a research question examining the impact of confidence on human thinking.</p><p>If you would like to know more about the study, you can send questions to the researcher at purcell.z.a@gmail.com</p>';
+    }
+
+    //create the pages to be shown
+
+    //consent (pushed here)
+    var consent = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: [consent_text], //from consent.js
+        choices: ['I consent to participate']
+    };
+    timeline.push(consent);
+
+    //instructions - some set above per condition, some from instructions.js
+    var instructions1 = {
+        type: jsPsychInstructions,
+        pages: [instr_1_mouse, instr_2_mouse, instr_3],
+        show_clickable_nav: true,
+        allow_keys: true,
+        key_forward: 'n',
+        key_backward: 'c'
+    };
+
+    var hands1 = {
+        type: jsPsychImageKeyboardResponse,
+        stimulus: 'hand_positions.png',
+        stimulus_height: 300,
+        choices: ['c', 'n'],
+        timeline: [
+            { prompt: instr_4_cn },
+            { prompt: instr_5_cn },
+            { prompt: instr_6_cn }
+        ]
+    };
+
+    var hands2 = {
+        type: jsPsychImageKeyboardResponse,
+        stimulus: 'hand_positions.png',
+        stimulus_height: 300,
+        choices: ['1', '2', '3', '8', '9', '0', '&', 'é', '"', '_', '!', 'ç', 'à'],
+        timeline: [
+            { prompt: instr_7_nums },
+            { prompt: instr_8_nums }
+        ]
+    };
+
+    var hands3 = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: instr_9_nums,
+        choices: ['1', '2', '3', '8', '9', '0', '&', 'é', '"', '!', '_', 'ç', 'à'],
+        prompt: function () {
+            // Create choice boxes with jQuery
+            var choiceBox1 = $('<div>').addClass('choice-box').text('1');
+            var choiceBox2 = $('<div>').addClass('choice-box').text('2');
+            var choiceBox3 = $('<div>').addClass('choice-box').text('3');
+            var choiceBox4 = $('<div>').addClass('choice-box').text('4');
+            var choiceBox5 = $('<div>').addClass('choice-box').text('5');
+            var choiceBox6 = $('<div>').addClass('choice-box').text('6');
+
+            // Create a container div and append choice boxes
+            var promptContainer = $('<div>').addClass('prompt-container').append(choiceBox1)
+                .append(choiceBox2).append(choiceBox3).append(choiceBox4).append(choiceBox5).append(choiceBox6);
+
+            // Use prop() to get the HTML content of the jQuery object
+            return promptContainer.prop('outerHTML');
+
+        },
+    };
+
+    var instructions2 = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: pre_practice_cn,
+        choices: ['C', 'N'],
+        prompt: function () {
+
+            // Create choice boxes with jQuery
+            var choiceBox1 = $('<div>').addClass('choice-box').text('C');
+            var choiceBox2 = $('<div>').addClass('choice-box').text('N');
+
+            // Create a container div and append choice boxes
+            var promptContainer = $('<div>').addClass('prompt-container').append(choiceBox1).append(choiceBox2);
+
+            // Use prop() to get the HTML content of the jQuery object
+            return promptContainer.prop('outerHTML');
+
+        },
+    };
+
+    var instructions3 = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: '<p>Ready for the practice?</p><p>Press C or N to start.</p>',
+        choices: ['C', 'N'],
+        prompt: function () {
+
+            // Create choice boxes with jQuery
+            var choiceBox1 = $('<div>').addClass('choice-box').text('C');
+            var choiceBox2 = $('<div>').addClass('choice-box').text('N');
+
+            // Create a container div and append choice boxes
+            var promptContainer = $('<div>').addClass('prompt-container').append(choiceBox1).append(choiceBox2);
+
+            // Use prop() to get the HTML content of the jQuery object
+            return promptContainer.prop('outerHTML');
+
+        },
+    };
+
+    var post_practice_instructions = {
+        type: jsPsychHtmlKeyboardResponse,
+        choices: ['C', 'N'],
+        timeline: [
+            { stimulus: post_practice_a_cn },
+            { stimulus: post_practice_b_cn }
+        ]
+    };
+
+
+    //hide cursor 
+
+    var cursor_off = {
+        type: jsPsychCallFunction,
+        func: function () {
+            document.body.style.cursor = "none";
+        }
+    }
+
+    // return cursor 
+    var cursor_on = {
+        type: jsPsychCallFunction,
+        func: function () {
+            document.body.style.cursor = "auto";
+        }
+    }
+    //fixation
+    var fixation = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: '<span style="font-size:40px;">+</span>',
+        on_start: set_html_style_3,
+        choices: "NO_KEYS",
+        trial_duration: 500,
+        func: function () {
+            document.body.style.cursor = "none";
+        }
+    };
+
+
+    ////////MAIN TRIAL /////////////
+
+    var trial_keyboard = {
+        //creat empty array to save choice list
+        shuffledChoices: [],
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: jsPsych.timelineVariable('stimulus'),
+        choices: ['c', 'n'],
+        prompt: function () {
+            // Assign shuffledChoices to the trial_keyboard property
+            trial_keyboard.shuffledChoices = jsPsych.randomization.shuffle(jsPsych.timelineVariable('choices'));
+
+            // Create choice boxes with jQuery
+            var choiceBox1 = $('<div>').addClass('choice-box').text(trial_keyboard.shuffledChoices[0]);
+            var choiceBox2 = $('<div>').addClass('choice-box').text(trial_keyboard.shuffledChoices[1]);
+
+            // Create a container div and append choice boxes
+            var promptContainer = $('<div>').addClass('prompt-container').append(choiceBox1).append(choiceBox2);
+
+            // Use prop() to get the HTML content of the jQuery object
+            return promptContainer.prop('outerHTML');
+
+        },
+        data: {
+            task: 'reasoning_problem',
+            item: jsPsych.timelineVariable('item'),
+            correct_response: jsPsych.timelineVariable('correct_response'),
+            question_type: jsPsych.timelineVariable('QuestionType'),
+            item_order: jsPsych.timelineVariable('item_order'),
+        },
+        on_finish: function (data) {
+
+            // Save the order of the shuffled choices
+            data.shuffledChoices = trial_keyboard.shuffledChoices;
+            data.choiceBoxOne = trial_keyboard.shuffledChoices[0];
+            data.choiceBoxTwo = trial_keyboard.shuffledChoices[1];
+
+            // Determine the participant's response based on the key response
+            data.participantResponse = data.response == 'c' ? trial_keyboard.shuffledChoices[0] : trial_keyboard.shuffledChoices[1];
+
+            // Check if the participant's response is equal to the correct choice
+            data.accuracy = data.participantResponse === jsPsych.timelineVariable('correct_response');
+
+            // Log all trial data to the console REMOVE BEFORE RUNNING
+            //console.log(data);
+        }
+
+    };
+
+    //confidence rating 
+    var confidence = {
+        confidenceResponse: null,
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: jsPsych.timelineVariable('conf_stimulus'),
+        choices: ['1', '2', '3', '8', '9', '0', '&', 'é', '"', '_', '!', 'ç', 'à'],
+        prompt: function () {
+            // Create choice boxes with jQuery
+            var choiceBox1 = $('<div>').addClass('choice-box').text('1');
+            var choiceBox2 = $('<div>').addClass('choice-box').text('2');
+            var choiceBox3 = $('<div>').addClass('choice-box').text('3');
+            var choiceBox4 = $('<div>').addClass('choice-box').text('4');
+            var choiceBox5 = $('<div>').addClass('choice-box').text('5');
+            var choiceBox6 = $('<div>').addClass('choice-box').text('6');
+
+            // Create a container div and append choice boxes
+            var promptContainer = $('<div>').addClass('prompt-container').append(choiceBox1)
+                .append(choiceBox2).append(choiceBox3).append(choiceBox4).append(choiceBox5).append(choiceBox6);
+
+            // Use prop() to get the HTML content of the jQuery object
+            return promptContainer.prop('outerHTML');
+        },
+        data: {
+            task: 'confidence_question',
+            item: jsPsych.timelineVariable('item'),
+            correct_response: jsPsych.timelineVariable('correct_response'),
+            question_type: jsPsych.timelineVariable('QuestionType'),
+            item_order: jsPsych.timelineVariable('item_order'),
+        },
+        on_finish: function (data) {
+            console.log('Key Press:', data.response);
+            // Set the confidence response based on the key pressed
+            switch (data.response) {
+                case '1': case '&': data.confidenceResponse = 1; break; // '1' or '&'
+                case '2': case 'é': data.confidenceResponse = 2; break; // '2' or 'é'
+                case '3': case '"': data.confidenceResponse = 3; break; // '3' or '"'
+                case '8': case '_': case '!': data.confidenceResponse = 4; break; // '4' or '_'
+                case '9': case 'ç': data.confidenceResponse = 5; break; // '5' or 'ç' 
+                case '0': case 'à': data.confidenceResponse = 6; break; // '6' or 'à' 
+                default: data.confidenceResponse = null; break;
+            }
+
+            // Log all trial data to the console
+            //console.log('Key Press:', data.response);
+            //console.log('Confidence Response:', data.confidenceResponse);
+        }
+    };
+
+
+    //create procedures for practice, block1, feedback, block2)
+
+    var practice_procedure = {
+        timeline: [fixation, trial_keyboard, confidence],
+        timeline_variables: trial_info_practice,
+        randomize_order: true,
+        data: { block: 'blockPractice' }
+    };
+
+    var block1_procedure = {
+        timeline: [fixation, trial_keyboard, confidence],
+        timeline_variables: trial_info_set.slice(0, 32),
+        data: { block: 'block1' }
+    };
+
+    var feedback = {
+        type: jsPsychImageKeyboardResponse,
+        on_start: feedback_background,
+        stimulus_height: 300,
+        stimulus: feedback_image,
+        prompt: [feedback_text],
+        choices: ['c', 'n']
+    };
+
+    var block2_procedure = {
+        timeline: [fixation, trial_keyboard, confidence],
+        timeline_variables: trial_info_set.slice(32),
+        data: { block: 'block2' }
+    };
+
+    ///////////////////////////////////////////_______________________________________________________
+    //////////// THE TIMELINE //////////////////______________________________________________________
+
+    timeline.push(instructions1, hands1, hands2, hands3, instructions2, instructions3, cursor_off, practice_procedure, post_practice_instructions, block1_procedure, feedback, block2_procedure, cursor_on);
+
+    //end of main task
+    var end_trials = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: ['Well done!<p>You completed the main part of the experiment.</p><p>Before you go, please answer some short demographic questions.</p>'],
+        choices: ['Next'],
+    };
+    timeline.push(end_trials);
+
+    //age and country
+    var age = {
+        type: jsPsychSurveyText,
+        preamble: '<p> Please answer the following quesions </p>',
+        questions: [{ prompt: '<p> What is your age in years? </p>', name: 'age', columns: 2, required: true },
+        { prompt: '<p> In what country do you currently reside? </p>', name: 'county', columns: 20, required: true },
+        { prompt: '<p> Do you have any comments for the researchers? For example, were there any technical issues during the experiment. </p>', name: 'issues', columns: 130, required: false }],
+        on_finish: function (data) {
+            var responses = data.response;
+            jsPsych.data.addProperties({ age: responses.age });
+            jsPsych.data.addProperties({ country: responses.country });
+            jsPsych.data.addProperties({ issues: responses.issues });
+        }
+    };
+    timeline.push(age);
+
+    //gender
+    var gender_options = ["Male", "Female", "Non-binary", "Other/prefer not to say"];
+    var gender = {
+        type: jsPsychSurveyMultiChoice,
+        preamble: '<p> Please answer the following quesions </p>',
+        questions: [{ prompt: "What is your gender?", name: 'gender', options: gender_options, required: true }],
+        on_finish: function (data) {
+            var responses = data.response;
+            jsPsych.data.addProperties({ gender: responses.gender })
+        }
+    };
+    timeline.push(gender);
+
+    //prolific id
+    var pro = {
+        type: jsPsychSurveyText,
+        preamble: '<p> <p> Please answer the following quesion </p>',
+        questions: [{ prompt: '<p> What is your prolific ID? </p>', name: 'pro_id', columns: 30, required: true }],
+        button_label: 'Next',
+        on_finish: function (data) {
+            var responses = data.response;
+            jsPsych.data.addProperties({ pro_id: responses.pro_id })
+        }
+    }
+    timeline.push(pro);
+
+    //debrief
+    var debrief = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: function () {
+            var trials = jsPsych.data.get().filter({ task: 'reasoning_problem' });
+            var correct_trials = trials.filter({ accuracy: true });
+            var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
+
+            return (`<p>You're all done!</p>` + debrief_text + `<p></p> Thank you for participating!</p>`);
+        },
+        choices: ['Finish']
+    }
+    timeline.push(debrief);
+
+    jatos.onLoad(() => {
+        jsPsych.run(timeline);
+    });
+
+</script>
+
+</html>

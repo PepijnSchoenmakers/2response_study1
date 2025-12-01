@@ -31,42 +31,55 @@
 
     // Initialise jsPsych with JATOS results
     var jsPsych = initJsPsych({
-        // Save filtered data if the participant leaves early
+        //save data as you go along (every time data is added it will save the selected components)
         on_close: function () {
-            var tasksToKeep = ['reasoning_response1', 'reasoning_response2', 'confidence_question1', 'confidence_question2', 'grid', 'demographics_age_country', 'demographics_gender', 'demographics_education'];
-            var blockNames = Array.isArray(blocks) ? blocks.map(function (b) { return b.name; }) : [];
-            var resultData = jsPsych.data.get()
-                .ignore('internal_node_id')
-                .ignore('trial_type')
-                .filter(function (trial) {
-                    var taskMatch = tasksToKeep.indexOf(trial.task) !== -1;
-                    if (!taskMatch) return false;
-                    if (blockNames.length && trial.block) {
-                        return blockNames.indexOf(trial.block) !== -1;
-                    }
-                    return true; // Allow non-block trials like demographics
-                });
+            var resultData = jsPsych.data.get().ignore('internal_node_id').ignore('trial_type')
+                
+                .filter([
+                    { task: 'reasoning_response2' },
+                    { task: 'reasoning_response1' },
+                    { task: 'confidence_question1' },
+                    { task: 'confidence_question2' },
+                    { task: 'grid' },
+                    { task: 'demographics_age_country' },
+                    { task: 'demographics_gender' },
+                    { task: 'demographics_education' }
+                ]);
             jatos.submitResultData(resultData.csv());
         },
-        // Save only the main task/response trials when the study finishes
+        // when study complete, save all the data --- (it will overwrited the on_data_update file if that's included)
+        // end and redirect to prolific
         on_finish: function () {
-            var tasksToKeep = ['reasoning_response1', 'reasoning_response2', 'confidence_question1', 'confidence_question2', 'grid', 'demographics_age_country', 'demographics_gender', 'demographics_education'];
-            var blockNames = Array.isArray(blocks) ? blocks.map(function (b) { return b.name; }) : [];
-            var resultData = jsPsych.data.get()
-                .ignore('internal_node_id')
-                .ignore('trial_type')
-                .filter(function (trial) {
-                    var taskMatch = tasksToKeep.indexOf(trial.task) !== -1;
-                    if (!taskMatch) return false;
-                    if (blockNames.length && trial.block) {
-                        return blockNames.indexOf(trial.block) !== -1;
-                    }
-                    return true; // Allow non-block trials like demographics
-                });
+            var resultData = jsPsych.data.get().ignore('internal_node_id').ignore('trial_type')
+                
+                .filter([
+                    { task: 'reasoning_response2' },
+                    { task: 'reasoning_response1' },
+                    { task: 'confidence_question1' },
+                    { task: 'confidence_question2' },
+                    { task: 'grid' },
+                    { task: 'demographics_age_country' },
+                    { task: 'demographics_gender' },
+                    { task: 'demographics_education' }
+                ]);
             jatos.submitResultData(resultData.csv());
-            jatos.endStudyAndRedirect("https://app.prolific.com/submissions/complete?cc=CMT3ITX0");
+            jatos.endStudyAndRedirect("https://app.prolific.com/submissions/complete?cc=CCIA7GUS");
         }
     });
+
+
+
+//  on_finish: function () {
+//             var resultData = jsPsych.data.get().ignore('internal_node_id').ignore('trial_type').filter([{ block: 'block1' }, { block: 'block2' }]).filter([{ task: 'reasoning_response2' }, { task: 'reasoning_response1' }, { task: 'confidence_question1' }, { task: 'confidence_question2' }, { task: 'grid' }]);
+//             jatos.submitResultData(resultData.csv());
+//             jatos.endStudyAndRedirect("https://app.prolific.com/submissions/complete?cc=R9H75I0G")
+//         }
+//     });
+
+
+
+
+
 
     //get prolific url parameters
     //var subject_id = jatos.urlQueryParameters.prolific_ID;

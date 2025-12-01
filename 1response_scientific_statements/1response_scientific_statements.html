@@ -33,32 +33,46 @@
     var jsPsych = initJsPsych({
         // Save filtered data if the participant leaves early
         on_close: function () {
-            var tasksToKeep = ['reasoning_response', 'confidence_question'];
+            var tasksToKeep = [
+                'reasoning_response', 'reasoning_response1', 'reasoning_response2',
+                'confidence_question', 'confidence_question1', 'confidence_question2',
+                'grid',
+                'demographics_age_country', 'demographics_gender', 'demographics_education'
+            ];
             var blockNames = Array.isArray(blocks) ? blocks.map(function (b) { return b.name; }) : [];
-            var blockFilters = blockNames.length ? blockNames.map(function (name) { return { block: name }; }) : null;
-            var taskFilters = tasksToKeep.map(function (task) { return { task: task }; });
             var resultData = jsPsych.data.get()
                 .ignore('internal_node_id')
-                .ignore('trial_type');
-            if (blockFilters) {
-                resultData = resultData.filter(blockFilters);
-            }
-            resultData = resultData.filter(taskFilters);
+                .ignore('trial_type')
+                .filter(function (trial) {
+                    var taskMatch = tasksToKeep.indexOf(trial.task) !== -1;
+                    if (!taskMatch) return false;
+                    if (blockNames.length && trial.block) {
+                        return blockNames.indexOf(trial.block) !== -1;
+                    }
+                    return true; // Keep non-block trials like demographics
+                });
             jatos.submitResultData(resultData.csv());
         },
         // Save only the main task/response trials when the study finishes
         on_finish: function () {
-            var tasksToKeep = ['reasoning_response', 'confidence_question'];
+            var tasksToKeep = [
+                'reasoning_response', 'reasoning_response1', 'reasoning_response2',
+                'confidence_question', 'confidence_question1', 'confidence_question2',
+                'grid',
+                'demographics_age_country', 'demographics_gender', 'demographics_education'
+            ];
             var blockNames = Array.isArray(blocks) ? blocks.map(function (b) { return b.name; }) : [];
-            var blockFilters = blockNames.length ? blockNames.map(function (name) { return { block: name }; }) : null;
-            var taskFilters = tasksToKeep.map(function (task) { return { task: task }; });
             var resultData = jsPsych.data.get()
                 .ignore('internal_node_id')
-                .ignore('trial_type');
-            if (blockFilters) {
-                resultData = resultData.filter(blockFilters);
-            }
-            resultData = resultData.filter(taskFilters);
+                .ignore('trial_type')
+                .filter(function (trial) {
+                    var taskMatch = tasksToKeep.indexOf(trial.task) !== -1;
+                    if (!taskMatch) return false;
+                    if (blockNames.length && trial.block) {
+                        return blockNames.indexOf(trial.block) !== -1;
+                    }
+                    return true; // Keep non-block trials like demographics
+                });
             jatos.submitResultData(resultData.csv());
             jatos.endStudyAndRedirect("https://app.prolific.com/submissions/complete?cc=CCIA7GUS");
         }
@@ -152,8 +166,16 @@ var blocks = [
     { block: respiration_block, name: 'respiration', topic: 'respiration in living things' }
 ];
 
+
 // Randomize block order
 blocks = jsPsych.randomization.shuffle(blocks);
+
+// // For a short test run, keep only the first 2 blocks COMMENT THIS OUT FOR FULL STUDY
+// blocks = blocks.slice(0, 1);
+
+// // Concatenate all blocks in the randomized order
+// var all_items = [];
+// var totalBlocks = blocks.length;
 
 // Concatenate all blocks in the randomized order
 var all_items = [];
@@ -352,94 +374,6 @@ var trial_info_set = all_items;    // Verification logging for each predicate bl
 
     };
 
-    var hands5 = {
-        type: jsPsychHtmlKeyboardResponse,
-        stimulus: function () {
-            return '<div class="centered-content">' +
-                '<img src="hand_positions_grid.png" height="300" />' +
-                window.instructions.instr_grid +
-                '</div>';
-        },
-        choices: ['c', 'n'],
-        prompt: function() {
-            var choiceBox1 = $('<div>').addClass('choice-box').text('C');
-            var choiceBox2 = $('<div>').addClass('choice-box').text('N');
-            var promptContainer = $('<div>').addClass('prompt-container').append(choiceBox1).append(choiceBox2);
-            return promptContainer.prop('outerHTML');
-        },
-        on_start: function () {
-            attachKeyListeners("grid_answer");
-        },
-        on_finish: function (data) {
-            removeKeyListeners();
-        }
-    };
-
-    var grid1, grid2, grid3, grid4;
-
-    var hands6 = {
-        on_start: function () {
-            attachKeyListeners("grid_answer"); // Attach keydown and keyup listeners for the grid trial
-        },
-        type: jsPsychHtmlKeyboardResponse,
-        stimulus: function () {
-            // Get the item order and shuffle the grids
-            var item_ord = 0;
-            // Use the last appended practice quad (grid_practice items were concatenated at the end
-            // of randomised_quads). This avoids hard-coded indices that break when grid_quads length changes.
-            var quad = randomised_quads[randomised_quads.length - 1]; // last item (a practice quad)
-            var quad_shuffled = jsPsych.randomization.sampleWithoutReplacement(quad, 4);
-
-            grid1 = quad_shuffled[0]; // Top-left grid
-            grid2 = quad_shuffled[1]; // Top-right grid
-            grid3 = quad_shuffled[2]; // Bottom-left grid
-            grid4 = quad_shuffled[3]; // Bottom-right grid
-
-            // Create grid boxes dynamically, similar to how it's done in trial_response1
-            var gridBox1 = $('<div>').addClass('grid-box').attr('id', 'grid1').append(`<img src="${grid1}" width="200" style="border: 2px solid black;">`);
-            var gridBox2 = $('<div>').addClass('grid-box').attr('id', 'grid2').append(`<img src="${grid2}" width="200" style="border: 2px solid black;">`);
-            var gridBox3 = $('<div>').addClass('grid-box').attr('id', 'grid3').append(`<img src="${grid3}" width="200" style="border: 2px solid black;">`);
-            var gridBox4 = $('<div>').addClass('grid-box').attr('id', 'grid4').append(`<img src="${grid4}" width="200" style="border: 2px solid black;">`);
-
-            // Create a container div for the grids
-            var gridContainer = $('<div>').css({
-                display: 'grid',
-                'grid-template-columns': '1fr 1fr',
-                'grid-gap': '5px',
-                'justify-items': 'center',
-                'align-items': 'center',
-                margin: '0 auto',
-                'max-width': '450px'
-            });
-
-            // Append the grid boxes to the container
-            gridContainer.append(gridBox1, gridBox2, gridBox3, gridBox4);
-
-            // Return the full stimulus HTML, combining the instructions and the grid container
-            return '<div class="centered-content">' +
-                window.instructions.instr_grid +
-                gridContainer.prop('outerHTML') +
-                '<span style="color: gray"><p>Keys: 3 = top-left, 8 = top-right, </p><p>C = bottom-left, N = bottom-right</p></span>' +
-                '</div>';
-        },
-        choices: ['3', '8', '"', '!', '_', 'c', 'n'],
-        on_finish: function (data) {
-            // Cleanup event listeners and styles after trial ends
-            removeKeyListeners();
-        }
-    };
-
-    var inter_trial = {
-        on_start: set_html_style_3,
-        type: jsPsychHtmlKeyboardResponse,
-        stimulus: '<div class="centered-content">' +
-            '<p><span style="color: green"> &nbsp;</span></p>' +
-            '<p>Next, you will see the same statement but </p><p>you can take as much time as you need to reflect on the statement and give your final answer.</p>' +
-            '</div>',
-        //stimulus: '<div id="stimulus_container" style="position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 100%; text-align: center;"><p>In the next part, you will see the same question but </p><p>you can take as much time as you need to reflect on the statement and give your final answer.</p></div>',
-        trial_duration: 5000,
-    };
-
     var instructions4 = {
         on_start: function () {
             attachKeyListeners("trial_response1"); // Attach keydown and keyup listeners for the grid trial
@@ -604,7 +538,7 @@ var item_start_practice = {
     },
     on_start: set_html_style_3,
     choices: "NO_KEYS",
-    trial_duration: 2000,
+    trial_duration: 1000,
 };
     // Start of item, block
     var item_start = {
@@ -618,7 +552,7 @@ var item_start_practice = {
                 '</div>';
         },
         choices: "NO_KEYS",
-        trial_duration: 2000,
+        trial_duration: 1000,
         func: function () {
             document.body.style.cursor = "none";
         }
@@ -1253,7 +1187,7 @@ var item_start_practice = {
                 jsPsych.timelineVariable('stimulus2') ||
                 jsPsych.timelineVariable('stimulus3') || '';
             return '<div class="centered-content">' +
-                '<p><span style="color: green">Respond at your own pace.</span></p>' +
+                // '<p><span style="color: green">Respond at your own pace.</span></p>' +
                 stim +
                 promptContainer.prop('outerHTML') +
                 '</div>';
@@ -1315,10 +1249,10 @@ var item_start_practice = {
         choices: ['Next'],
     };
 
-    //age and country
     var age = {
         type: jsPsychSurveyText,
         preamble: '<p> Please answer the following quesions </p>',
+        data: { task: 'demographics_age_country' },
         questions: [{ prompt: '<p> What is your age in years? </p>', name: 'age', columns: 2, required: true },
         { prompt: '<p> In what country do you currently reside? </p>', name: 'country', columns: 20, required: true },
         { prompt: '<p> Do you have any comments for the researchers? For example, were there any technical issues during the experiment. </p>', name: 'issues', columns: 130, required: false }],
@@ -1335,6 +1269,7 @@ var item_start_practice = {
     var gender = {
         type: jsPsychSurveyMultiChoice,
         preamble: '<p> Please answer the following quesions </p>',
+        data: { task: 'demographics_gender' },
         questions: [{ prompt: "What is your gender?", name: 'gender', options: gender_options, required: true }],
         on_finish: function (data) {
             var responses = data.response;
@@ -1342,15 +1277,17 @@ var item_start_practice = {
         }
     };
 
-    //prolific id
-    var pro = {
-        type: jsPsychSurveyText,
-        preamble: '<p> <p> Please answer the following quesion </p>',
-        questions: [{ prompt: '<p> What is your prolific ID? </p>', name: 'pro_id', columns: 30, required: true }],
+    //education level
+    var education_options = ["Less than High School", "High School / GED", "Bachelor Degree", "Master Degree", "Doctoral Degree"];
+    var education_level = {
+        type: jsPsychSurveyMultiChoice,
+        preamble: '<p> Please answer the following question </p>',
+        data: { task: 'demographics_education' },
+        questions: [{ prompt: "What is the highest level of education you have completed?", name: 'education_level', options: education_options, required: true }],
         button_label: 'Next',
         on_finish: function (data) {
             var responses = data.response;
-            jsPsych.data.addProperties({ pro_id: responses.pro_id })
+            jsPsych.data.addProperties({ education_level: responses.education_level })
         }
     };
 
@@ -1367,7 +1304,7 @@ var item_start_practice = {
 
     var preload2 = {
         type: jsPsychPreload,
-        images: ['hand_positions_thumbs.png'],
+        images: ['hand_positions.png', 'hand_positions_fingers.png', 'hand_positions_grid.png', 'hand_positions_thumbs.png'],
         show_progress_bar: true,
         show_detailed_errors: true,
         message: 'Please wait while the experiment loads.</p><p>WARNING: Do not refresh the page at any point during loading or throughout the study.</p>'
@@ -1382,8 +1319,8 @@ var item_start_practice = {
         cursor_off
     );
 
-    // Keyboard and response key instructions
-    timeline.push(hands2);
+    // Keyboard and response/confidence key instructions
+    timeline.push(hands1, hands2, hands3);
 
     // Practice trials in the single-response format
     timeline.push(
@@ -1489,7 +1426,7 @@ var item_start_practice = {
         end_trials,
         age,
         gender,
-        pro,
+        education_level,
         debrief,
         exit_fullscreen
     );
